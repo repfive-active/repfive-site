@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RepFive — Every Rep Moves the Team.</title>
+
+  <meta
+    name="description"
+    content="RepFive turns purposeful digital learning into team progress, real-world rewards, and shared experiences for middle-school and high-school athletes."
+  >
+
+  <style>
+    :root {
+      --navy: #07152f;
+      --navy-2: #0b2450;
+      --blue: #1677ff;
+      --blue-dark: #0d5bd3;
+      --lime: #b7ff3c;
+      --white: #ffffff;
+      --off-white: #f7f9fc;
+      --light-blue: #edf5ff;
+      --gray: #667085;
+      --dark-gray: #344054;
+      --border: #e4e9f0;
+      --success: #19a463;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* ========================================
+       NAV
+    ======================================== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 21, 47, 0.97);
+      backdrop-filter: blur(12px);
+      color: white;
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+    }
+
+    .logo span {
+      color: var(--lime);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--lime);
+    }
+
+    .nav-cta {
+      background: var(--lime);
+      color: var(--navy);
+      padding: 10px 17px;
+      border-radius: 999px;
+      font-weight: 900;
+    }
+
+    /* ========================================
+       BUTTONS
+    ======================================== */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 999px;
+      font-weight: 850;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--lime);
+      color: var(--navy);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(183, 255, 60, 0.25);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(255,255,255,.35);
+      color: white;
+    }
+
+    .button-outline:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    .button-blue {
+      background: var(--blue);
+      color: white;
+    }
+
+    .button-blue:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ========================================
+       EYEBROW
+    ======================================== */
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: currentColor;
+      border-radius: 10px;
+    }
+
+    .eyebrow-blue {
+      color: var(--blue);
+    }
+
+    /* ========================================
+       HERO
+    ======================================== */
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at 82% 18%,
+          rgba(22,119,255,.38),
+          transparent 33%
+        ),
+        linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-2) 100%
+        );
+      color: white;
+      padding: 96px 0 88px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(54px, 7vw, 88px);
+      line-height: .92;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--lime);
+    }
+
+    .hero h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero-copy {
+      max-width: 670px;
+      color: #dce8ff;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    .audience-line {
+      margin-top: 22px;
+      color: #aebfdc;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .audience-line strong {
+      color: white;
+    }
+
+    /* ========================================
+       CHALLENGE CARD
+    ======================================== */
+
+    .challenge-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.22);
+    }
+
+    .challenge-label {
+      color: var(--lime);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+    }
+
+    .challenge-card h3 {
+      font-size: 28px;
+      line-height: 1.15;
+      margin: 9px 0 22px;
+    }
+
+    .challenge-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .challenge-stat {
+      background: rgba(255,255,255,.07);
+      border-radius: 15px;
+      padding: 15px 10px;
+      text-align: center;
+    }
+
+    .challenge-stat strong {
+      display: block;
+      font-size: 23px;
+      color: white;
+    }
+
+    .challenge-stat span {
+      display: block;
+      color: #b9c8df;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .6px;
+    }
+
+    .progress {
+      height: 15px;
+      background: rgba(255,255,255,.13);
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 12px 0 8px;
+    }
+
+    .progress-bar {
+      width: 72%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        var(--lime),
+        #7eff00
+      );
+      border-radius: 20px;
+    }
+
+    .progress-numbers {
+      display: flex;
+      justify-content: space-between;
+      color: #c9d7ef;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .challenge-message {
+      margin-top: 22px;
+      padding: 17px;
+      border-radius: 16px;
+      background: rgba(183,255,60,.10);
+      color: white;
+    }
+
+    .challenge-message strong {
+      color: var(--lime);
+    }
+
+    /* ========================================
+       SECTION
+    ======================================== */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-light {
+      background: var(--off-white);
+    }
+
+    .section-header {
+      max-width: 740px;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -2.5px;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* ========================================
+       BRAND PHILOSOPHY
+    ======================================== */
+
+    .philosophy {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .philosophy-statement {
+      font-size: clamp(31px, 4vw, 49px);
+      line-height: 1.04;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .philosophy-statement span {
+      color: var(--blue);
+    }
+
+    .philosophy-copy p {
+      color: var(--gray);
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .principle-box {
+      margin-top: 25px;
+      padding: 22px;
+      background: var(--light-blue);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 15px 15px 0;
+    }
+
+    .principle-box strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    .principle-box span {
+      color: var(--gray);
+    }
+
+    /* ========================================
+       AGE POSITIONING
+    ======================================== */
+
+    .age-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .age-card {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      background: white;
+    }
+
+    .age-card.highlight {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    .age-card .age-label {
+      color: var(--blue);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+    }
+
+    .age-card.highlight .age-label {
+      color: var(--lime);
+    }
+
+    .age-card h3 {
+      font-size: 27px;
+      margin: 8px 0 12px;
+    }
+
+    .age-card p {
+      color: var(--gray);
+    }
+
+    .age-card.highlight p {
+      color: #c7d5eb;
+    }
+
+    /* ========================================
+       HOW IT WORKS
+    ======================================== */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 21px;
+    }
+
+    .step-number {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .step h3 {
+      font-size: 21px;
+      margin: 7px 0;
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ========================================
+       MVP CHALLENGE
+    ======================================== */
+
+    .mvp {
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(22,119,255,.22),
+          transparent 30%
+        ),
+        var(--navy);
+      color: white;
+    }
+
+    .mvp-grid {
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .mvp h2 {
+      font-size: clamp(39px, 5vw, 60px);
+      line-height: .98;
+      letter-spacing: -2.5px;
+      margin-bottom: 20px;
+    }
+
+    .mvp-copy {
+      color: #c9d7ef;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .mvp-equation {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: 15px 0 25px;
+      font-weight: 900;
+    }
+
+    .equation-item {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 13px;
+      padding: 11px 14px;
+    }
+
+    .equation-item strong {
+      color: var(--lime);
+    }
+
+    .equation-symbol {
+      color: #7890b5;
+    }
+
+    .mvp-card {
+      background: white;
+      color: var(--navy);
+      border-radius: 26px;
+      padding: 30px;
+    }
+
+    .mvp-card-label {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .mvp-card h3 {
+      font-size: 28px;
+      margin: 7px 0 20px;
+    }
+
+    .mvp-list {
+      list-style: none;
+    }
+
+    .mvp-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+
+    .mvp-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check {
+      color: var(--success);
+      font-weight: 900;
+      margin-right: 6px;
+    }
+
+    /* ========================================
+       SPORTS
+    ======================================== */
+
+    .sports {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .sport {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 18px;
+      padding: 21px;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .sport small {
+      display: block;
+      margin-top: 3px;
+      color: var(--gray);
+      font-size: 11px;
+      font-weight: 650;
+    }
+
+    /* ========================================
+       AUDIENCES
+    ======================================== */
+
+    .audiences {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .audience {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 27px;
+      background: white;
+    }
+
+    .audience-icon {
+      font-size: 27px;
+      margin-bottom: 13px;
+    }
+
+    .audience h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .audience p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* ========================================
+       SPONSOR
+    ======================================== */
+
+    .sponsor {
+      text-align: center;
+    }
+
+    .sponsor .section-header {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sponsor-box {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 45px;
+      border-radius: 28px;
+      background:
+        linear-gradient(
+          135deg,
+          #edf5ff,
+          #f5ffe6
+        );
+      border: 1px solid var(--border);
+    }
+
+    .sponsor-box h3 {
+      font-size: 31px;
+      margin-bottom: 12px;
+    }
+
+    .sponsor-box p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    .sponsor-points {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 25px;
+    }
+
+    .sponsor-point {
+      padding: 8px 13px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--dark-gray);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    /* ========================================
+       FINAL CTA
+    ======================================== */
+
+    .final-cta {
+      text-align: center;
+      background: var(--off-white);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(43px, 6vw, 72px);
+      line-height: .94;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .final-cta h2 span {
+      color: var(--blue);
+    }
+
+    .final-cta p {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      background: #040d20;
+      color: white;
+      padding: 45px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer p {
+      color: #91a1bd;
+      font-size: 13px;
+    }
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .philosophy,
+      .mvp-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sports {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .audiences {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .challenge-card {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .steps,
+      .age-grid,
+      .audiences,
+      .sports {
+        grid-template-columns: 1fr;
+      }
+
+      .challenge-stats {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .sponsor-box {
+        padding: 29px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+  ======================================== -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        REP<span>FIVE</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#why">Why RepFive</a>
+        <a href="#challenge">The Challenge</a>
+        <a href="#athletes">Athletes</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#pilot" class="nav-cta">Join the Pilot</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ========================================
+       HERO
+  ======================================== -->
+
+  <header class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          The Active Swap
+        </div>
+
+        <h1>
+          Every Rep<br>
+          <span>Moves the Team.</span>
+        </h1>
+
+        <h2>
+          Make the screen part of the team.
+        </h2>
+
+        <p class="hero-copy">
+          RepFive turns short, purposeful digital learning challenges
+          into team progress, real-world rewards, and shared experiences
+          for middle-school and high-school athletes.
+        </p>
+
+        <div class="buttons">
+          <a href="#pilot" class="button button-primary">
+            Join the Pilot
+          </a>
+
+          <a href="#challenge" class="button button-outline">
+            See the Challenge
+          </a>
+        </div>
+
+        <div class="audience-line">
+          <strong>Built for team athletes.</strong>
+          Boys & girls · Middle school & high school · Multiple sports
+        </div>
+
+      </div>
+
+
+      <!-- LIVE-STYLE EXAMPLE -->
+
+      <div class="challenge-card">
+
+        <div class="challenge-label">
+          Example RepFive Challenge
+        </div>
+
+        <h3>
+          U13 Boys Soccer<br>
+          2,000 Point Challenge
+        </h3>
+
+        <div class="challenge-stats">
+
+          <div class="challenge-stat">
+            <strong>10</strong>
+            <span>Days</span>
+          </div>
+
+          <div class="challenge-stat">
+            <strong>20</strong>
+            <span>Points / Day</span>
+          </div>
+
+          <div class="challenge-stat">
+            <strong>2,000</strong>
+            <span>Team Goal</span>
+          </div>
+
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="progress-numbers">
+          <span>1,440 points</span>
+          <span>72%</span>
+        </div>
+
+        <div class="challenge-message">
+          <strong>560 points to go.</strong><br>
+          Every Rep moves the team closer to Movie Night.
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       BRAND PHILOSOPHY
+  ======================================== -->
+
+  <section id="why">
+
+    <div class="container philosophy">
+
+      <div class="philosophy-statement">
+
+        More play when you're young.<br><br>
+
+        <span>More purpose as you grow.</span>
+
+      </div>
+
+      <div class="philosophy-copy">
+
+        <p>
+          We believe younger kids need room to explore, move, imagine,
+          play outside, and simply be kids.
+        </p>
+
+        <p>
+          As athletes reach middle school and high school, purposeful
+          digital learning can become a powerful complement to practices,
+          coaching, competition, and team life.
+        </p>
+
+        <p>
+          RepFive doesn't tell athletes to put the phone down.
+          We give them a better reason to pick it up.
+        </p>
+
+        <div class="principle-box">
+
+          <strong>
+            The Active Swap
+          </strong>
+
+          <span>
+            Swap passive scrolling for purposeful development.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       AGE POSITIONING
+  ======================================== -->
+
+  <section class="section-light">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          Who RepFive Is For
+        </div>
+
+        <h2>
+          Built for the next stage of the athlete journey.
+        </h2>
+
+        <p>
+          RepFive is intentionally focused on middle-school and
+          high-school athletes—when structured development and team
+          identity become increasingly important.
+        </p>
+
+      </div>
+
+
+      <div class="age-grid">
+
+        <div class="age-card">
+
+          <div class="age-label">
+            Elementary School
+          </div>
+
+          <h3>
+            Explore. Play. Move.
+          </h3>
+
+          <p>
+            RepFive isn't designed to replace the freedom, exploration,
+            outdoor play, and unstructured activity that young children need.
+          </p>
+
+        </div>
+
+
+        <div class="age-card highlight">
+
+          <div class="age-label">
+            RepFive Sweet Spot
+          </div>
+
+          <h3>
+            Middle School → High School
+          </h3>
+
+          <p>
+            Athletes are ready for more intentional learning, tactical
+            thinking, skill development, and team goals—without losing
+            the fun of being part of a team.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       HOW IT WORKS
+  ======================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          How It Works
+        </div>
+
+        <h2>
+          Simple enough to do every day.
+        </h2>
+
+        <p>
+          No complicated training plans. No coach verification.
+          No screen-time surveillance. Just a small daily Rep that
+          moves the team forward.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">01</div>
+
+          <h3>
+            Watch
+          </h3>
+
+          <p>
+            Watch a short, coach-curated lesson focused on a
+            specific skill or game concept.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">02</div>
+
+          <h3>
+            Think
+          </h3>
+
+          <p>
+            Answer a couple of multiple-choice questions to
+            reinforce what you just watched.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">03</div>
+
+          <h3>
+            Earn
+          </h3>
+
+          <p>
+            A parent confirms that the athlete completed the
+            day's Rep and the athlete earns 20 points.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">04</div>
+
+          <h3>
+            Move the Team
+          </h3>
+
+          <p>
+            Individual Reps add up to a shared team goal and
+            a real-world reward.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       MVP CHALLENGE
+  ======================================== -->
+
+  <section id="challenge" class="mvp">
+
+    <div class="container mvp-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          The RepFive MVP
+        </div>
+
+        <h2>
+          10 Days.<br>
+          20 Points a Day.<br>
+          One Team Goal.
+        </h2>
+
+        <p class="mvp-copy">
+          The first RepFive challenge is deliberately simple.
+          Ten daily Reps. Twenty points per completed Rep.
+          The team works together toward a shared 2,000-point goal.
+        </p>
+
+
+        <div class="mvp-equation">
+
+          <div class="equation-item">
+            <strong>10</strong> athletes
+          </div>
+
+          <div class="equation-symbol">×</div>
+
+          <div class="equation-item">
+            <strong>10</strong> days
+          </div>
+
+          <div class="equation-symbol">×</div>
+
+          <div class="equation-item">
+            <strong>20</strong> points
+          </div>
+
+          <div class="equation-symbol">=</div>
+
+          <div class="equation-item">
+            <strong>2,000</strong> team points
+          </div>
+
+        </div>
+
+
+        <p class="mvp-copy">
+          The first team goal:
+          <strong style="color:white;">Movie Night.</strong>
+        </p>
+
+        <a href="#pilot" class="button button-primary">
+          Follow the First Challenge
+        </a>
+
+      </div>
+
+
+      <div class="mvp-card">
+
+        <div class="mvp-card-label">
+          A Daily Rep Looks Like This
+        </div>
+
+        <h3>
+          REP 01 — First Touch to Space
+        </h3>
+
+        <ul class="mvp-list">
+
+          <li>
+            <span class="check">✓</span>
+            Watch the coach-curated video
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Answer 2 multiple-choice questions
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Parent confirms completion
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Athlete earns 20 Rep Points
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Team moves closer to its goal
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       MULTI-SPORT
+  ======================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          Not Just Soccer
+        </div>
+
+        <h2>
+          One idea.<br>
+          Every team sport.
+        </h2>
+
+        <p>
+          RepFive is sport-agnostic. The content changes.
+          The RepFive experience stays the same:
+          learn, think, earn, and move the team.
+        </p>
+
+      </div>
+
+
+      <div class="sports">
+
+        <div class="sport">
+          ⚽ Soccer
+          <small>Technical · Tactical</small>
+        </div>
+
+        <div class="sport">
+          🏀 Basketball
+          <small>IQ · Skills · Team Play</small>
+        </div>
+
+        <div class="sport">
+          ⚾ Baseball / Softball
+          <small>Skills · Situational</small>
+        </div>
+
+        <div class="sport">
+          🏐 Volleyball
+          <small>Technique · Game IQ</small>
+        </div>
+
+        <div class="sport">
+          🥍 Lacrosse
+          <small>Skills · Tactics</small>
+        </div>
+
+        <div class="sport">
+          🏈 Football
+          <small>Reads · Concepts</small>
+        </div>
+
+        <div class="sport">
+          🏒 Hockey
+          <small>Skills · Systems</small>
+        </div>
+
+        <div class="sport">
+          🏃 Track & Field
+          <small>Training · Preparation</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       PEOPLE AROUND THE TEAM
+  ======================================== -->
+
+  <section id="athletes" class="section-light">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <h2>
+          Built for everyone<br>
+          around the team.
+        </h2>
+
+      </div>
+
+
+      <div class="audiences">
+
+        <div class="audience">
+
+          <div class="audience-icon">⚡</div>
+
+          <h3>
+            Athletes
+          </h3>
+
+          <p>
+            Learn something new, complete your Rep, earn points,
+            and help your teammates reach the next goal.
+          </p>
+
+        </div>
+
+
+        <div class="audience">
+
+          <div class="audience-icon">🎯</div>
+
+          <h3>
+            Coaches
+          </h3>
+
+          <p>
+            Extend development beyond practice with short,
+            focused lessons that reinforce your coaching.
+          </p>
+
+        </div>
+
+
+        <div class="audience">
+
+          <div class="audience-icon">👨‍👩‍👧</div>
+
+          <h3>
+            Families
+          </h3>
+
+          <p>
+            A simple, positive way to support purposeful digital
+            engagement without becoming the coach—or the screen police.
+          </p>
+
+        </div>
+
+
+        <div class="audience">
+
+          <div class="audience-icon">🚀</div>
+
+          <h3>
+            Sponsors
+          </h3>
+
+          <p>
+            Fund athlete engagement and connect your brand with
+            measurable youth development and team experiences.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       SPONSOR
+  ======================================== -->
+
+  <section id="sponsors" class="sponsor">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          For Community & Corporate Partners
+        </div>
+
+        <h2>
+          Fund the effort.<br>
+          Fuel the opportunity.
+        </h2>
+
+        <p>
+          Youth-sports sponsorship can be more than a logo on a banner.
+          RepFive connects sponsor support to athlete participation,
+          team progress, and a tangible experience the team can celebrate.
+        </p>
+
+      </div>
+
+
+      <div class="sponsor-box">
+
+        <h3>
+          Become a RepFive Impact Partner.
+        </h3>
+
+        <p>
+          Sponsor a challenge. Fund a team milestone.
+          Help young athletes get better—and give their team
+          something to celebrate together.
+        </p>
+
+
+        <div class="sponsor-points">
+
+          <div class="sponsor-point">
+            Team Challenge Sponsor
+          </div>
+
+          <div class="sponsor-point">
+            Community Recognition
+          </div>
+
+          <div class="sponsor-point">
+            Participation Impact Report
+          </div>
+
+          <div class="sponsor-point">
+            Team Experience
+          </div>
+
+        </div>
+
+
+        <a
+          href="mailto:hello@repfive.com?subject=RepFive%20Impact%20Partner"
+          class="button button-blue"
+        >
+          Become an Impact Partner
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       PILOT
+  ======================================== -->
+
+  <section id="pilot" class="mvp">
+
+    <div class="container" style="text-align:center;">
+
+      <div class="eyebrow">
+        The First RepFive Team
+      </div>
+
+      <h2 style="
+        font-size:clamp(40px,6vw,68px);
+        line-height:.96;
+        letter-spacing:-3px;
+        margin-bottom:20px;
+      ">
+        10 players.<br>
+        10 days.<br>
+        <span style="color:var(--lime);">
+          Movie Night.
+        </span>
+      </h2>
+
+      <p style="
+        max-width:650px;
+        margin:0 auto 28px;
+        color:#c9d7ef;
+        font-size:18px;
+      ">
+        We're starting with one real team, one simple challenge,
+        and one measurable goal. The purpose is to prove that
+        individual effort can create collective momentum.
+      </p>
+
+      <div class="buttons" style="justify-content:center;">
+
+        <a
+          href="mailto:hello@repfive.com?subject=RepFive%20Pilot"
+          class="button button-primary"
+        >
+          Join the Pilot
+        </a>
+
+        <a
+          href="mailto:hello@repfive.com?subject=RepFive%20Sponsor%20Interest"
+          class="button button-outline"
+        >
+          Sponsor the Challenge
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FINAL BRAND STATEMENT
+  ======================================== -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <div class="eyebrow eyebrow-blue">
+        RepFive
+      </div>
+
+      <h2>
+        Your reps.<br>
+        Your team.<br>
+        <span>Your impact.</span>
+      </h2>
+
+      <p>
+        Swap passive scrolling for purposeful development.
+        Small individual efforts can create something bigger:
+        a stronger team and a reason to celebrate together.
+      </p>
+
+      <a href="#pilot" class="button button-blue">
+        Start a RepFive Challenge
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <div class="logo">
+          REP<span>FIVE</span>
+        </div>
+
+        <p>
+          The Active Swap · Every Rep Moves the Team.
+        </p>
+
+      </div>
+
+      <p>
+        © 2026 RepFive. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
