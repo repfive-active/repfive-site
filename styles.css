@@ -307,7 +307,7 @@ nav {
 }
 
 .progress-bar {
-  width: 72%;
+  width: 0%;
   height: 100%;
   background: linear-gradient(
     90deg,
@@ -315,6 +315,7 @@ nav {
     #7eff00
   );
   border-radius: 20px;
+  transition: width 0.4s ease;
 }
 
 .progress-numbers {
@@ -869,6 +870,202 @@ section {
   margin: 0 auto 28px;
   color: #c9d7ef;
   font-size: 18px;
+}
+
+/* ================================
+   LIVE CHALLENGE SCOREBOARD
+================================ */
+
+.challenge-scoreboard {
+  max-width: 850px;
+  margin: 0 auto;
+  background: var(--navy);
+  color: white;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.scoreboard-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.scoreboard-label {
+  color: var(--lime);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-weight: 900;
+}
+
+.scoreboard-status {
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+.scoreboard-start {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 9px 15px;
+  color: #c9d7ef;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.scoreboard-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.scoreboard-eyebrow {
+  color: #aebfdc;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.scoreboard-day-value {
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 900;
+  margin-top: 6px;
+}
+
+.scoreboard-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 9px;
+}
+
+.scoreboard-points {
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+.scoreboard-points-total {
+  font-size: 20px;
+  color: #8fa3c2;
+  font-weight: 700;
+}
+
+.scoreboard-percent {
+  color: var(--lime);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.scoreboard-progress-numbers {
+  display: flex;
+  justify-content: space-between;
+  color: #9fb1ce;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.scoreboard-message {
+  margin-top: 22px;
+  padding: 17px;
+  border-radius: 16px;
+  background: rgba(183, 255, 60, 0.1);
+  color: white;
+}
+
+.scoreboard-message strong {
+  color: var(--lime);
+}
+
+/* ================================
+   CHALLENGE INFO
+================================ */
+
+.challenge-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.challenge-info-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 30px;
+  background: white;
+}
+
+.challenge-info-card.highlight {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.challenge-info-label {
+  color: var(--blue);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.challenge-info-card.highlight .challenge-info-label {
+  color: var(--lime);
+}
+
+.challenge-info-card h3 {
+  font-size: 27px;
+  margin: 8px 0 12px;
+}
+
+.challenge-info-card p {
+  color: var(--gray);
+}
+
+.challenge-info-card.highlight p {
+  color: #c7d5eb;
+}
+
+/* ================================
+   MOBILE — SCOREBOARD
+================================ */
+
+@media (max-width: 600px) {
+  .challenge-scoreboard {
+    padding: 25px;
+    border-radius: 23px;
+  }
+
+  .scoreboard-status {
+    font-size: 26px;
+  }
+
+  .scoreboard-day-value {
+    font-size: 32px;
+  }
+
+  .scoreboard-points {
+    font-size: 36px;
+  }
+
+  .scoreboard-points-total {
+    font-size: 17px;
+  }
+
+  .challenge-info-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ================================
