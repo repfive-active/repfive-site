@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RepFive — 10-Day Team Journey</title>
+
+  <meta
+    name="description"
+    content="Follow the first RepFive 10-day team journey. Complete daily Reps, move the team toward its goal, and earn Movie Night together."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+  ========================================= -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="index.html" class="logo">
+        REP<span>FIVE</span>
+      </a>
+
+      <div class="nav-links">
+
+        <a href="index.html#why">
+          Why RepFive
+        </a>
+
+        <a href="challenge.html">
+          The Journey
+        </a>
+
+        <a href="index.html#athletes">
+          Athletes
+        </a>
+
+        <a href="index.html#sponsors">
+          Sponsors
+        </a>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ========================================
+       HERO
+  ========================================= -->
+
+  <header class="challenge-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        The Active Swap
+      </div>
+
+      <h1>
+        10 Days.<br>
+        <span>One Team Goal.</span>
+      </h1>
+
+      <p class="challenge-hero-copy">
+        A short daily Rep. A little progress each day.
+        See what happens when the team moves together.
+      </p>
+
+      <div class="challenge-meta">
+
+        <div class="meta-pill">
+          U13 Boys Soccer
+        </div>
+
+        <div class="meta-pill">
+          10 Days
+        </div>
+
+        <div class="meta-pill">
+          20 Points / Rep
+        </div>
+
+        <div class="meta-pill">
+          Movie Night
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       LIVE TEAM SCOREBOARD
+  ========================================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          The First RepFive Journey
+        </div>
+
+        <h2>
+          U13 Boys Soccer
+        </h2>
+
+        <p>
+          Ten daily Reps. Twenty points per Rep.
+          One shared goal: Movie Night.
+        </p>
+
+      </div>
+
+
+      <!--
+        ========================================
+        SCOREBOARD DATA CONTAINER
+        ========================================
+
+        These IDs are intentionally stable.
+
+        Later, the Google Sheets connection
+        will populate these values.
+
+        Current challenge:
+        CH-001
+      -->
+
+      <div
+        id="challenge-scoreboard"
+        data-challenge-id="CH-001"
+        data-goal="2000"
+        data-total-days="10"
+        data-points-per-rep="20"
+      >
+
+        <div class="challenge-scoreboard">
+
+
+          <!-- STATUS -->
+
+          <div class="scoreboard-header">
+
+            <div>
+
+              <div class="scoreboard-label">
+                10-Day Team Journey
+              </div>
+
+              <div
+                id="challenge-status"
+                class="scoreboard-status"
+              >
+                🟡 Not Started
+              </div>
+
+            </div>
+
+            <div
+              id="challenge-start"
+              class="scoreboard-start"
+            >
+              Starts September 2026
+            </div>
+
+          </div>
+
+
+          <!-- DAY -->
+
+          <div class="scoreboard-day">
+
+            <div>
+
+              <div class="scoreboard-eyebrow">
+                Team Journey
+              </div>
+
+              <div
+                id="journey-day"
+                class="scoreboard-day-value"
+              >
+                Day 0 of 10
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- TEAM PROGRESS -->
+
+          <div class="scoreboard-progress-header">
+
+            <div>
+
+              <div class="scoreboard-eyebrow">
+                Team Progress
+              </div>
+
+              <div
+                id="team-points"
+                class="scoreboard-points"
+              >
+                0
+                <span class="scoreboard-points-total">
+                  / 2,000 points
+                </span>
+              </div>
+
+            </div>
+
+            <div
+              id="team-percent"
+              class="scoreboard-percent"
+            >
+              0%
+            </div>
+
+          </div>
+
+
+          <!-- PROGRESS BAR -->
+
+          <div class="progress">
+
+            <div
+              id="team-progress-bar"
+              class="progress-bar"
+            ></div>
+
+          </div>
+
+
+          <!-- PROGRESS NUMBERS -->
+
+          <div class="scoreboard-progress-numbers">
+
+            <span id="points-earned">
+              0 points earned
+            </span>
+
+            <span id="points-goal">
+              2,000 point goal
+            </span>
+
+          </div>
+
+
+          <!-- JOURNEY MESSAGE -->
+
+          <div class="scoreboard-message">
+
+            <strong id="journey-message">
+              The journey hasn't started yet.
+            </strong>
+
+            <br>
+
+            Make your screen part of the team.
+            Every completed Rep moves the team closer
+            to Movie Night.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       HOW IT WORKS
+  ========================================= -->
+
+  <section class="section-light">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          Your Daily Rep
+        </div>
+
+        <h2>
+          Simple. Short. Team-focused.
+        </h2>
+
+        <p>
+          One short learning Rep each day.
+          Watch, think, complete your Rep, and move the team.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">
+            01
+          </div>
+
+          <h3>
+            Watch
+          </h3>
+
+          <p>
+            Watch the day's short,
+            coach-curated video.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <h3>
+            Think
+          </h3>
+
+          <p>
+            Answer two quick questions
+            about what you watched.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <h3>
+            Complete
+          </h3>
+
+          <p>
+            Confirm that you've completed
+            today's Rep.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            04
+          </div>
+
+          <h3>
+            Move the Team
+          </h3>
+
+          <p>
+            Your Rep adds 20 points
+            to the team's shared goal.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       THE MATH
+  ========================================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          How the Team Gets There
+        </div>
+
+        <h2>
+          Small Reps.<br>
+          Big Team Goal.
+        </h2>
+
+        <p>
+          Every completed Rep adds 20 points.
+          When the team keeps showing up,
+          the points compound.
+        </p>
+
+      </div>
+
+
+      <div class="challenge-info-grid">
+
+        <div class="challenge-info-card">
+
+          <div class="challenge-info-label">
+            The Rep
+          </div>
+
+          <h3>
+            20 Points
+          </h3>
+
+          <p>
+            One completed daily Rep earns
+            20 points for the team.
+          </p>
+
+        </div>
+
+
+        <div class="challenge-info-card highlight">
+
+          <div class="challenge-info-label">
+            The Team Goal
+          </div>
+
+          <h3>
+            2,000 Points
+          </h3>
+
+          <p>
+            10 athletes × 10 days × 20 points
+            = 2,000 points and Movie Night.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       THE 10-DAY JOURNEY
+  ========================================= -->
+
+  <section class="section-light">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="eyebrow eyebrow-blue">
+          The 10-Day Journey
+        </div>
+
+        <h2>
+          One Rep at a time.
+        </h2>
+
+        <p>
+          Each Rep unlocks on its scheduled day.
+          The next Rep isn't available until the
+          team moves on.
+        </p>
+
+      </div>
+
+
+      <div class="sports">
+
+        <div class="sport">
+          REP 01
+          <small>
+            First Touch to Space
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 02
+          <small>
+            Receiving Across Body
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 03
+          <small>
+            1v1 Defensive Stance
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 04
+          <small>
+            Transition: Attack to Defend
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 05
+          <small>
+            Scanning / Head Checks
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 06
+          <small>
+            Off-the-Ball Movement
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 07
+          <small>
+            Dribbling for Penetration
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 08
+          <small>
+            Crossing Mechanics
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 09
+          <small>
+            Pressing Triggers
+          </small>
+        </div>
+
+        <div class="sport">
+          REP 10
+          <small>
+            Switching the Point of Attack
+          </small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       TEAM MESSAGE
+  ========================================= -->
+
+  <section class="mvp">
+
+    <div class="container">
+
+      <div
+        style="
+          max-width:760px;
+          margin:0 auto;
+          text-align:center;
+        "
+      >
+
+        <div class="eyebrow">
+          The Active Swap
+        </div>
+
+        <h2>
+          Just Rep and Keep Reaching.
+        </h2>
+
+        <p
+          class="mvp-copy"
+          style="margin-top:20px;"
+        >
+          Small changes add up when the team gets involved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <a href="index.html" class="logo">
+          REP<span>FIVE</span>
+        </a>
+
+        <p>
+          The Active Swap · Every Rep Moves the Team.
+        </p>
+
+      </div>
+
+      <p>
+        © 2026 RepFive. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========================================
+       SCOREBOARD LOGIC
+  ========================================
+
+       The scoreboard currently uses the
+       pre-launch values above.
+
+       Later this section will be connected
+       to the live Google Sheets / published
+       scoreboard data.
+
+       Expected fields:
+
+         challenge_id
+         team_id
+         team
+         challenge_name
+         current_day
+         days
+         team_points
+         goal
+         percent_complete
+         reps_completed
+         week
+         status
+
+       Google Sheets remains the source of truth.
+
+       The website should DISPLAY the calculated
+       values rather than recreate the scoring
+       formulas.
+
+  ========================================= -->
+
+</body>
+
+</html>
