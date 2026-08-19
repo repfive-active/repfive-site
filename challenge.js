@@ -253,15 +253,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       // ========================================
-      // TEAM SUBMISSION URL
+      // CHALLENGE SUBMISSION URL
       // ========================================
 
       const submissionURL =
-        team["Submission URL"];
+        challenge["Submission URL"];
 
 
       console.log(
-        "Team Submission URL:",
+        "Challenge Submission URL:",
         submissionURL
       );
 
