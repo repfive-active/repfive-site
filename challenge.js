@@ -488,7 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (teamPercent) {
 
         teamPercent.textContent =
-          `${percent.toFixed(0)}%`;
+          `${percent}%`;
 
       }
 
