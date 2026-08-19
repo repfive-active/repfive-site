@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const teamId = params.get("team");
   const challengeId = params.get("challenge");
 
-  fetch(`${API_URL}?challenge=${encodeURIComponent(challengeId)}`)
+  fetch(
+  `${API_URL}?team=${encodeURIComponent(teamId)}&challenge=${encodeURIComponent(challengeId)}`
+)
     .then(response => response.json())
     .then(data => {
       console.log(
