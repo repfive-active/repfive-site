@@ -1235,235 +1235,36 @@ footer p {
   }
 }
 /* ========================================
-   REP FIVE — REP JOURNEY
+   TODAY'S ACTIVE REP
 ======================================== */
 
-
-/* ----------------------------------------
-   REP JOURNEY GRID
----------------------------------------- */
-
-.rep-journey {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-
-/* ----------------------------------------
-   REP TILE
----------------------------------------- */
-
-.rep-tile {
-  position: relative;
-  padding: 28px;
-  background: #ffffff;
-  border: 1px solid #e4e9ef;
-  border-radius: 16px;
-  opacity: 0.68;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease;
-}
-
-
-/* ----------------------------------------
-   REP TILE TOP
----------------------------------------- */
-
-.rep-tile-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-
-.rep-number {
-  color: #6b7a90;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-
-.rep-today {
-  display: none;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 999px;
-
-  background: #2f80ed;
-  color: #ffffff;
-
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-}
-
-
-/* ----------------------------------------
-   REP TILE CONTENT
----------------------------------------- */
-
-.rep-tile h3 {
-  margin: 0 0 10px;
-}
-
-
-.rep-tile p {
-  margin: 0;
-  color: #66758a;
-  line-height: 1.6;
-}
-
-
-/* ----------------------------------------
-   REP TILE FOOTER
----------------------------------------- */
-
-.rep-tile-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-
-  margin-top: 22px;
-}
-
-
-.rep-duration {
-  color: #6b7a90;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-
-/* ----------------------------------------
-   REP BUTTON
----------------------------------------- */
-
-.rep-button {
+.rep-active-label {
   display: none;
 
-  align-items: center;
-  justify-content: center;
+  margin-top: 10px;
 
-  padding: 10px 16px;
+  padding: 4px 9px;
 
   border-radius: 999px;
 
   background: #2f80ed;
   color: #ffffff;
 
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 800;
-  text-decoration: none;
-
-  white-space: nowrap;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  letter-spacing: 0.06em;
 }
 
-
-.rep-button:hover {
-  background: #216dcc;
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-
-/* ----------------------------------------
-   ACTIVE REP
----------------------------------------- */
-
-.rep-tile.active {
-  opacity: 1;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #f5f9ff 100%
-    );
-
+.sport.active {
+  background: #f4f8ff;
   border-color: #2f80ed;
 
   box-shadow:
-    0 12px 30px rgba(47, 128, 237, 0.14);
+    0 8px 24px rgba(47, 128, 237, 0.15);
 
   transform: translateY(-2px);
 }
 
-
-.rep-tile.active .rep-number {
-  color: #2f80ed;
-}
-
-
-.rep-tile.active .rep-today {
+.sport.active .rep-active-label {
   display: inline-flex;
-}
-
-
-.rep-tile.active .rep-button {
-  display: inline-flex;
-}
-
-
-/* ----------------------------------------
-   ACTIVE REP — SUBTLE INDICATOR
----------------------------------------- */
-
-.rep-tile.active::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  bottom: 0;
-
-  width: 4px;
-
-  border-radius:
-    16px 0 0 16px;
-
-  background: #2f80ed;
-}
-
-
-/* ----------------------------------------
-   MOBILE
----------------------------------------- */
-
-@media (max-width: 700px) {
-
-  .rep-journey {
-    grid-template-columns: 1fr;
-  }
-
-
-  .rep-tile {
-    padding: 22px;
-  }
-
-
-  .rep-tile-footer {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-
-  .rep-button {
-    width: 100%;
-  }
-
 }
