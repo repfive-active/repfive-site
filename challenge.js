@@ -1,16 +1,26 @@
 // ========================================
 // REP FIVE — CHALLENGE PAGE
-// Team routing test
+// Challenge + Team routing
 // ========================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Read the Team ID from the URL
-  const params = new URLSearchParams(window.location.search);
-  const teamId = params.get("team");
+  // ========================================
+  // READ URL PARAMETERS
+  // ========================================
 
-  // Temporary test data
+  const params = new URLSearchParams(window.location.search);
+
+  const teamId = params.get("team");
+  const challengeId = params.get("challenge");
+
+
+  // ========================================
+  // TEMPORARY TEST DATA
+  // ========================================
+
   const teams = {
+
     "TEAM-001": {
       teamName: "U13 Boys",
       challengeId: "CH-001",
@@ -22,39 +32,97 @@ document.addEventListener("DOMContentLoaded", () => {
       challengeId: "CH-002",
       challengeName: "Fall Challenge"
     }
+
   };
 
-  // Find the requested team
+
+  // ========================================
+  // VALIDATE TEAM
+  // ========================================
+
   const team = teams[teamId];
 
-  // If no valid team was supplied
   if (!team) {
+
     console.log("No valid Team ID supplied.");
+
     return;
+
   }
+
+
+  // ========================================
+  // VALIDATE CHALLENGE
+  // ========================================
+
+  if (challengeId !== team.challengeId) {
+
+    console.log(
+      "Challenge ID does not match the selected Team."
+    );
+
+    return;
+
+  }
+
+
+  // ========================================
+  // FIND PAGE ELEMENTS
+  // ========================================
+
+  const teamNameElement =
+    document.getElementById("team-name");
+
+  const challengeNameElement =
+    document.getElementById("challenge-name");
+
+  const scoreboard =
+    document.getElementById("challenge-scoreboard");
+
 
   // ========================================
   // UPDATE PAGE
   // ========================================
 
-  const teamName = document.getElementById("team-name");
-  const challengeName = document.getElementById("challenge-name");
-  const scoreboard = document.getElementById("challenge-scoreboard");
+  if (teamNameElement) {
+
+    teamNameElement.textContent =
+      team.teamName;
+
+  }
+
+
+  if (challengeNameElement) {
+
+    challengeNameElement.textContent =
+      team.challengeName;
+
+  }
+
 
   if (scoreboard) {
-    scoreboard.dataset.challengeId = team.challengeId;
+
+    scoreboard.dataset.teamId =
+      teamId;
+
+    scoreboard.dataset.challengeId =
+      challengeId;
+
   }
 
-  if (teamName) {
-    teamName.textContent = team.teamName;
-  }
 
-  if (challengeName) {
-    challengeName.textContent = team.challengeName;
-  }
+  // ========================================
+  // DEBUG / TESTING
+  // ========================================
 
-  if (challengeId) {
-    challengeId.textContent = team.challengeId;
-  }
+  console.log("RepFive routing successful.");
+
+  console.log("Team ID:", teamId);
+
+  console.log("Challenge ID:", challengeId);
+
+  console.log("Team:", team.teamName);
+
+  console.log("Challenge:", team.challengeName);
 
 });
