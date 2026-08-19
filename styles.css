@@ -232,6 +232,33 @@ nav {
   margin-bottom: 30px;
 }
 
+/* ========================================
+   HERO MANTRA
+======================================== */
+
+.hero-actions {
+  margin: 20px 0 28px;
+}
+
+.hero-mantra {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.hero-mantra strong {
+  color: var(--lime);
+  font-size: 18px;
+  letter-spacing: .5px;
+}
+
+.hero-actions p {
+  margin: 0;
+  color: #c9d7ef;
+  font-size: 16px;
+}
+
 .audience-line {
   margin-top: 22px;
   color: #aebfdc;
