@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Team + Sport
       if (teamNameElement) {
         teamNameElement.textContent =
-          `${challenge["Team Name"] || challenge["Team ID"]} · ${challenge["Sport"]}`;
+          `${challenge["Team Name"]} · ${challenge["Sport"]}`;
       }
 
       // Challenge Name
@@ -61,57 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
 })
-
-  // ========================================
-  // TEMPORARY TEST DATA
-  // ========================================
-
-  const teams = {
-
-    "TEAM-001": {
-      teamName: "U13 Boys",
-      challengeId: "CH-001",
-      challengeName: "First RepFive Challenge"
-    },
-
-    "TEAM-002": {
-      teamName: "U14 Girls",
-      challengeId: "CH-002",
-      challengeName: "Fall Challenge"
-    }
-
-  };
-
-
-  // ========================================
-  // VALIDATE TEAM
-  // ========================================
-
-  const team = teams[teamId];
-
-  if (!team) {
-
-    console.log("No valid Team ID supplied.");
-
-    return;
-
-  }
-
-
-  // ========================================
-  // VALIDATE CHALLENGE
-  // ========================================
-
-  if (challengeId !== team.challengeId) {
-
-    console.log(
-      "Challenge ID does not match the selected Team."
-    );
-
-    return;
-
-  }
-
 
   // ========================================
   // FIND PAGE ELEMENTS
