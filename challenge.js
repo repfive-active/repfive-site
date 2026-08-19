@@ -5,7 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  console.log("CHALLENGE JS VERSION: SCOREBOARD + JOURNEY + SUBMISSION 003");
+  console.log("CHALLENGE JS VERSION: SCOREBOARD + JOURNEY + SUBMISSION 001");
 
 
   const API_URL =
@@ -79,30 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ========================================
-  // RESET JOURNEY TILE STATE
-  // ========================================
-
-  repTiles.forEach(tile => {
-
-    tile.classList.remove("active");
-    tile.classList.remove("clickable");
-
-
-    const label =
-      tile.querySelector(".rep-active-label");
-
-
-    if (label) {
-
-      label.style.display =
-        "none";
-
-    }
-
-  });
-
-
-  // ========================================
   // FETCH ONE API RESPONSE
   // ========================================
 
@@ -152,9 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       const currentDay =
-        Number(
-          scoreboardData["Current Day"]
-        );
+        Number(scoreboardData["Current Day"]);
 
 
       // ========================================
@@ -234,9 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (challengeStart) {
 
         const startDate =
-          new Date(
-            challenge["Start Date"]
-          );
+          new Date(challenge["Start Date"]);
 
 
         const formattedStartDate =
@@ -281,6 +253,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       // ========================================
+      // TEAM SUBMISSION URL
+      // ========================================
+
+      const submissionURL =
+        team["Submission URL"];
+
+
+      console.log(
+        "Team Submission URL:",
+        submissionURL
+      );
+
+
+      // ========================================
+      // RESET JOURNEY TILES
+      // ========================================
+
+      repTiles.forEach(tile => {
+
+        tile.classList.remove(
+          "active",
+          "clickable"
+        );
+
+
+        tile.removeAttribute(
+          "role"
+        );
+
+
+        tile.removeAttribute(
+          "tabindex"
+        );
+
+
+        const label =
+          tile.querySelector(
+            ".rep-active-label"
+          );
+
+
+        if (label) {
+
+          label.style.display =
+            "none";
+
+        }
+
+
+        // Remove any previous click handler
+        tile.onclick = null;
+
+      });
+
+
+      // ========================================
       // ACTIVATE TODAY'S REP
       // ========================================
 
@@ -298,7 +326,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (todayTile) {
 
-          todayTile.classList.add("active");
+          // ----------------------------------------
+          // VISUAL ACTIVE STATE
+          // ----------------------------------------
+
+          todayTile.classList.add(
+            "active"
+          );
 
 
           const label =
@@ -315,18 +349,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
 
-          // ========================================
-          // TODAY'S REP SUBMISSION URL
-          // ========================================
+          // ----------------------------------------
+          // MAKE TODAY'S TILE CLICKABLE
+          // ----------------------------------------
 
-          const submissionUrl =
-            challenge["Submission URL"];
-
-
-          if (
-            submissionUrl &&
-            String(submissionUrl).trim() !== ""
-          ) {
+          if (submissionURL) {
 
             todayTile.classList.add(
               "clickable"
@@ -345,23 +372,33 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            const openSubmission =
-              () => {
-
-                window.open(
-                  String(submissionUrl).trim(),
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-
-              };
-
-
-            todayTile.addEventListener(
-              "click",
-              openSubmission
+            todayTile.setAttribute(
+              "aria-label",
+              "Take today's Rep"
             );
 
+
+            // ----------------------------------------
+            // MOUSE / TOUCH
+            // ----------------------------------------
+
+            todayTile.onclick = () => {
+
+              console.log(
+                "Opening Submission URL:",
+                submissionURL
+              );
+
+
+              window.location.href =
+                submissionURL;
+
+            };
+
+
+            // ----------------------------------------
+            // KEYBOARD ACCESS
+            // ----------------------------------------
 
             todayTile.addEventListener(
               "keydown",
@@ -374,11 +411,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
                   event.preventDefault();
 
-                  openSubmission();
+                  window.location.href =
+                    submissionURL;
 
                 }
 
               }
+            );
+
+
+          } else {
+
+            console.warn(
+              "Today's Rep is active, but no Submission URL was provided."
             );
 
           }
@@ -547,8 +592,8 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       console.log(
-        "Submission URL:",
-        challenge["Submission URL"]
+        "Today's Submission URL:",
+        submissionURL
       );
 
     })
