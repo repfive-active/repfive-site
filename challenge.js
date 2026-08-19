@@ -5,7 +5,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  console.log("CHALLENGE JS VERSION: SCOREBOARD TEST 001");
+  console.log("CHALLENGE JS VERSION: SCOREBOARD + JOURNEY 002");
+
 
   const API_URL =
     "https://script.google.com/macros/s/AKfycbxW0-5VPC3bEisqxFL7XktDUZci-OyykqF5Ddf-BQqxUQbOlXRG0zqS9jnnzcvGhAs/exec";
@@ -70,6 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ========================================
+  // JOURNEY TILES
+  // ========================================
+
+  const repTiles =
+    document.querySelectorAll(".sport");
+
+
+  // ========================================
   // FETCH ONE API RESPONSE
   // ========================================
 
@@ -112,6 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const scoreboardData =
         data.scoreboard;
+
+
+      const status =
+        scoreboardData["Status"];
+
+
+      const currentDay =
+        Number(scoreboardData["Current Day"]);
 
 
       // ========================================
@@ -159,9 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (challengeStatus) {
 
-        const status =
-          scoreboardData["Status"];
-
         if (status === "Active") {
 
           challengeStatus.textContent =
@@ -196,15 +210,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const startDate =
           new Date(challenge["Start Date"]);
 
-        challengeStart.textContent =
-          `Starts ${startDate.toLocaleDateString(
+
+        const formattedStartDate =
+          startDate.toLocaleDateString(
             "en-US",
             {
               month: "long",
               day: "numeric",
               year: "numeric"
             }
-          )}`;
+          );
+
+
+        if (status === "Active" || status === "Completed") {
+
+          challengeStart.textContent =
+            `Started ${formattedStartDate}`;
+
+        } else {
+
+          challengeStart.textContent =
+            `Starts ${formattedStartDate}`;
+
+        }
 
       }
 
@@ -216,7 +244,65 @@ document.addEventListener("DOMContentLoaded", () => {
       if (journeyDay) {
 
         journeyDay.textContent =
-          `Day ${scoreboardData["Current Day"]} of ${scoreboardData["Days"]}`;
+          `Day ${currentDay} of ${scoreboardData["Days"]}`;
+
+      }
+
+
+      // ========================================
+      // ACTIVATE TODAY'S REP
+      // ========================================
+
+      repTiles.forEach(tile => {
+
+        tile.classList.remove("active");
+
+
+        const label =
+          tile.querySelector(".rep-active-label");
+
+
+        if (label) {
+
+          label.style.display =
+            "none";
+
+        }
+
+      });
+
+
+      if (
+        status === "Active" &&
+        currentDay >= 1 &&
+        currentDay <= 10
+      ) {
+
+        const todayTile =
+          document.querySelector(
+            `.sport[data-rep-day="${currentDay}"]`
+          );
+
+
+        if (todayTile) {
+
+          todayTile.classList.add("active");
+
+
+          const label =
+            todayTile.querySelector(
+              ".rep-active-label"
+            );
+
+
+          if (label) {
+
+            label.style.display =
+              "inline-flex";
+
+          }
+
+        }
 
       }
 
@@ -247,11 +333,13 @@ document.addEventListener("DOMContentLoaded", () => {
       let percent =
         parseFloat(scoreboardData["% Complete"]);
 
+
       if (isNaN(percent)) {
 
         percent = 0;
 
       }
+
 
       // Handles either:
       // 63
@@ -260,7 +348,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (percent > 0 && percent <= 1) {
 
-        percent = percent * 100;
+        percent =
+          percent * 100;
 
       }
 
@@ -280,7 +369,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (teamProgressBar) {
 
         teamProgressBar.style.width =
-          `${Math.min(Math.max(percent, 0), 100)}%`;
+          `${Math.min(
+            Math.max(percent, 0),
+            100
+          )}%`;
 
       }
 
@@ -315,12 +407,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (journeyMessage) {
 
-        if (scoreboardData["Status"] === "Active") {
+        if (status === "Active") {
 
           journeyMessage.textContent =
-            `Day ${scoreboardData["Current Day"]} is live. Keep the Reps moving.`;
+            `Day ${currentDay} is live. Keep the Reps moving.`;
 
-        } else if (scoreboardData["Status"] === "Completed") {
+        } else if (status === "Completed") {
 
           journeyMessage.textContent =
             "The team reached the finish line. Time to celebrate.";
@@ -339,13 +431,34 @@ document.addEventListener("DOMContentLoaded", () => {
       // DEBUG
       // ========================================
 
-      console.log("RepFive routing successful.");
+      console.log(
+        "RepFive routing successful."
+      );
 
-      console.log("Team:", team);
+      console.log(
+        "Team:",
+        team
+      );
 
-      console.log("Challenge:", challenge);
+      console.log(
+        "Challenge:",
+        challenge
+      );
 
-      console.log("Scoreboard:", scoreboardData);
+      console.log(
+        "Scoreboard:",
+        scoreboardData
+      );
+
+      console.log(
+        "Journey current day:",
+        currentDay
+      );
+
+      console.log(
+        "Journey status:",
+        status
+      );
 
     })
 
