@@ -1268,3 +1268,23 @@ footer p {
 .sport.active .rep-active-label {
   display: inline-flex;
 }
+
+/* ========================================
+   CLICKABLE TODAY'S REP
+======================================== */
+
+.sport.clickable {
+  cursor: pointer;
+}
+
+.sport.clickable:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 28px rgba(47, 128, 237, 0.22);
+}
+
+.sport.clickable:focus {
+  outline: 3px solid rgba(47, 128, 237, 0.35);
+  outline-offset: 3px;
+}
