@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(`${API_URL}?challenge=${encodeURIComponent(challengeId)}`)
     .then(response => response.json())
     .then(data => {
-      console.log("API response:", data);
+      console.log(
+        "API response:",
+        JSON.stringify(data, null, 2)
+      );
     })
     .catch(error => {
       console.error("API error:", error);
     });
-
 
   // ========================================
   // TEMPORARY TEST DATA
@@ -133,7 +135,5 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Team:", team.teamName);
 
   console.log("Challenge:", team.challengeName);
-
-  console.log("API response:", JSON.stringify(data, null, 2));
 
 });
