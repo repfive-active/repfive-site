@@ -39,7 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const teamName = document.getElementById("team-name");
   const challengeName = document.getElementById("challenge-name");
-  const challengeId = document.getElementById("challenge-id");
+  const scoreboard = document.getElementById("challenge-scoreboard");
+
+  if (scoreboard) {
+    scoreboard.dataset.challengeId = team.challengeId;
+  }
 
   if (teamName) {
     teamName.textContent = team.teamName;
