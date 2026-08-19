@@ -19,15 +19,37 @@ document.addEventListener("DOMContentLoaded", () => {
   `${API_URL}?team=${encodeURIComponent(teamId)}&challenge=${encodeURIComponent(challengeId)}`
 )
     .then(response => response.json())
-    .then(data => {
-      console.log(
-        "API response:",
-        JSON.stringify(data, null, 2)
-      );
-    })
-    .catch(error => {
-      console.error("API error:", error);
-    });
+.then(data => {
+
+  console.log(
+    "API response:",
+    JSON.stringify(data, null, 2)
+  );
+
+  if (!data.success || !data.challenge) {
+    console.error("Challenge data not found.");
+    return;
+  }
+
+  const challenge = data.challenge;
+
+  const teamNameElement =
+    document.getElementById("team-name");
+
+  const challengeNameElement =
+    document.getElementById("challenge-name");
+
+  if (teamNameElement) {
+    teamNameElement.textContent =
+      `${challenge.Team} · ${challenge.Sport}`;
+  }
+
+  if (challengeNameElement) {
+    challengeNameElement.textContent =
+      challenge["Challenge Name"];
+  }
+
+});
 
   // ========================================
   // TEMPORARY TEST DATA
