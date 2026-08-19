@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>RepFive — Your Daily Rep</title>
+
+  <meta
+    name="description"
+    content="Complete today's Rep and move the team forward."
+  >
+
+  <link rel="stylesheet" href="repform.css">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="form-header">
+
+    <div class="header-inner">
+
+      <div class="logo">
+        REP<span>FIVE</span>
+      </div>
+
+      <div
+        id="dayLabel"
+        class="day-label"
+      >
+        Your Daily Rep
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       MAIN
+  ======================================== -->
+
+  <main>
+
+
+    <!-- ======================================
+         LOADING
+    ======================================= -->
+
+    <div
+      id="loading"
+      class="loading"
+    >
+
+      <div class="spinner"></div>
+
+      Loading today's Rep...
+
+    </div>
+
+
+    <!-- ======================================
+         ERROR
+    ======================================= -->
+
+    <div
+      id="error"
+      class="error"
+      style="display:none;"
+    ></div>
+
+
+    <!-- ======================================
+         PAGE 1 — WATCH
+    ======================================= -->
+
+    <section
+      id="page1"
+      class="page-panel"
+    >
+
+      <div class="eyebrow">
+        WATCH
+      </div>
+
+      <h1>
+        5 minutes.<br>
+        <span>One Rep. One team goal.</span>
+      </h1>
+
+      <br>
+
+      <div class="card">
+
+
+        <!-- JERSEY -->
+
+        <div class="field">
+
+          <label
+            class="field-label"
+            for="jersey"
+          >
+            Who's taking the Rep today,
+            select your jersey #?
+            <span class="required">*</span>
+          </label>
+
+          <select id="jersey">
+
+            <option value="">
+              Select your jersey #
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- REP -->
+
+        <div class="rep-number">
+          REP <span id="repNumber">01</span>
+        </div>
+
+        <h2
+          id="repName"
+          class="rep-name"
+        >
+          Loading...
+        </h2>
+
+        <p
+          id="repCore"
+          class="rep-core"
+        ></p>
+
+
+        <!-- VIDEO -->
+
+        <div
+          id="videoContainer"
+          class="video-container"
+          style="display:none;"
+        ></div>
+
+
+        <!-- COACH TAKEAWAY -->
+
+        <div
+          id="coachTakeaway"
+          class="coach-takeaway"
+          style="display:none;"
+        >
+
+          <strong>
+            Coach Takeaway
+          </strong>
+
+          <span id="coachTakeawayText"></span>
+
+        </div>
+
+
+        <div class="actions">
+
+          <button
+            id="page1Next"
+            class="button button-primary"
+            type="button"
+          >
+            Next
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         PAGE 2 — THINK
+    ======================================= -->
+
+    <section
+      id="page2"
+      class="page-panel"
+    >
+
+      <div class="eyebrow">
+        THINK
+      </div>
+
+      <h1>
+        What did<br>
+        <span>you notice?</span>
+      </h1>
+
+      <p class="intro">
+        Two quick questions about today's Rep.
+      </p>
+
+
+      <div class="card">
+
+
+        <!-- QUESTION 1 -->
+
+        <div
+          id="question1"
+          class="question-card"
+        >
+
+          <div
+            id="question1Title"
+            class="question-title"
+          ></div>
+
+          <div id="question1Answers"></div>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div
+          id="question2"
+          class="question-card"
+        >
+
+          <div
+            id="question2Title"
+            class="question-title"
+          ></div>
+
+          <div id="question2Answers"></div>
+
+        </div>
+
+
+        <div class="actions">
+
+          <button
+            id="page2Back"
+            class="button button-secondary"
+            type="button"
+          >
+            Back
+          </button>
+
+          <button
+            id="page2Next"
+            class="button button-primary"
+            type="button"
+          >
+            Next
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         PAGE 3 — COMPLETE
+    ======================================= -->
+
+    <section
+      id="page3"
+      class="page-panel"
+    >
+
+      <div class="eyebrow">
+        EARN
+      </div>
+
+      <h1>
+        REP COMPLETE. 🎯
+      </h1>
+
+
+      <div class="points">
+        <span>+20</span> Team Points
+      </div>
+
+
+      <p class="intro">
+        Nice Rep! You just added to the team total.
+      </p>
+
+
+      <div class="card">
+
+
+        <!-- PARENT SECTION -->
+
+        <div class="parent-section">
+
+          <div class="parent-label">
+            Optional
+          </div>
+
+          <h3>
+            👨‍👩‍👧 Parents — Want to help the team a little more?
+          </h3>
+
+          <p class="parent-copy">
+            A quick check-in helps us learn what works.
+            Your athlete's Rep is already complete.
+            Your feedback is entirely optional.
+          </p>
+
+
+          <!-- PARENT CHECK-IN -->
+
+          <label class="checkbox-row">
+
+            <input
+              type="checkbox"
+              id="parentCheckIn"
+            >
+
+            <span>
+              I saw my athlete complete today's Rep.
+            </span>
+
+          </label>
+
+
+          <!-- PARENT FEEDBACK -->
+
+          <div class="field">
+
+            <label class="field-label">
+              How did today's Rep go at home?
+            </label>
+
+            <label class="answer-option">
+
+              <input
+                type="radio"
+                name="parentFeedback"
+                value="😍 Loved it — no prompting needed."
+              >
+
+              <span>
+                😍 Loved it — no prompting needed.
+              </span>
+
+            </label>
+
+
+            <label class="answer-option">
+
+              <input
+                type="radio"
+                name="parentFeedback"
+                value="🙂 Good — pretty easy to get started."
+              >
+
+              <span>
+                🙂 Good — pretty easy to get started.
+              </span>
+
+            </label>
+
+
+            <label class="answer-option">
+
+              <input
+                type="radio"
+                name="parentFeedback"
+                value="😐 Okay — a little pushback."
+              >
+
+              <span>
+                😐 Okay — a little pushback.
+              </span>
+
+            </label>
+
+
+            <label class="answer-option">
+
+              <input
+                type="radio"
+                name="parentFeedback"
+                value="🙃 Hard — took some convincing."
+              >
+
+              <span>
+                🙃 Hard — took some convincing.
+              </span>
+
+            </label>
+
+          </div>
+
+
+          <!-- PARENT NOTES -->
+
+          <div class="field">
+
+            <label
+              class="field-label"
+              for="parentNotes"
+            >
+              Anything we should know?
+            </label>
+
+            <textarea
+              id="parentNotes"
+              placeholder="Optional"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- FINISH -->
+
+        <div class="actions">
+
+          <button
+            id="finishButton"
+            class="button button-primary"
+            type="button"
+          >
+            Finish Rep
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         PAGE 4 — THANK YOU
+    ======================================= -->
+
+    <section
+      id="page4"
+      class="page-panel"
+    >
+
+      <div class="complete">
+
+        <div class="complete-icon">
+          🙌
+        </div>
+
+        <div class="eyebrow">
+          REPFIVE
+        </div>
+
+        <h1>
+          Your Rep Is In.
+        </h1>
+
+        <p class="thank-you-copy">
+
+          ⚡ You just made the Active Swap.
+
+          <br><br>
+
+          The team has moved forward >>>>
+
+          <br><br>
+
+          See you tomorrow.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer>
+
+    RepFive · Every Rep Moves the Team.
+
+  </footer>
+
+
+  <script src="repform.js"></script>
+
+</div>
+
+</body>
+
+</html>
