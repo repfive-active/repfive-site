@@ -134,4 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Challenge:", team.challengeName);
 
+  console.log("API response:", JSON.stringify(data, null, 2));
+
 });
