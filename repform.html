@@ -825,13 +825,14 @@
     >
 
       <div class="eyebrow">
-        Your Daily Rep
+        WATCH
       </div>
 
       <h1>
         5 minutes.<br>
-        <span>One Rep. One Team Goal.</span>
+        <span>One Rep. One team goal.</span>
       </h1>
+      <br>
 
       <div class="card">
 
@@ -932,7 +933,7 @@
     >
 
       <div class="eyebrow">
-        Think
+        THINK
       </div>
 
       <h1>
@@ -942,7 +943,6 @@
 
       <p class="intro">
         Two quick questions about today's Rep.
-        Both are optional.
       </p>
 
 
@@ -1018,7 +1018,7 @@
     >
 
       <div class="eyebrow">
-        Rep Complete
+        EARN
       </div>
 
       <h1>
@@ -1194,15 +1194,15 @@
       <div class="complete">
 
         <div class="complete-icon">
-          ✓
+        🙌
         </div>
 
         <div class="eyebrow">
-          RepFive
+          REPFIVE
         </div>
 
         <h1>
-          Your Rep Is In. ✓
+          Your Rep Is In.
         </h1>
 
         <p class="thank-you-copy">
@@ -1599,6 +1599,8 @@
         input.value =
           answer;
 
+        input.required =
+          true;
 
         const letterSpan =
           document.createElement("span");
@@ -1680,22 +1682,46 @@
       );
 
 
-    // ========================================
-    // PAGE 2 NEXT
-    // ========================================
+// ========================================
+// PAGE 2 NEXT
+// ========================================
 
-    document
-      .getElementById("page2Next")
-      .addEventListener(
-        "click",
-        function() {
+document
+  .getElementById("page2Next")
+  .addEventListener(
+    "click",
+    function() {
 
-          showPage(3);
+      const q1 =
+        document.querySelector(
+          'input[name="q1"]:checked'
+        );
 
-        }
-      );
+      const q2 =
+        document.querySelector(
+          'input[name="q2"]:checked'
+        );
 
 
+      // Require both answers
+
+      if (!q1 || !q2) {
+
+        alert(
+          "Please answer both questions before continuing."
+        );
+
+        return;
+
+      }
+
+
+      // Both answered
+
+      showPage(3);
+
+    }
+  );
     // ========================================
     // FINISH
     // ========================================
