@@ -87,6 +87,11 @@
 
     <!-- ======================================
          PAGE 1 — WATCH
+            //<div
+        //  id="videoContainer"
+        //  class="video-container"
+        //  style="display:none;"
+        //  ></div>
     ======================================= -->
 
     <section
@@ -152,12 +157,16 @@
 
 
         <!-- VIDEO -->
-
-        <div
-          id="videoContainer"
-          class="video-container"
-          style="display:none;"
-        ></div>
+       
+        <div class="video-wrapper" id="videoContainer">
+          <iframe
+            id="repVideo"
+            title="Today's Rep"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowfullscreen>
+          </iframe>
+        </div>
 
 
         <!-- COACH TAKEAWAY -->
