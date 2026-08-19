@@ -19,37 +19,48 @@ document.addEventListener("DOMContentLoaded", () => {
   `${API_URL}?team=${encodeURIComponent(teamId)}&challenge=${encodeURIComponent(challengeId)}`
 )
     .then(response => response.json())
-.then(data => {
+    .then(data => {
 
-  console.log(
-    "API response:",
-    JSON.stringify(data, null, 2)
-  );
+      console.log("API response:", data);
 
-  if (!data.success || !data.challenge) {
-    console.error("Challenge data not found.");
-    return;
-  }
+      if (!data.success || !data.challenge) {
+        console.error("Challenge data not found.");
+        return;
+      }
 
-  const challenge = data.challenge;
+      const challenge = data.challenge;
 
-  const teamNameElement =
-    document.getElementById("team-name");
+      const teamNameElement =
+        document.getElementById("team-name");
 
-  const challengeNameElement =
-    document.getElementById("challenge-name");
+      const challengeNameElement =
+        document.getElementById("challenge-name");
 
-  if (teamNameElement) {
-    teamNameElement.textContent =
-      `${challenge.Team} · ${challenge.Sport}`;
-  }
+      const scoreboard =
+        document.getElementById("challenge-scoreboard");
 
-  if (challengeNameElement) {
-    challengeNameElement.textContent =
-      challenge["Challenge Name"];
-  }
+      // Team + Sport
+      if (teamNameElement) {
+        teamNameElement.textContent =
+          `${challenge["Team Name"] || challenge["Team ID"]} · ${challenge["Sport"]}`;
+      }
 
-});
+      // Challenge Name
+      if (challengeNameElement) {
+        challengeNameElement.textContent =
+          challenge["Challenge Name"];
+      }
+
+      // Scoreboard identifiers
+      if (scoreboard) {
+        scoreboard.dataset.teamId =
+          challenge["Team ID"];
+
+        scoreboard.dataset.challengeId =
+          challenge["Challenge ID"];
+      }
+
+})
 
   // ========================================
   // TEMPORARY TEST DATA
