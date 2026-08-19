@@ -1,11 +1,11 @@
 // ========================================
 // REP FIVE — CHALLENGE PAGE
-// Challenge + Team + Scoreboard
+// Challenge + Team + Scoreboard + Journey
 // ========================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  console.log("CHALLENGE JS VERSION: SCOREBOARD + JOURNEY 002");
+  console.log("CHALLENGE JS VERSION: SCOREBOARD + JOURNEY + SUBMISSION 003");
 
 
   const API_URL =
@@ -79,6 +79,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ========================================
+  // RESET JOURNEY TILE STATE
+  // ========================================
+
+  repTiles.forEach(tile => {
+
+    tile.classList.remove("active");
+    tile.classList.remove("clickable");
+
+
+    const label =
+      tile.querySelector(".rep-active-label");
+
+
+    if (label) {
+
+      label.style.display =
+        "none";
+
+    }
+
+  });
+
+
+  // ========================================
   // FETCH ONE API RESPONSE
   // ========================================
 
@@ -128,7 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       const currentDay =
-        Number(scoreboardData["Current Day"]);
+        Number(
+          scoreboardData["Current Day"]
+        );
 
 
       // ========================================
@@ -208,7 +234,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (challengeStart) {
 
         const startDate =
-          new Date(challenge["Start Date"]);
+          new Date(
+            challenge["Start Date"]
+          );
 
 
         const formattedStartDate =
@@ -222,7 +250,10 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
 
-        if (status === "Active" || status === "Completed") {
+        if (
+          status === "Active" ||
+          status === "Completed"
+        ) {
 
           challengeStart.textContent =
             `Started ${formattedStartDate}`;
@@ -253,25 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // ACTIVATE TODAY'S REP
       // ========================================
 
-      repTiles.forEach(tile => {
-
-        tile.classList.remove("active");
-
-
-        const label =
-          tile.querySelector(".rep-active-label");
-
-
-        if (label) {
-
-          label.style.display =
-            "none";
-
-        }
-
-      });
-
-
       if (
         status === "Active" &&
         currentDay >= 1 &&
@@ -299,6 +311,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
             label.style.display =
               "inline-flex";
+
+          }
+
+
+          // ========================================
+          // TODAY'S REP SUBMISSION URL
+          // ========================================
+
+          const submissionUrl =
+            challenge["Submission URL"];
+
+
+          if (
+            submissionUrl &&
+            String(submissionUrl).trim() !== ""
+          ) {
+
+            todayTile.classList.add(
+              "clickable"
+            );
+
+
+            todayTile.setAttribute(
+              "role",
+              "link"
+            );
+
+
+            todayTile.setAttribute(
+              "tabindex",
+              "0"
+            );
+
+
+            const openSubmission =
+              () => {
+
+                window.open(
+                  String(submissionUrl).trim(),
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+
+              };
+
+
+            todayTile.addEventListener(
+              "click",
+              openSubmission
+            );
+
+
+            todayTile.addEventListener(
+              "keydown",
+              event => {
+
+                if (
+                  event.key === "Enter" ||
+                  event.key === " "
+                ) {
+
+                  event.preventDefault();
+
+                  openSubmission();
+
+                }
+
+              }
+            );
 
           }
 
@@ -331,7 +412,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // ========================================
 
       let percent =
-        parseFloat(scoreboardData["% Complete"]);
+        parseFloat(
+          scoreboardData["% Complete"]
+        );
 
 
       if (isNaN(percent)) {
@@ -346,7 +429,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // or
       // 0.63
 
-      if (percent > 0 && percent <= 1) {
+      if (
+        percent > 0 &&
+        percent <= 1
+      ) {
 
         percent =
           percent * 100;
@@ -458,6 +544,11 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(
         "Journey status:",
         status
+      );
+
+      console.log(
+        "Submission URL:",
+        challenge["Submission URL"]
       );
 
     })
