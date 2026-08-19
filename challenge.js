@@ -11,9 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // ========================================
 
   const params = new URLSearchParams(window.location.search);
-
   const teamId = params.get("team");
   const challengeId = params.get("challenge");
+
+  fetch(`${API_URL}?challenge=${encodeURIComponent(challengeId)}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log("API response:", data);
+    })
+    .catch(error => {
+      console.error("API error:", error);
+    });
 
 
   // ========================================
