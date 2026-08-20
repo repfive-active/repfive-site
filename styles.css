@@ -626,8 +626,8 @@ section {
 }
 
 .mega-rep span {
-  color: var(--lime);
-  font-weight: 700;
+  color: #5b8f00;
+  font-weight: 800;
 }
 
 .mega-rep strong {
