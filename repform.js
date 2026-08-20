@@ -209,7 +209,7 @@ function renderRep(data) {
 // VIDEO
 // ========================================
 
-function renderVideo(rep) {
+function renderVideo(url) {
 
   const container =
     document.getElementById("videoContainer");
@@ -217,42 +217,34 @@ function renderVideo(rep) {
   const iframe =
     document.getElementById("repVideo");
 
-  const videoUrl =
-    String(rep["Video URL"] || "").trim();
 
-
-  // No video
-
-  if (!videoUrl) {
+  if (!url) {
 
     container.style.display = "none";
-
     return;
 
   }
 
 
   const embedUrl =
-    getEmbedUrl(videoUrl);
+    getEmbedUrl(url);
 
-
-  // If we can't determine an embed URL,
-  // don't show a broken player.
 
   if (!embedUrl) {
 
     container.style.display = "none";
-
     return;
 
   }
 
 
-  iframe.src =
-    embedUrl;
+  console.log("Original:", url);
+  console.log("Embed:", embedUrl);
 
-  container.style.display =
-    "block";
+
+  iframe.src = embedUrl;
+
+  container.style.display = "block";
 
 }
 
