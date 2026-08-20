@@ -204,6 +204,7 @@ function renderRep(data) {
 // ========================================
 
 function renderVideo(url) {
+  console.log("Original:", url);
 
   const container =
     document.getElementById("videoContainer");
@@ -232,7 +233,6 @@ function renderVideo(url) {
   }
 
 
-  console.log("Original:", url);
   console.log("Embed:", embedUrl);
 
 
