@@ -186,6 +186,9 @@ function renderRep(data) {
     data.roster
   );
 
+  // VIDEO
+
+  renderVideo(rep);
 
   // QUESTIONS
 
@@ -206,47 +209,200 @@ function renderRep(data) {
 // VIDEO
 // ========================================
 
-function renderVideo(url) {
+function renderVideo(rep) {
 
   const container =
-    document.getElementById(
-      "videoContainer"
-    );
+    document.getElementById("videoContainer");
+
+  const iframe =
+    document.getElementById("repVideo");
+
+  const videoUrl =
+    String(rep["Video URL"] || "").trim();
 
 
-  if (!url) {
+  // No video
 
-    container.style.display =
-      "none";
+  if (!videoUrl) {
+
+    container.style.display = "none";
 
     return;
 
   }
 
 
-  container.innerHTML = "";
+  const embedUrl =
+    getEmbedUrl(videoUrl);
 
 
-  const link =
-    document.createElement("a");
+  // If we can't determine an embed URL,
+  // don't show a broken player.
 
-  link.href = url;
+  if (!embedUrl) {
 
-  link.target = "_blank";
+    container.style.display = "none";
 
-  link.rel = "noopener noreferrer";
+    return;
 
-  link.className =
-    "video-link";
-
-  link.textContent =
-    "Watch today's Rep video";
+  }
 
 
-  container.appendChild(link);
+  iframe.src =
+    embedUrl;
 
   container.style.display =
     "block";
+
+}
+
+
+// ========================================
+// CONVERT VIDEO URL TO EMBED URL
+// ========================================
+
+function getEmbedUrl(url) {
+
+  try {
+
+    const parsed =
+      new URL(url);
+
+
+    // ------------------------------------
+    // YOUTUBE
+    // ------------------------------------
+
+    if (
+      parsed.hostname.includes("youtube.com")
+    ) {
+
+      // Already an embed URL
+
+      if (
+        parsed.pathname.startsWith("/embed/")
+      ) {
+
+        return url;
+
+      }
+
+
+      // Standard YouTube URL
+
+      const videoId =
+        parsed.searchParams.get("v");
+
+      if (videoId) {
+
+        return (
+          "https://www.youtube.com/embed/" +
+          videoId
+        );
+
+      }
+
+
+      // YouTube Shorts
+
+      const shortsMatch =
+        parsed.pathname.match(
+          /\/shorts\/([^/]+)/
+        );
+
+      if (shortsMatch) {
+
+        return (
+          "https://www.youtube.com/embed/" +
+          shortsMatch[1]
+        );
+
+      }
+
+    }
+
+
+    // ------------------------------------
+    // YOUTUBE SHORT URL
+    // ------------------------------------
+
+    if (
+      parsed.hostname === "youtu.be"
+    ) {
+
+      const videoId =
+        parsed.pathname.substring(1);
+
+      if (videoId) {
+
+        return (
+          "https://www.youtube.com/embed/" +
+          videoId
+        );
+
+      }
+
+    }
+
+
+    // ------------------------------------
+    // VIMEO
+    // ------------------------------------
+
+    if (
+      parsed.hostname.includes("vimeo.com")
+    ) {
+
+      const match =
+        parsed.pathname.match(
+          /\/(\d+)/
+        );
+
+      if (match) {
+
+        return (
+          "https://player.vimeo.com/video/" +
+          match[1]
+        );
+
+      }
+
+    }
+
+
+    // ------------------------------------
+    // ALREADY EMBEDDED / OTHER PROVIDER
+    // ------------------------------------
+
+    if (
+      parsed.pathname.includes("/embed/")
+    ) {
+
+      return url;
+
+    }
+
+
+    // ------------------------------------
+    // UNKNOWN PROVIDER
+    // ------------------------------------
+
+    // Try the supplied URL directly.
+
+    return url;
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "Invalid video URL:",
+      url
+    );
+
+    return null;
+
+  }
 
 }
 
