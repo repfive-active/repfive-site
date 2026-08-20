@@ -389,7 +389,7 @@ function getEmbedUrl(url) {
 
     // Try the supplied URL directly.
 
-    return url;
+    return null;
 
   }
 
