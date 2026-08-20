@@ -174,11 +174,13 @@ function renderRep(data) {
 
 
   // VIDEO
+  //renderVideo(
+  //  rep["Video URL"]
+  //);
+  
+  // VIDEO
 
-  renderVideo(
-    rep["Video URL"]
-  );
-
+  renderVideo(rep);
 
   // JERSEYS
 
@@ -186,9 +188,7 @@ function renderRep(data) {
     data.roster
   );
 
-  // VIDEO
 
-  renderVideo(rep);
 
   // QUESTIONS
 
