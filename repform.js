@@ -172,15 +172,9 @@ function renderRep(data) {
 
   }
 
-
-  // VIDEO
-  //renderVideo(
-  //  rep["Video URL"]
-  //);
-  
   // VIDEO
 
-  renderVideo(rep);
+  renderVideo(rep["Video URL");
 
   // JERSEYS
 
