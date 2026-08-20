@@ -736,7 +736,24 @@ section {
   font-size: 13px;
   font-weight: 750;
 }
+.next-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 32px;
+}
 
+.next-cta h3 {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .next-cta {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
 /* ================================
    CHALLENGE PAGE
 ================================ */
