@@ -681,21 +681,26 @@ textarea {
   margin-top: 20px;
 }
 
-
-/* ========================================
+/* ================================
    FOOTER
-======================================== */
+================================ */
 
 footer {
   background: #040d20;
+  color: white;
+  padding: 45px 0;
+}
 
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+footer p {
   color: #91a1bd;
-
-  text-align: center;
-
-  padding: 25px 18px;
-
-  font-size: 12px;
+  font-size: 13px;
 }
 
 
