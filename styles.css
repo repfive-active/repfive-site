@@ -615,6 +615,25 @@ section {
   border-bottom: none;
 }
 
+.mega-rep {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+
+  font-size: 13px;
+  line-height: 1.5;
+  color: #8fa3c2;
+}
+
+.mega-rep span {
+  color: var(--lime);
+  font-weight: 700;
+}
+
+.mega-rep strong {
+  color: #c9d7ef;
+}
+
 .check {
   color: var(--success);
   font-weight: 900;
