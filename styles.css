@@ -440,6 +440,13 @@ section {
   color: var(--gray);
 }
 
+.principle-subline {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #c9d7ef;
+}
+
 /* ================================
    AGE POSITIONING
 ================================ */
