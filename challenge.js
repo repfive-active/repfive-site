@@ -551,7 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
 
           journeyMessage.textContent =
-            "Every Rep and every Journey counts.";
+            "Your Reps. Your Team. Your Impact.";
 
         }
 
