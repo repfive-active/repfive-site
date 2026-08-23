@@ -440,10 +440,14 @@ section {
   color: var(--gray);
 }
 
-.principle-box .principle-subline strong {
+.principle-box .principle-subline {
   display: block;
   margin-top: 8px;
   font-size: 0.9em;
+  color: #b7ff3c;
+}
+
+.principle-box .principle-subline span {
   color: #b7ff3c;
 }
 
