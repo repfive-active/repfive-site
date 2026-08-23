@@ -447,7 +447,8 @@ section {
   color: #b7ff3c;
 }
 
-.principle-box .principle-subline span {
+.principle-box .principle-subline,
+.principle-box .principle-subline strong {
   color: #b7ff3c;
 }
 
