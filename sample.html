@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>10-Day Soccer Challenge</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7f5;
+      color: #1f2933;
+    }
+
+    header {
+      background: #123b2a;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+    }
+
+    header p {
+      margin: 0;
+      color: #d8e9df;
+      font-size: 16px;
+    }
+
+    .grid {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    .tile {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    .day {
+      color: #6b7280;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .rep {
+      font-size: 23px;
+      font-weight: bold;
+      margin: 6px 0 10px;
+      color: #123b2a;
+    }
+
+    .type {
+      display: inline-block;
+      align-self: flex-start;
+      background: #e7f3ec;
+      color: #21613f;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .core {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    /*
+      Responsive YouTube embed
+    */
+    .video {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+      margin-top: auto;
+    }
+
+    .video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 30px 16px;
+      }
+
+      header h1 {
+        font-size: 27px;
+      }
+
+      .grid {
+        padding: 0 14px;
+        margin-top: 22px;
+      }
+
+      .tile {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>10-Day Soccer Challenge</h1>
+    <p>Watch. Notice. Try it yourself.</p>
+  </header>
+
+  <main class="grid">
+
+    <!-- =========================================================
+         DAY 1
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 1</div>
+
+      <div class="rep">
+        Scan Before You Receive
+      </div>
+
+      <div class="type">
+        ⚽ Sport
+      </div>
+
+      <div class="core">
+        Before the ball gets to you, find out what's around you so you can make your next decision earlier.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/vzu_hOn2Bm4"
+          title="Day 1 - Scan Before You Receive"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 2
+         Segment: 0:50 - 4:10
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 2</div>
+
+      <div class="rep">
+        One Word
+      </div>
+
+      <div class="type">
+        🤝 Team
+      </div>
+
+      <div class="core">
+        Communication changes a teammate's action; a quick word can give them information that supports them to make their next move.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/isSJ5QM9YSw?start=50&end=250"
+          title="Day 2 - One Word"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 3
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 3</div>
+
+      <div class="rep">
+        Pass and Move
+      </div>
+
+      <div class="type">
+        ⚽ Sport
+      </div>
+
+      <div class="core">
+        Passing is not the end of your involvement; move to create the next option.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/3VFK7xFkYIQ"
+          title="Day 3 - Pass and Move"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 4
+         Segment starts at 4:15
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 4</div>
+
+      <div class="rep">
+        Call for the Ball
+      </div>
+
+      <div class="type">
+        🤝 Team
+      </div>
+
+      <div class="core">
+        How you communicate can make it easier for your teammate to trust you and pass the ball.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/lgBsXSy4uxg?start=255"
+          title="Day 4 - Call for the Ball"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 5
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 5</div>
+
+      <div class="rep">
+        Defend the 1v1
+      </div>
+
+      <div class="type">
+        ⚽ Sport
+      </div>
+
+      <div class="core">
+        Good 1v1 defending means slowing the attacker down, staying in control, and waiting for the right moment.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/brf4Rl8pGiU"
+          title="Day 5 - Defend the 1v1"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 6
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 6</div>
+
+      <div class="rep">
+        Pro Eyes
+      </div>
+
+      <div class="type">
+        🎮 Fun
+      </div>
+
+      <div class="core">
+        Look for clues, predict what might happen next by noticing the players, space and possibilities around the ball.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/7fGvWAfoYCM"
+          title="Day 6 - Pro Eyes"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 7
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 7</div>
+
+      <div class="rep">
+        Keep It Simple
+      </div>
+
+      <div class="type">
+        🌟 Life
+      </div>
+
+      <div class="core">
+        When things feel complicated, focusing on the simple things you can control can help you make better decisions.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/HSg4yHYk25o"
+          title="Day 7 - Keep It Simple"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 8
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 8</div>
+
+      <div class="rep">
+        Next Chance
+      </div>
+
+      <div class="type">
+        🌟 Life
+      </div>
+
+      <div class="core">
+        Even the best players make mistakes. What matters is how you respond when the next opportunity comes.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/LHovsGSNXf0"
+          title="Day 8 - Next Chance"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 9
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 9</div>
+
+      <div class="rep">
+        Soft First Touch
+      </div>
+
+      <div class="type">
+        ⚽ Sport
+      </div>
+
+      <div class="core">
+        A good first touch keeps the ball close and gives you more control over what you do next.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/_ePH5L2VOT0"
+          title="Day 9 - Soft First Touch"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DAY 10
+         ========================================================= -->
+    <div class="tile">
+
+      <div class="day">Day 10</div>
+
+      <div class="rep">
+        The First 3 Seconds
+      </div>
+
+      <div class="type">
+        ⚽ Sport
+      </div>
+
+      <div class="core">
+        When the team loses the ball, the first few seconds matter. Know your job and help the team defend.
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/NXMGwEBLE1E"
+          title="Day 10 - The First 3 Seconds"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    10 days. 10 reps. Watch it. Notice it. Try it.
+  </footer>
+
+</body>
+</html>
