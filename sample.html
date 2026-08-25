@@ -18,94 +18,99 @@
       color: #1f2933;
     }
 
+    /* =========================
+       HEADER
+       ========================= */
+
     header {
       background: #123b2a;
       color: white;
-      padding: 40px 20px;
+      padding: 42px 20px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0 0 8px;
-      font-size: 32px;
+      margin: 0 0 10px;
+      font-size: 34px;
     }
 
     header p {
       margin: 0;
-      color: #d8e9df;
-      font-size: 16px;
+      color: #d9e9df;
+      font-size: 17px;
     }
 
+    /* =========================
+       GRID
+       ========================= */
+
     .grid {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 35px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
     }
+
+    /* =========================
+       REP CARD
+       ========================= */
 
     .tile {
       background: white;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .tile:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+      overflow: hidden;
     }
 
     .day {
-      color: #6b7280;
-      font-size: 13px;
-      font-weight: bold;
+      color: #7a8790;
+      font-size: 12px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: .1em;
     }
 
     .rep {
-      font-size: 23px;
-      font-weight: bold;
-      margin: 6px 0 10px;
       color: #123b2a;
+      font-size: 25px;
+      font-weight: 750;
+      margin: 5px 0 9px;
     }
 
     .type {
       display: inline-block;
-      align-self: flex-start;
+      padding: 6px 11px;
+      border-radius: 20px;
       background: #e7f3ec;
       color: #21613f;
-      padding: 5px 10px;
-      border-radius: 20px;
       font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 16px;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
 
     .core {
       font-size: 15px;
-      line-height: 1.5;
+      line-height: 1.55;
       color: #4b5563;
       margin-bottom: 18px;
     }
 
-    /*
-      Responsive YouTube embed
-    */
+    /* =========================
+       VIDEO
+       ========================= */
+
     .video {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #000;
-      margin-top: auto;
+      margin-bottom: 22px;
     }
 
     .video iframe {
@@ -116,369 +121,1353 @@
       border: 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
+    /* =========================
+       QUESTIONS
+       ========================= */
+
+    .question-block {
+      border-top: 1px solid #e5e9e7;
+      padding-top: 19px;
+      margin-top: 20px;
+    }
+
+    .question-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
       color: #6b7280;
+      margin-bottom: 7px;
+    }
+
+    .question {
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* =========================
+       ANSWERS
+       ========================= */
+
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .answer {
+      border: 1px solid #dfe5e1;
+      background: #fafcfb;
+      border-radius: 9px;
+      padding: 11px 13px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.35;
+      transition: .15s ease;
+    }
+
+    .answer:hover {
+      border-color: #6ca684;
+      background: #f3faf6;
+    }
+
+    .answer.selected {
+      border-color: #276b46;
+      background: #eaf6ef;
+    }
+
+    .answer.correct {
+      border-color: #2e8b57;
+      background: #dff3e6;
+      color: #14532d;
+      font-weight: 700;
+    }
+
+    .answer.incorrect {
+      border-color: #e5bcbc;
+      background: #fff5f5;
+      color: #7f1d1d;
+    }
+
+    .answer.disabled {
+      cursor: default;
+    }
+
+    /* =========================
+       CHECK BUTTON
+       ========================= */
+
+    .check-btn {
+      margin-top: 12px;
+      border: none;
+      border-radius: 9px;
+      padding: 10px 15px;
+      background: #123b2a;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
       font-size: 14px;
     }
 
+    .check-btn:hover {
+      background: #1b573d;
+    }
+
+    .feedback {
+      margin-top: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      min-height: 18px;
+    }
+
+    .feedback.correct-text {
+      color: #18733c;
+    }
+
+    .feedback.incorrect-text {
+      color: #a33a3a;
+    }
+
+    /* =========================
+       TAKEAWAY
+       ========================= */
+
+    .takeaway {
+      margin-top: 13px;
+      padding: 11px 13px;
+      background: #f5f8f6;
+      border-radius: 9px;
+      font-size: 13px;
+      color: #45514a;
+      display: none;
+    }
+
+    .takeaway strong {
+      color: #123b2a;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 45px;
+      color: #7a8790;
+      font-size: 14px;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 600px) {
+
       header {
-        padding: 30px 16px;
+        padding: 32px 18px;
       }
 
       header h1 {
-        font-size: 27px;
+        font-size: 28px;
       }
 
       .grid {
-        padding: 0 14px;
-        margin-top: 22px;
+        grid-template-columns: 1fr;
+        padding: 0 13px;
+        margin-top: 20px;
       }
 
       .tile {
         padding: 18px;
       }
+
+      .rep {
+        font-size: 23px;
+      }
     }
   </style>
 </head>
 
+
 <body>
 
-  <header>
-    <h1>10-Day Soccer Challenge</h1>
-    <p>Watch. Notice. Try it yourself.</p>
-  </header>
+<header>
+  <h1>10-Day Soccer Challenge</h1>
+  <p>Watch it. Notice it. Try it.</p>
+</header>
 
-  <main class="grid">
 
-    <!-- =========================================================
-         DAY 1
-         ========================================================= -->
-    <div class="tile">
+<main class="grid">
 
-      <div class="day">Day 1</div>
 
-      <div class="rep">
-        Scan Before You Receive
+  <!-- ==========================================================
+       DAY 1
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 1</div>
+    <div class="rep">Scan Before You Receive</div>
+
+    <div class="type">⚽ Sport</div>
+
+    <div class="core">
+      Before the ball gets to you, find out what's around you so you can make your next decision earlier.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/vzu_hOn2Bm4"
+        title="Day 1 - Scan Before You Receive"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <!-- Q1 -->
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        What was different about the better way of receiving?
       </div>
 
-      <div class="type">
-        ⚽ Sport
+      <div class="answers"
+           data-correct="0">
+
+        <button class="answer">
+          A — The player looked around before receiving
+        </button>
+
+        <button class="answer">
+          B — The player took more touches
+        </button>
+
+        <button class="answer">
+          C — The player moved closer to the ball
+        </button>
+
+        <button class="answer">
+          D — The player waited longer before playing
+        </button>
+
       </div>
 
-      <div class="core">
-        Before the ball gets to you, find out what's around you so you can make your next decision earlier.
-      </div>
+      <button class="check-btn">Check Answer</button>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/vzu_hOn2Bm4"
-          title="Day 1 - Scan Before You Receive"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        Scan before the ball arrives.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 2
-         Segment: 0:50 - 4:10
-         ========================================================= -->
-    <div class="tile">
+    <!-- Q2 -->
 
-      <div class="day">Day 2</div>
+    <div class="question-block">
 
-      <div class="rep">
-        One Word
+      <div class="question-label">Q2 · Try</div>
+
+      <div class="question">
+        What will you try next time you receive the ball?
       </div>
 
-      <div class="type">
-        🤝 Team
+      <div class="answers"
+           data-correct="0">
+
+        <button class="answer">A — Scan before the ball arrives</button>
+        <button class="answer">B — Check where the defender is</button>
+        <button class="answer">C — Look for my next option early</button>
+        <button class="answer">D — Turn and play quickly</button>
+
       </div>
 
-      <div class="core">
-        Communication changes a teammate's action; a quick word can give them information that supports them to make their next move.
+      <button class="check-btn">Check Answer</button>
+
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Scan before the ball arrives.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/isSJ5QM9YSw?start=50&end=250"
-          title="Day 2 - One Word"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 2
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 2</div>
+    <div class="rep">One Word</div>
+
+    <div class="type">🤝 Team</div>
+
+    <div class="core">
+      Communication changes a teammate's action; a quick word can support them to make their next move.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/isSJ5QM9YSw?start=50&end=250"
+        title="Day 2 - One Word"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        What did good communication help the teammates do together?
+      </div>
+
+      <div class="answers" data-correct="1">
+
+        <button class="answer">
+          A — Get more comfortable with the ball
+        </button>
+
+        <button class="answer">
+          B — Coordinate their movements
+        </button>
+
+        <button class="answer">
+          C — Make the play last longer
+        </button>
+
+        <button class="answer">
+          D — Make the teammate wait for instructions
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        Communication can help teammates coordinate their actions.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 3
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 3</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        Pass and Move
+      <div class="question">
+        What will you try next time you play with your teammates?
       </div>
 
-      <div class="type">
-        ⚽ Sport
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Tell a teammate what I see or need
+        </button>
+
+        <button class="answer">
+          B — Wait until my teammate asks for help
+        </button>
+
+        <button class="answer">
+          C — Say something only when I have the ball
+        </button>
+
+        <button class="answer">
+          D — Wait for my teammate to communicate first
+        </button>
+
       </div>
 
-      <div class="core">
-        Passing is not the end of your involvement; move to create the next option.
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Tell a teammate what you see or need.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/3VFK7xFkYIQ"
-          title="Day 3 - Pass and Move"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 3
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 3</div>
+    <div class="rep">Pass and Move</div>
+
+    <div class="type">⚽ Sport</div>
+
+    <div class="core">
+      Passing is not the end of your involvement; move to create the next option.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/3VFK7xFkYIQ"
+        title="Day 3 - Pass and Move"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        Why was the player's movement after passing useful?
+      </div>
+
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — It gave the teammate another passing option
+        </button>
+
+        <button class="answer">
+          B — It gave the player time to stop the game
+        </button>
+
+        <button class="answer">
+          C — It gave the player someone to defend against
+        </button>
+
+        <button class="answer">
+          D — It brought the player closer to the ball
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        Move after you pass to create another option.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 4
-         Segment starts at 4:15
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 4</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        Call for the Ball
+      <div class="question">
+        What will you try after your next pass?
       </div>
 
-      <div class="type">
-        🤝 Team
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Move somewhere my teammate can pass to me
+        </button>
+
+        <button class="answer">
+          B — Make a supporting run
+        </button>
+
+        <button class="answer">
+          C — Find a new passing option
+        </button>
+
+        <button class="answer">
+          D — Stay ready and keep moving
+        </button>
+
       </div>
 
-      <div class="core">
-        How you communicate can make it easier for your teammate to trust you and pass the ball.
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Move somewhere my teammate can pass to me.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/lgBsXSy4uxg?start=255"
-          title="Day 4 - Call for the Ball"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 4
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 4</div>
+    <div class="rep">Keep It Simple</div>
+
+    <div class="type">🌟 Life</div>
+
+    <div class="core">
+      When things feel complicated, focusing on the simple things you can control can help you make better decisions.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/HSg4yHYk25o"
+        title="Day 4 - Keep It Simple"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        Why can keeping things simple be helpful?
+      </div>
+
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — It helps you focus on what matters
+        </button>
+
+        <button class="answer">
+          B — It means you don't have to work hard
+        </button>
+
+        <button class="answer">
+          C — It guarantees everything will go your way
+        </button>
+
+        <button class="answer">
+          D — It means you can ignore problems
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        Focus on the next thing you can control.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 5
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 5</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        Defend the 1v1
+      <div class="question">
+        What will you try when something starts to feel complicated?
       </div>
 
-      <div class="type">
-        ⚽ Sport
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Focus on the next thing I can control
+        </button>
+
+        <button class="answer">
+          B — Try to solve everything at once
+        </button>
+
+        <button class="answer">
+          C — Worry about what might happen
+        </button>
+
+        <button class="answer">
+          D — All of these
+        </button>
+
       </div>
 
-      <div class="core">
-        Good 1v1 defending means slowing the attacker down, staying in control, and waiting for the right moment.
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Focus on the next thing I can control.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/brf4Rl8pGiU"
-          title="Day 5 - Defend the 1v1"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 5
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 5</div>
+    <div class="rep">Defend the 1v1</div>
+
+    <div class="type">⚽ Sport</div>
+
+    <div class="core">
+      Good 1v1 defending means slowing the attacker down, staying in control, and waiting for the right moment.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/brf4Rl8pGiU"
+        title="Day 5 - Defend the 1v1"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        What was the defender trying to achieve before winning the ball?
+      </div>
+
+      <div class="answers" data-correct="1">
+
+        <button class="answer">
+          A — Get close to the attacker immediately
+        </button>
+
+        <button class="answer">
+          B — Slow the attacker down and reduce the danger
+        </button>
+
+        <button class="answer">
+          C — Let the attacker run toward goal
+        </button>
+
+        <button class="answer">
+          D — Wait for the attacker to stop moving
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        Slow the attacker down before trying to win the ball.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 6
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 6</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        Pro Eyes
+      <div class="question">
+        What will you try next time you defend 1v1?
       </div>
 
-      <div class="type">
-        🎮 Fun
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Force the attacker towards the outside
+        </button>
+
+        <button class="answer">
+          B — Dive in as quickly as possible
+        </button>
+
+        <button class="answer">
+          C — Turn and run toward my own goal
+        </button>
+
+        <button class="answer">
+          D — Wait for my teammate to win the ball
+        </button>
+
       </div>
 
-      <div class="core">
-        Look for clues, predict what might happen next by noticing the players, space and possibilities around the ball.
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Force the attacker towards the outside.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/7fGvWAfoYCM"
-          title="Day 6 - Pro Eyes"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 6
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 6</div>
+    <div class="rep">Pro Eyes</div>
+
+    <div class="type">🎮 Fun</div>
+
+    <div class="core">
+      Look for clues around the ball and try to predict what might happen next.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/7fGvWAfoYCM"
+        title="Day 6 - Pro Eyes"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        After watching Ødegaard, what do you think he notices before making his move?
+      </div>
+
+      <div class="answers" data-correct="3">
+
+        <button class="answer">
+          A — An open teammate
+        </button>
+
+        <button class="answer">
+          B — Space he could attack
+        </button>
+
+        <button class="answer">
+          C — A defender's position
+        </button>
+
+        <button class="answer">
+          D — More than one option
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        Look for more than one option before making your move.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 7
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 7</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        Keep It Simple
+      <div class="question">
+        Think like the pro: what will you try to spot before your next touch?
       </div>
 
-      <div class="type">
-        🌟 Life
+      <div class="answers" data-correct="3">
+
+        <button class="answer">
+          A — Where I can turn
+        </button>
+
+        <button class="answer">
+          B — Where my teammate is
+        </button>
+
+        <button class="answer">
+          C — Where the defenders are
+        </button>
+
+        <button class="answer">
+          D — All of these
+        </button>
+
       </div>
 
-      <div class="core">
-        When things feel complicated, focusing on the simple things you can control can help you make better decisions.
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Scan for all of these before your next touch.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/HSg4yHYk25o"
-          title="Day 7 - Keep It Simple"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 7
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 7</div>
+    <div class="rep">Soft First Touch</div>
+
+    <div class="type">⚽ Sport</div>
+
+    <div class="core">
+      A first touch keeps the ball close and gives you more control over what you do next.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/_ePH5L2VOT0"
+        title="Day 7 - Soft First Touch"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        What made the player's first touch effective?
+      </div>
+
+      <div class="answers" data-correct="1">
+
+        <button class="answer">
+          A — He stopped the ball completely
+        </button>
+
+        <button class="answer">
+          B — He cushioned the ball and kept it close
+        </button>
+
+        <button class="answer">
+          C — He kicked the ball as far as possible
+        </button>
+
+        <button class="answer">
+          D — He took lots of small touches
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        A good first touch gives you control over what comes next.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 8
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 8</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        Next Chance
+      <div class="question">
+        What will you try to do with your first touch?
       </div>
 
-      <div class="type">
-        🌟 Life
+      <div class="answers" data-correct="1">
+
+        <button class="answer">
+          A — Make the ball stop at my feet
+        </button>
+
+        <button class="answer">
+          B — Set myself up for my next move
+        </button>
+
+        <button class="answer">
+          C — Move the ball as far away as possible
+        </button>
+
+        <button class="answer">
+          D — Take several touches before deciding
+        </button>
+
       </div>
 
-      <div class="core">
-        Even the best players make mistakes. What matters is how you respond when the next opportunity comes.
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Use your first touch to set up your next move.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/LHovsGSNXf0"
-          title="Day 8 - Next Chance"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 8
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 8</div>
+    <div class="rep">Call for the Ball</div>
+
+    <div class="type">🤝 Team</div>
+
+    <div class="core">
+      How you communicate can make it easier for your teammate to trust you and pass the ball.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/lgBsXSy4uxg?start=255"
+        title="Day 8 - Call for the Ball"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        What can happen when a player calls for the ball in a frustrated way?
+      </div>
+
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Their teammate may be less willing to pass
+        </button>
+
+        <button class="answer">
+          B — Their teammate will pass faster
+        </button>
+
+        <button class="answer">
+          C — They will always get the ball
+        </button>
+
+        <button class="answer">
+          D — The team will move into better space
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        The way you communicate can affect whether teammates feel comfortable passing to you.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 9
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 9</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        Soft First Touch
+      <div class="question">
+        What will you try the next time you want the ball?
       </div>
 
-      <div class="type">
-        ⚽ Sport
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Tell my teammate I'm ready to support
+        </button>
+
+        <button class="answer">
+          B — Wait until they see me
+        </button>
+
+        <button class="answer">
+          C — Shout for the ball repeatedly
+        </button>
+
+        <button class="answer">
+          D — Get frustrated if they don't pass
+        </button>
+
       </div>
 
-      <div class="core">
-        A good first touch keeps the ball close and gives you more control over what you do next.
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Tell your teammate you're ready to support.
       </div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/_ePH5L2VOT0"
-          title="Day 9 - Soft First Touch"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    </div>
+
+  </article>
+
+
+
+  <!-- ==========================================================
+       DAY 9
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 9</div>
+    <div class="rep">The First 3 Seconds</div>
+
+    <div class="type">⚽ Sport</div>
+
+    <div class="core">
+      When the team loses the ball, the first few seconds matter. Know your job and help the team defend.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/NXMGwEBLE1E"
+        title="Day 9 - The First 3 Seconds"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        What are the three jobs players can have after losing the ball?
+      </div>
+
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Ball, depth, passing lanes
+        </button>
+
+        <button class="answer">
+          B — Ball, space, attack
+        </button>
+
+        <button class="answer">
+          C — Pressure, possession, passing
+        </button>
+
+        <button class="answer">
+          D — Defend, attack, support
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        After losing the ball, know your defensive job instead of everyone chasing the ball.
       </div>
 
     </div>
 
 
-    <!-- =========================================================
-         DAY 10
-         ========================================================= -->
-    <div class="tile">
+    <div class="question-block">
 
-      <div class="day">Day 10</div>
+      <div class="question-label">Q2 · Try</div>
 
-      <div class="rep">
-        The First 3 Seconds
+      <div class="question">
+        What will you do first when your team loses the ball?
       </div>
 
-      <div class="type">
-        ⚽ Sport
+      <div class="answers" data-correct="1">
+
+        <button class="answer">
+          A — Chase the ball
+        </button>
+
+        <button class="answer">
+          B — Find my defensive job
+        </button>
+
+        <button class="answer">
+          C — Stay where I am
+        </button>
+
+        <button class="answer">
+          D — Wait for someone else to defend
+        </button>
+
       </div>
 
-      <div class="core">
-        When the team loses the ball, the first few seconds matter. Know your job and help the team defend.
-      </div>
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
 
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/NXMGwEBLE1E"
-          title="Day 10 - The First 3 Seconds"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Find your defensive job.
       </div>
 
     </div>
 
-  </main>
+  </article>
 
-  <footer>
-    10 days. 10 reps. Watch it. Notice it. Try it.
-  </footer>
+
+
+  <!-- ==========================================================
+       DAY 10
+       ========================================================== -->
+
+  <article class="tile">
+
+    <div class="day">Day 10</div>
+    <div class="rep">Next Chance</div>
+
+    <div class="type">🌟 Life</div>
+
+    <div class="core">
+      Even the best players make mistakes. What matters is how you respond when the next opportunity comes.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/LHovsGSNXf0"
+        title="Day 10 - Next Chance"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q1 · Notice</div>
+
+      <div class="question">
+        What does seeing Mbappé make a mistake remind you?
+      </div>
+
+      <div class="answers" data-correct="0">
+
+        <button class="answer">
+          A — Everyone makes mistakes
+        </button>
+
+        <button class="answer">
+          B — Great players shouldn't make mistakes
+        </button>
+
+        <button class="answer">
+          C — You should stop after a mistake
+        </button>
+
+        <button class="answer">
+          D — Mistakes decide the outcome
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Key takeaway:</strong>
+        Even great players make mistakes. The next opportunity still matters.
+      </div>
+
+    </div>
+
+
+    <div class="question-block">
+
+      <div class="question-label">Q2 · Try</div>
+
+      <div class="question">
+        What will you try when your team makes a mistake?
+      </div>
+
+      <div class="answers" data-correct="2">
+
+        <button class="answer">
+          A — Think about it for the rest of the game
+        </button>
+
+        <button class="answer">
+          B — Complain to the coach
+        </button>
+
+        <button class="answer">
+          C — Focus on the next opportunity
+        </button>
+
+        <button class="answer">
+          D — Quit the team
+        </button>
+
+      </div>
+
+      <button class="check-btn">Check Answer</button>
+      <div class="feedback"></div>
+
+      <div class="takeaway">
+        <strong>Real-world action:</strong>
+        Focus on the next opportunity.
+      </div>
+
+    </div>
+
+  </article>
+
+
+</main>
+
+
+<footer>
+  10 days · 10 reps · Watch it · Notice it · Try it
+</footer>
+
+
+<script>
+
+  /*
+   * Each question has:
+   * - answer buttons
+   * - a data-correct value
+   * - a Check Answer button
+   * - feedback
+   * - a takeaway
+   */
+
+  document.querySelectorAll(".question-block").forEach(block => {
+
+    const answers = block.querySelector(".answers");
+    const buttons = answers.querySelectorAll(".answer");
+    const checkButton = block.querySelector(".check-btn");
+    const feedback = block.querySelector(".feedback");
+    const takeaway = block.querySelector(".takeaway");
+
+    let selected = null;
+
+    /* Select an answer */
+
+    buttons.forEach((button, index) => {
+
+      button.addEventListener("click", () => {
+
+        /* Don't allow changes after checking */
+        if (checkButton.disabled) return;
+
+        buttons.forEach(btn => {
+          btn.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+        selected = index;
+
+        feedback.textContent = "";
+        feedback.className = "feedback";
+
+      });
+
+    });
+
+
+    /* Check answer */
+
+    checkButton.addEventListener("click", () => {
+
+      if (selected === null) {
+
+        feedback.textContent = "Choose an answer first.";
+        feedback.className = "feedback incorrect-text";
+
+        return;
+      }
+
+      const correct = parseInt(
+        answers.dataset.correct,
+        10
+      );
+
+      buttons.forEach((button, index) => {
+
+        button.classList.add("disabled");
+
+        if (index === correct) {
+          button.classList.add("correct");
+        }
+
+        if (index === selected && index !== correct) {
+          button.classList.add("incorrect");
+        }
+
+      });
+
+
+      if (selected === correct) {
+
+        feedback.textContent = "✓ Nice. That's the key idea.";
+        feedback.className = "feedback correct-text";
+
+      } else {
+
+        feedback.textContent = "Not quite. Here's the key idea.";
+
+        feedback.className = "feedback incorrect-text";
+
+      }
+
+
+      takeaway.style.display = "block";
+
+      checkButton.disabled = true;
+
+    });
+
+  });
+
+</script>
 
 </body>
 </html>
