@@ -359,23 +359,21 @@ nav {
 
 .challenge-mantra {
   display: flex;
-  gap: 14px;
-  align-items: center;
   justify-content: center;
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 
 .challenge-mantra strong {
   color: var(--lime);
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: .4px;
 }
 
 .challenge-mantra strong:last-child {
-  font-size: 15px;
+  color: white;
 }
 
 
