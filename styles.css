@@ -350,7 +350,7 @@ nav {
 }
 
 .challenge-message strong {
-  color: var(--lime);
+  color: var(--blue);
 }
 
 /* ========================================
@@ -367,7 +367,7 @@ nav {
 }
 
 .challenge-mantra strong {
-  color: var(--blue);
+  color: var(--lime);
   font-size: 15px;
   letter-spacing: .4px;
 }
