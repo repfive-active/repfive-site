@@ -232,6 +232,35 @@ nav {
   margin-bottom: 30px;
 }
 
+.hero-bridge {
+  margin: 28px 0 26px;
+  padding: 20px 22px;
+  border-left: 3px solid var(--lime);
+  background: rgba(183, 255, 60, 0.06);
+  border-radius: 0 10px 10px 0;
+}
+
+.hero-bridge-title {
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.hero-bridge-title span {
+  color: var(--lime);
+}
+
+.hero-bridge p {
+  margin: 0;
+  color: #c9d7ef;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 540px;
+}
+
+
 /* ========================================
    HERO MANTRA
 ======================================== */
