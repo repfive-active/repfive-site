@@ -245,32 +245,8 @@ nav {
 
 
 /* ========================================
-   HERO MANTRA
+   HERO AUDIENCE
 ======================================== */
-
-.hero-actions {
-  margin: 20px 0 28px;
-}
-
-.hero-mantra {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
-.hero-mantra strong {
-  color: var(--lime);
-  font-size: 18px;
-  letter-spacing: .5px;
-}
-
-.hero-actions p {
-  margin: 0;
-  color: #c9d7ef;
-  font-size: 16px;
-}
-
 .audience-line {
   margin-top: 22px;
   color: #aebfdc;
@@ -376,6 +352,32 @@ nav {
 .challenge-message strong {
   color: var(--lime);
 }
+
+/* ========================================
+   CHALLENGE MANTRA
+======================================== */
+
+.challenge-mantra {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  flex-wrap: wrap;
+}
+
+.challenge-mantra strong {
+  color: var(--lime);
+  font-size: 14px;
+  letter-spacing: .4px;
+}
+
+.challenge-mantra strong:last-child {
+  font-size: 15px;
+}
+
 
 /* ================================
    GENERAL SECTIONS
