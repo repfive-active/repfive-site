@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("CHALLENGE JS VERSION: SCOREBOARD + JOURNEY + SUBMISSION 001");
 
-
   const API_URL =
     "https://script.google.com/macros/s/AKfycbxW0-5VPC3bEisqxFL7XktDUZci-OyykqF5Ddf-BQqxUQbOlXRG0zqS9jnnzcvGhAs/exec";
+  const DEBUG = false;
 
 
   // ========================================
@@ -34,9 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
   return;
 
 }
-
+if (DEBUG) {
   console.log("Team ID:", teamId);
   console.log("Challenge ID:", challengeId);
+}
 
   // ========================================
   // FIND PAGE ELEMENTS
@@ -101,8 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.json())
 
     .then(data => {
-
-      // console.log("API response:", data);
+    if (DEBUG) {
+      console.log("API response:", data);
+    }
 
       // ========================================
       // VALIDATE RESPONSE
@@ -309,11 +311,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const submissionURL =
         challenge["Submission URL"];
 
-
-      console.log(
-        "Challenge Submission URL:",
-        submissionURL
-      );
+      if (DEBUG) {
+          console.log(
+            "Challenge Submission URL:",
+            submissionURL
+          );
+      }
 
 
       // ========================================
@@ -436,12 +439,12 @@ document.addEventListener("DOMContentLoaded", () => {
             // ----------------------------------------
 
             todayTile.onclick = () => {
-
-              console.log(
-                "Opening Submission URL:",
-                submissionURL
-              );
-
+                if (DEBUG) {
+                    console.log(
+                      "Opening Submission URL:",
+                      submissionURL
+                    );
+                }
 
               window.location.href =
                 submissionURL;
@@ -611,42 +614,42 @@ document.addEventListener("DOMContentLoaded", () => {
       // ========================================
       // DEBUG
       // ========================================
+      if (DEBUG) {
+            
+        console.log(
+              "RepFive routing successful."
+            );
 
-      console.log(
-        "RepFive routing successful."
-      );
+        console.log(
+              "Team:",
+              team
+            );
 
-      console.log(
-        "Team:",
-        team
-      );
+        console.log(
+              "Challenge:",
+              challenge
+            );
 
-      console.log(
-        "Challenge:",
-        challenge
-      );
+        console.log(
+              "Scoreboard:",
+              scoreboardData
+            );
 
-      console.log(
-        "Scoreboard:",
-        scoreboardData
-      );
+        console.log(
+              "Journey current day:",
+              currentDay
+            );
 
-      console.log(
-        "Journey current day:",
-        currentDay
-      );
+        console.log(
+              "Journey status:",
+              status
+            );
 
-      console.log(
-        "Journey status:",
-        status
-      );
-
-      console.log(
-        "Today's Submission URL:",
-        submissionURL
-      );
-
-    })
+        console.log(
+              "Today's Submission URL:",
+              submissionURL
+            );
+  }
 
 
     // ========================================
