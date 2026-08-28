@@ -4,7 +4,7 @@
 
 const API_URL =
   "https://script.google.com/macros/s/AKfycbxW0-5VPC3bEisqxFL7XktDUZci-OyykqF5Ddf-BQqxUQbOlXRG0zqS9jnnzcvGhAs/exec";
-
+const DEBUG = false;
 
 // ========================================
 // URL PARAMETERS
@@ -28,6 +28,7 @@ let repData = null;
 
 let currentPage = 1;
 
+let isSubmitting = false;
 
 // ========================================
 // ELEMENTS
@@ -244,7 +245,10 @@ function renderRep(data) {
 // ========================================
 
 function renderVideo(url) {
+  
+  if (DEBUG) {
   console.log("Original:", url);
+  }
 
   const container =
     document.getElementById("videoContainer");
@@ -254,7 +258,8 @@ function renderVideo(url) {
 
 
   if (!url) {
-
+    
+    iframe.removeAttribute("src");
     container.style.display = "none";
     return;
 
@@ -267,14 +272,15 @@ function renderVideo(url) {
 
   if (!embedUrl) {
 
+    iframe.removeAttribute("src");
     container.style.display = "none";
     return;
 
   }
 
-
+  if (DEBUG) {
   console.log("Embed:", embedUrl);
-
+  }
 
   iframe.src = embedUrl;
 
@@ -442,6 +448,10 @@ function renderRoster(roster) {
   const select =
     document.getElementById("jersey");
 
+  if (!select || !Array.isArray(roster)) {
+    console.warn("No roster available.");
+    return;
+  }
 
   roster.forEach(jersey => {
 
@@ -682,6 +692,21 @@ document
 // ========================================
 
 async function submitRep() {
+    
+  if (isSubmitting) {
+    return;
+  }
+  
+  if (!repData || !repData.rep) {
+
+    alert(
+      "Your Rep could not be loaded. Please refresh and try again."
+    );
+
+    return;
+  }
+
+  isSubmitting = true;
 
   const finishButton =
     document.getElementById(
@@ -811,6 +836,7 @@ async function submitRep() {
       "Something went wrong. Please try again."
     );
 
+    isSubmitting = false;
 
     finishButton.disabled =
       false;
