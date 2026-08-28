@@ -115,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-
       const challenge =
         data.challenge;
 
@@ -125,13 +124,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const scoreboardData =
         data.scoreboard;
 
-
       const status =
         scoreboardData["Status"];
 
-
       const currentDay =
         Number(scoreboardData["Current Day"]);
+
+      // ========================================
+      // WEEKEND CHECK
+      // ========================================
+
+      const today =  new Date();
+
+      const dayOfWeek =  today.getDay();
+
+      const isWeekend =
+        dayOfWeek === 0 ||
+        dayOfWeek === 6;
 
     // ========================================
     // MEGAREPS THIS WEEK
@@ -160,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "none";
         }
       }
+      
       // ========================================
       // TEAM + SPORT
       // ========================================
@@ -343,8 +353,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (
         status === "Active" &&
+        !isWeekend &&
         currentDay >= 1 &&
-        currentDay <= 10
+        currentDay <= Number(scoreboardData["Days"])
       ) {
 
         const todayTile =
@@ -565,25 +576,28 @@ document.addEventListener("DOMContentLoaded", () => {
       // JOURNEY MESSAGE
       // ========================================
 
+      // ========================================
+      // JOURNEY MESSAGE
+      // ========================================
+
       if (journeyMessage) {
-
-        if (status === "Active") {
-
-          journeyMessage.textContent =
-            `Day ${currentDay} is live. Keep the Reps moving.`;
-
-        } else if (status === "Completed") {
+        if (status === "Completed") {
 
           journeyMessage.textContent =
             "The team reached the finish line. Time to celebrate.";
+        } else if (status === "Active" && isWeekend) {
 
+          journeyMessage.textContent =
+            "You made it through the week. Enjoy the weekend — we'll Rep again Monday!";
+        } else if (status === "Active") {
+
+          journeyMessage.textContent =
+            `Day ${currentDay} is live. Keep the Reps moving.`;
         } else {
 
           journeyMessage.textContent =
-            "Your Reps. Your Team. Your Impact.";
-
+            "Your Reps. Your Team. Your Impact.";    
         }
-
       }
 
 
