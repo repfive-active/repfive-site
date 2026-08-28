@@ -40,11 +40,51 @@ const errorBox =
   document.getElementById("error");
 
 
+
 // ========================================
 // INITIALIZE
 // ========================================
 
-loadRep();
+if (isWeekend()) {
+  showWeekend();
+} else {
+  loadRep();
+}
+
+
+// ========================================
+// WEEKEND CHECK
+// ========================================
+
+function isWeekend() {
+
+  const day =
+    new Date().getDay();
+
+  // 0 = Sunday
+  // 6 = Saturday
+
+  return day === 0 || day === 6;
+
+}
+
+
+// ========================================
+// WEEKEND EXPERIENCE
+// ========================================
+
+function showWeekend() {
+
+  loading.style.display =
+    "none";
+
+  errorBox.style.display =
+    "block";
+
+  errorBox.textContent =
+    "No Rep today. Enjoy your weekend!";
+
+}
 
 
 // ========================================
