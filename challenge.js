@@ -25,9 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const challengeId =
     params.get("challenge");
 
+  if (!teamId || !challengeId) {
+
+  console.error(
+    "Missing team or challenge parameter."
+  );
+
+  return;
+
+}
+
   console.log("Team ID:", teamId);
   console.log("Challenge ID:", challengeId);
-
 
   // ========================================
   // FIND PAGE ELEMENTS
@@ -93,8 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .then(data => {
 
-      console.log("API response:", data);
-
+      // console.log("API response:", data);
 
       // ========================================
       // VALIDATE RESPONSE
@@ -129,6 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const currentDay =
         Number(scoreboardData["Current Day"]);
+
+      const totalDays =
+        Number(scoreboardData["Days"]);
 
       // ========================================
       // WEEKEND CHECK
@@ -286,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (journeyDay) {
 
         journeyDay.textContent =
-          `Day ${currentDay} of ${scoreboardData["Days"]}`;
+          `Day ${currentDay} of ${totalDays}`;
 
       }
 
@@ -340,9 +351,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-
         // Remove any previous click handler
         tile.onclick = null;
+        tile.onkeydown = null;
+
+        tile.removeAttribute("aria-label");
 
       });
 
@@ -355,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
         status === "Active" &&
         !isWeekend &&
         currentDay >= 1 &&
-        currentDay <= Number(scoreboardData["Days"])
+        currentDay <= totalDays
       ) {
 
         const todayTile =
@@ -440,8 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // KEYBOARD ACCESS
             // ----------------------------------------
 
-            todayTile.addEventListener(
-              "keydown",
+            todayTile.onkeydown =
               event => {
 
                 if (
@@ -570,11 +582,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ).toLocaleString()} point goal`;
 
       }
-
-
-      // ========================================
-      // JOURNEY MESSAGE
-      // ========================================
 
       // ========================================
       // JOURNEY MESSAGE
