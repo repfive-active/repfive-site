@@ -69,6 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const journeyMessage =
     document.getElementById("journey-message");
 
+  const megaRepCount =
+  document.getElementById("megarep-count");
+
 
   // ========================================
   // JOURNEY TILES
@@ -130,7 +133,33 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentDay =
         Number(scoreboardData["Current Day"]);
 
+    // ========================================
+    // MEGAREPS THIS WEEK
+    // ========================================
 
+      const megaRepsThisWeek =
+        Number(
+          scoreboardData["MegaReps This Week"] || 0
+        );
+
+      const megaRepElement =
+        document.querySelector(".scoreboard-megarep");
+
+      if (megaRepElement) {
+        if (megaRepsThisWeek > 0) {
+
+          megaRepElement.style.display =
+            "flex";
+
+          if (megaRepCount) {
+            megaRepCount.textContent =
+              megaRepsThisWeek;
+          }
+        } else {
+          megaRepElement.style.display =
+            "none";
+        }
+      }
       // ========================================
       // TEAM + SPORT
       // ========================================
