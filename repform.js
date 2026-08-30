@@ -83,8 +83,7 @@ function showWeekend() {
     "block";
 
   errorBox.textContent =
-    "No Rep today. Enjoy your weekend!";
-
+    "Weekend mode 🌤️\nNo Rep today. Enjoy your weekend!";
 }
 
 
