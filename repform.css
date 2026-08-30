@@ -554,6 +554,7 @@ textarea {
   padding: 17px;
   border-radius: 14px;
   margin-top: 20px;
+  white-space: pre-line;
 }
 
 /* ================================
