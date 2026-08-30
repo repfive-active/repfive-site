@@ -547,11 +547,10 @@ textarea {
   }
 }
 
-
 .error {
-  background: #fff0f0;
-  color: #b42318;
-  border: 1px solid #fecdca;
+  background: #eef5ff;
+  color: var(--navy);
+  border: 1px solid #d6e6ff;
   padding: 17px;
   border-radius: 14px;
   margin-top: 20px;
