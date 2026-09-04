@@ -167,6 +167,15 @@ async function loadRep() {
 
 function renderRep(data) {
 
+  if (DEBUG) {
+      console.log("RENDER REP DATA:", data);
+      console.log("CHALLENGE:", data.challenge);
+      console.log(
+          "IMPACT PARTNER:",
+          data.challenge?.["Impact Partner"]
+      );
+  }
+
   const rep =
     data.rep;
 
