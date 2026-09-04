@@ -170,11 +170,10 @@ function renderRep(data) {
   const rep =
     data.rep;
 
-
   // DAY
 
   const dayLabel = document.getElementById("dayLabel");
-  const impactPartner = (data.challenge.ImpactPartner || "").trim();
+  const impactPartner = (data.challenge["Impact Partner"] || "").trim();
 
   dayLabel.innerHTML = `
     <div>Day ${data.currentDay} of ${data.challenge.Days}</div>
