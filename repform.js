@@ -173,10 +173,19 @@ function renderRep(data) {
 
   // DAY
 
-  document.getElementById("dayLabel").textContent =
-    `Day ${data.currentDay} of ${data.challenge.Days}`;
+  const dayLabel = document.getElementById("dayLabel");
+  const impactPartner = (data.challenge.ImpactPartner || "").trim();
 
+  dayLabel.innerHTML = `
+    <div>Day ${data.currentDay} of ${data.challenge.Days}</div>
+    ${
+      impactPartner
+        ? `<div class="powered-by">POWERED BY ${impactPartner}</div>`
+        : ""
+    }
+  `;
 
+  
   // REP NUMBER
 
   document.getElementById("repNumber").textContent =
