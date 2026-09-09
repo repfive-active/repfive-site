@@ -142,7 +142,15 @@ async function loadRep() {
 
 
     repData = data;
-
+    // CHALLENGE STATUS
+  
+    const challengeStatus = (data.challenge["Status"] || "").trim();
+    if (challengeStatus !== "Active") {
+    throw new Error(
+      "This challenge is not Active."
+    );
+  }
+    
     renderRep(data);
 
     showPage(1);
@@ -178,15 +186,7 @@ function renderRep(data) {
 
   const rep =
     data.rep;
-
-  // CHALLENGE STATUS
-  
-  const challengeStatus = (data.challenge["Status"] || "").trim();
-  if (challengeStatus !== "Active") {
-  showError("This challenge is not Active.");
-  return;
-  }
-  
+ 
   // DAY
 
   const dayLabel = document.getElementById("dayLabel");
