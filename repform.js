@@ -143,8 +143,12 @@ async function loadRep() {
 
     repData = data;
     // CHALLENGE STATUS
-  
+    
     const challengeStatus = (data.challenge["Status"] || "").trim();
+
+    console.log("Challenge Status:", challengeStatus);
+    console.log("Challenge Object:", data.challenge);
+    
     if (challengeStatus !== "Active") {
     throw new Error(
       "This challenge is not Active."
