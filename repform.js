@@ -4,7 +4,7 @@
 
 const API_URL =
   "https://script.google.com/macros/s/AKfycbxW0-5VPC3bEisqxFL7XktDUZci-OyykqF5Ddf-BQqxUQbOlXRG0zqS9jnnzcvGhAs/exec";
-const DEBUG = false;
+const DEBUG = true;
 
 // ========================================
 // URL PARAMETERS
