@@ -179,6 +179,14 @@ function renderRep(data) {
   const rep =
     data.rep;
 
+  // CHALLENGE STATUS
+  
+  const challengeStatus = (data.challenge["Status"] || "").trim();
+  if (challengeStatus !== "Active") {
+  showError("This challenge is not Active.");
+  return;
+  }
+  
   // DAY
 
   const dayLabel = document.getElementById("dayLabel");
