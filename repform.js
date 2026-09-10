@@ -146,7 +146,7 @@ async function loadRep() {
     // CHALLENGE STATUS
     const challengeStatus = (data.challenge?.["Status"] || "").trim();
 
-    if (debug)
+    if (DEBUG)
     {
         console.log("Challenge Status:", challengeStatus);
         console.log("Challenge Object:", data.challenge);
