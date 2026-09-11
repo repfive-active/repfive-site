@@ -229,20 +229,21 @@ nav {
   max-width: 670px;
   color: #dce8ff;
   font-size: 19px;
+  line-height: 1.5;
   margin-bottom: 30px;
 }
 
 .hero-subhead {
   display: inline-block;
-  font-size: 1.08em;
+  font-size: 0.92em;
   font-weight: 800;
-  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+  margin-bottom: 7px;
 }
 
 .hero-why {
-  margin-top: 24px;
+  margin-top: 38px;
 }
-
 
 /* ========================================
    HERO AUDIENCE
