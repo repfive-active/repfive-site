@@ -784,14 +784,6 @@ async function submitRep() {
       "parentFeedback"
     );
 
-
-  const parentNotes =
-    document
-      .getElementById("parentNotes")
-      .value
-      .trim();
-
-
   const payload = {
 
     teamId:
@@ -822,9 +814,6 @@ async function submitRep() {
 
     parentHomeFeedback:
       parentFeedback,
-
-    parentNotes:
-      parentNotes
 
   };
 
