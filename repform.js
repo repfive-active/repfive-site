@@ -880,7 +880,7 @@ async function submitRep() {
       false;
 
     finishButton.textContent =
-      "Finish Rep";
+      "Finish Rep → +20 Team Points";
 
   }
 
