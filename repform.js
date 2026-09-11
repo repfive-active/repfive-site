@@ -339,12 +339,21 @@ function getEmbedUrl(url) {
     ) {
 
       // Already an embed URL
-
       if (
         parsed.pathname.startsWith("/embed/")
       ) {
 
-        return url;
+        const videoId =
+          parsed.pathname.split("/embed/")[1].split("/")[0];
+
+        if (videoId) {
+
+          return (
+            "https://www.youtube-nocookie.com/embed/" +
+            videoId
+          );
+
+        }
 
       }
 
@@ -357,7 +366,7 @@ function getEmbedUrl(url) {
       if (videoId) {
 
         return (
-          "https://www.youtube.com/embed/" +
+          "https://www.youtube-nocookie.com/embed/" +
           videoId
         );
 
@@ -374,7 +383,7 @@ function getEmbedUrl(url) {
       if (shortsMatch) {
 
         return (
-          "https://www.youtube.com/embed/" +
+          "https://www.youtube-nocookie.com/embed/" +
           shortsMatch[1]
         );
 
@@ -397,7 +406,7 @@ function getEmbedUrl(url) {
       if (videoId) {
 
         return (
-          "https://www.youtube.com/embed/" +
+          "https://www.youtube-nocookie.com/embed/" +
           videoId
         );
 
