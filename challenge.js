@@ -600,7 +600,7 @@ if (DEBUG) {
         } else if (status === "Active") {
 
           journeyMessage.textContent =
-            `Day ${currentDay} is live. Keep the Reps moving.`;
+            `Day ${currentDay} is live. Your Reps. Your Team. Your Impact.`;
         } else {
 
           journeyMessage.textContent =
