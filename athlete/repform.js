@@ -244,7 +244,11 @@ function renderRep(data) {
 
   // VIDEO
 
-  renderVideo(rep["Video URL"]);
+  renderVideo(
+  rep["Video URL"],
+  rep["Start"],
+  rep["End"]
+);
 
   // JERSEYS
 
@@ -268,15 +272,16 @@ function renderRep(data) {
 
 }
 
-
 // ========================================
 // VIDEO
 // ========================================
 
-function renderVideo(url) {
-  
+function renderVideo(url, start, end) {
+
   if (DEBUG) {
-  console.log("Original:", url);
+    console.log("Original URL:", url);
+    console.log("Start:", start);
+    console.log("End:", end);
   }
 
   const container =
@@ -287,47 +292,71 @@ function renderVideo(url) {
 
 
   if (!url) {
-    
+
     iframe.removeAttribute("src");
     container.style.display = "none";
-    return;
 
+    return;
   }
 
 
   const embedUrl =
-    getEmbedUrl(url);
+    getEmbedUrl(url, start, end);
 
 
   if (!embedUrl) {
 
     iframe.removeAttribute("src");
     container.style.display = "none";
-    return;
 
+    return;
   }
+
 
   if (DEBUG) {
-  console.log("Embed:", embedUrl);
+    console.log("Final Embed:", embedUrl);
   }
 
-  iframe.src = embedUrl;
 
-  container.style.display = "block";
+  iframe.src =
+    embedUrl;
 
+  container.style.display =
+    "block";
 }
 
 
 // ========================================
 // CONVERT VIDEO URL TO EMBED URL
 // ========================================
+//
+// Supports:
+//
+// YouTube standard:
+// https://www.youtube.com/watch?v=VIDEO_ID
+//
+// YouTube Shorts:
+// https://www.youtube.com/shorts/VIDEO_ID
+//
+// YouTube with existing parameters:
+//
+// https://www.youtube.com/watch?v=VIDEO_ID&start=50&end=250
+//
+// Google Sheet Start / End values override
+// URL start/end values when supplied.
+//
+// Looping is explicitly disabled.
+// ========================================
 
-function getEmbedUrl(url) {
+function getEmbedUrl(url, start, end) {
 
   try {
 
     const parsed =
       new URL(url);
+
+    let videoId =
+      null;
 
 
     // ------------------------------------
@@ -338,54 +367,39 @@ function getEmbedUrl(url) {
       parsed.hostname.includes("youtube.com")
     ) {
 
-      // Already an embed URL
-      if (
-        parsed.pathname.startsWith("/embed/")
-      ) {
+      // Standard YouTube URL
+      videoId =
+        parsed.searchParams.get("v");
 
-        const videoId =
-          parsed.pathname.split("/embed/")[1].split("/")[0];
 
-        if (videoId) {
+      // YouTube Shorts
+      if (!videoId) {
 
-          return (
-            "https://www.youtube-nocookie.com/embed/" +
-            videoId
+        const shortsMatch =
+          parsed.pathname.match(
+            /\/shorts\/([^/]+)/
           );
 
+        if (shortsMatch) {
+          videoId =
+            shortsMatch[1];
         }
 
       }
 
 
-      // Standard YouTube URL
+      // Existing embed URL
+      if (!videoId) {
 
-      const videoId =
-        parsed.searchParams.get("v");
+        const embedMatch =
+          parsed.pathname.match(
+            /\/embed\/([^/]+)/
+          );
 
-      if (videoId) {
-
-        return (
-          "https://www.youtube-nocookie.com/embed/" +
-          videoId
-        );
-
-      }
-
-
-      // YouTube Shorts
-
-      const shortsMatch =
-        parsed.pathname.match(
-          /\/shorts\/([^/]+)/
-        );
-
-      if (shortsMatch) {
-
-        return (
-          "https://www.youtube-nocookie.com/embed/" +
-          shortsMatch[1]
-        );
+        if (embedMatch) {
+          videoId =
+            embedMatch[1];
+        }
 
       }
 
@@ -397,69 +411,107 @@ function getEmbedUrl(url) {
     // ------------------------------------
 
     if (
+      !videoId &&
       parsed.hostname === "youtu.be"
     ) {
 
-      const videoId =
+      videoId =
         parsed.pathname.substring(1);
 
-      if (videoId) {
+    }
 
-        return (
-          "https://www.youtube-nocookie.com/embed/" +
-          videoId
-        );
 
-      }
+    // ------------------------------------
+    // NOT YOUTUBE
+    // ------------------------------------
+
+    if (!videoId) {
+
+      return null;
 
     }
 
 
     // ------------------------------------
-    // VIMEO
+    // BUILD CLEAN EMBED URL
     // ------------------------------------
 
-    if (
-      parsed.hostname.includes("vimeo.com")
-    ) {
+    const embed =
+      new URL(
+        "https://www.youtube-nocookie.com/embed/" +
+        videoId
+      );
 
-      const match =
-        parsed.pathname.match(
-          /\/(\d+)/
-        );
 
-      if (match) {
+    // ------------------------------------
+    // START
+    // ------------------------------------
 
-        return (
-          "https://player.vimeo.com/video/" +
-          match[1]
-        );
+    const startSeconds =
+      parseVideoTime(start);
 
-      }
+
+    if (startSeconds !== null) {
+
+      embed.searchParams.set(
+        "start",
+        startSeconds
+      );
 
     }
 
 
     // ------------------------------------
-    // ALREADY EMBEDDED / OTHER PROVIDER
+    // END
     // ------------------------------------
 
-    if (
-      parsed.pathname.includes("/embed/")
-    ) {
+    const endSeconds =
+      parseVideoTime(end);
 
-      return url;
+
+    if (endSeconds !== null) {
+
+      embed.searchParams.set(
+        "end",
+        endSeconds
+      );
 
     }
 
 
     // ------------------------------------
-    // UNKNOWN PROVIDER
+    // NO LOOPING
     // ------------------------------------
 
-    // Try the supplied URL directly.
+    embed.searchParams.set(
+      "loop",
+      "0"
+    );
 
-    return null;
+
+    // ------------------------------------
+    // PLAYER BEHAVIOR
+    // ------------------------------------
+
+    embed.searchParams.set(
+      "playsinline",
+      "1"
+    );
+
+
+    // ------------------------------------
+    // PRIVACY-ENHANCED MODE
+    // ------------------------------------
+
+    // youtube-nocookie.com is already being
+    // used above.
+    //
+    // No autoplay.
+    // No playlist parameter.
+    // Therefore the athlete controls playback.
+
+
+    return embed.toString();
 
   }
 
@@ -475,6 +527,152 @@ function getEmbedUrl(url) {
   }
 
 }
+
+
+// ========================================
+// PARSE VIDEO TIME
+// ========================================
+//
+// Accepts:
+//
+// 50
+// "50"
+// "50s"
+// "01:30"
+// "1:30:00"
+//
+// Returns seconds or null.
+// ========================================
+
+function parseVideoTime(value) {
+
+  if (
+    value === null ||
+    value === undefined ||
+    String(value).trim() === ""
+  ) {
+
+    return null;
+
+  }
+
+
+  const text =
+    String(value).trim();
+
+
+  // ------------------------------------
+  // Plain number
+  // ------------------------------------
+
+  if (
+    !isNaN(text)
+  ) {
+
+    const seconds =
+      Number(text);
+
+    return seconds >= 0
+      ? Math.floor(seconds)
+      : null;
+
+  }
+
+
+  // ------------------------------------
+  // "50s"
+  // ------------------------------------
+
+  if (
+    /^\d+(\.\d+)?s$/i.test(text)
+  ) {
+
+    const seconds =
+      parseFloat(text);
+
+    return seconds >= 0
+      ? Math.floor(seconds)
+      : null;
+
+  }
+
+
+  // ------------------------------------
+  // MM:SS
+  // ------------------------------------
+
+  const parts =
+    text.split(":");
+
+
+  if (parts.length === 2) {
+
+    const minutes =
+      Number(parts[0]);
+
+    const seconds =
+      Number(parts[1]);
+
+
+    if (
+      !isNaN(minutes) &&
+      !isNaN(seconds)
+    ) {
+
+      return (
+        Math.floor(minutes * 60 + seconds)
+      );
+
+    }
+
+  }
+
+
+  // ------------------------------------
+  // HH:MM:SS
+  // ------------------------------------
+
+  if (parts.length === 3) {
+
+    const hours =
+      Number(parts[0]);
+
+    const minutes =
+      Number(parts[1]);
+
+    const seconds =
+      Number(parts[2]);
+
+
+    if (
+      !isNaN(hours) &&
+      !isNaN(minutes) &&
+      !isNaN(seconds)
+    ) {
+
+      return (
+        Math.floor(
+          hours * 3600 +
+          minutes * 60 +
+          seconds
+        )
+      );
+
+    }
+
+  }
+
+
+  console.warn(
+    "Unable to parse video time:",
+    value
+  );
+
+
+  return null;
+
+}
+
 
 
 // ========================================
