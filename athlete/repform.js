@@ -276,6 +276,9 @@ function renderRep(data) {
 // VIDEO
 // ========================================
 
+let currentVideoEmbedUrl = null;
+
+
 function renderVideo(url, start, end) {
 
   if (DEBUG) {
@@ -290,39 +293,153 @@ function renderVideo(url, start, end) {
   const iframe =
     document.getElementById("repVideo");
 
+  const replayButton =
+    document.getElementById("replayVideoButton");
+
 
   if (!url) {
 
     iframe.removeAttribute("src");
-    container.style.display = "none";
+
+    container.style.display =
+      "none";
+
+    if (replayButton) {
+      replayButton.style.display =
+        "none";
+    }
+
+    currentVideoEmbedUrl =
+      null;
 
     return;
   }
 
 
   const embedUrl =
-    getEmbedUrl(url, start, end);
+    getEmbedUrl(
+      url,
+      start,
+      end
+    );
 
 
   if (!embedUrl) {
 
     iframe.removeAttribute("src");
-    container.style.display = "none";
+
+    container.style.display =
+      "none";
+
+    if (replayButton) {
+      replayButton.style.display =
+        "none";
+    }
+
+    currentVideoEmbedUrl =
+      null;
 
     return;
   }
 
 
   if (DEBUG) {
-    console.log("Final Embed:", embedUrl);
+    console.log(
+      "Final Embed:",
+      embedUrl
+    );
   }
+
+
+  currentVideoEmbedUrl =
+    embedUrl;
 
 
   iframe.src =
     embedUrl;
 
+
   container.style.display =
     "block";
+
+
+  if (replayButton) {
+
+    replayButton.style.display =
+      "inline-block";
+
+  }
+
+}
+
+
+// ========================================
+// REPLAY VIDEO
+// ========================================
+//
+// Reloads the SAME YouTube embed URL.
+//
+// This causes the player to return to the
+// configured Start position.
+//
+// It does NOT modify the YouTube video,
+// creator settings, or source video.
+//
+
+function replayVideo() {
+
+  const iframe =
+    document.getElementById("repVideo");
+
+
+  if (
+    !iframe ||
+    !currentVideoEmbedUrl
+  ) {
+
+    return;
+
+  }
+
+
+  // Remove the current player first.
+  iframe.src =
+    "";
+
+
+  // Re-create the player on the next
+  // browser rendering cycle.
+  //
+  // This reliably resets the YouTube
+  // player to the configured start time.
+
+  requestAnimationFrame(function() {
+
+    iframe.src =
+      currentVideoEmbedUrl;
+
+  });
+
+}
+
+
+// ========================================
+// REPLAY BUTTON
+// ========================================
+
+const replayVideoButton =
+  document.getElementById(
+    "replayVideoButton"
+  );
+
+
+if (replayVideoButton) {
+
+  replayVideoButton.addEventListener(
+    "click",
+    replayVideo
+  );
+
 }
 
 
