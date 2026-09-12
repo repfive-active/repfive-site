@@ -483,6 +483,40 @@ textarea {
   transform: none;
 }
 
+/* ========================================
+   VIDEO REPLAY
+======================================== */
+
+#replayVideoButton {
+  display: none;
+  width: auto;
+  margin: -12px 0 20px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: white;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 850;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+#replayVideoButton:hover {
+  border-color: var(--blue);
+  background: var(--light-blue);
+  color: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+#replayVideoButton:focus-visible {
+  outline: 3px solid rgba(22, 119, 255, .35);
+  outline-offset: 3px;
+}
+
+#replayVideoButton:active {
+  transform: translateY(0);
+}
 
 /* ========================================
    COMPLETION
