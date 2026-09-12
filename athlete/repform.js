@@ -153,7 +153,9 @@ async function loadRep() {
     }
     
     if (challengeStatus !== "Active") {
-       throw new Error("This challenge is not Active.");
+       throw new Error("You’re in! Your Challenge isn’t active just yet.\n\n" +
+                       "Check back when it goes live and get ready to Rep. 💙\n\n" +
+                       "— REPFIVE");
     }
     
     renderRep(data);
