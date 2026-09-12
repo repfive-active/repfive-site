@@ -597,10 +597,6 @@ if (DEBUG) {
 
           journeyMessage.textContent =
             "You made it through the week. Enjoy the weekend — we'll Rep again Monday!";
-        } else if (status === "Active") {
-
-          journeyMessage.textContent =
-            `Day ${currentDay} is live. Your Reps. Your Team. Your Impact.`;
         } else {
 
           journeyMessage.textContent =
