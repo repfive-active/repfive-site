@@ -306,6 +306,28 @@ textarea {
   font-weight: 850;
 }
 
+.video-note {
+  margin: 10px 0 18px;
+  padding: 12px 14px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.video-note strong {
+  color: var(--navy);
+  font-weight: 850;
+}
+
+.video-note span {
+  display: block;
+  margin-top: 5px;
+  color: var(--blue);
+  font-weight: 850;
+}
 
 .coach-takeaway {
   margin-top: 25px;
