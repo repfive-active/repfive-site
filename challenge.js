@@ -541,7 +541,7 @@ if (DEBUG) {
       if (teamPercent) {
 
         teamPercent.textContent =
-          `${percent}%`;
+          `${Number(percent).toFixed(1)}%`;
 
       }
 
