@@ -69,10 +69,6 @@ if (DEBUG) {
 
   const highlights = document.getElementById("team-highlights");
 
-  if (highlights) {
-  highlights.style.display = teamPoints > 0 ? "block" : "none";
-  }
-
   const teamProgressBar =
     document.getElementById("team-progress-bar");
 
@@ -498,17 +494,20 @@ if (DEBUG) {
 
       if (teamPoints) {
 
-        teamPoints.innerHTML =
-          `${Number(
-            scoreboardData["Team Points"]
-          ).toLocaleString()}`
-          + ` <span class="scoreboard-points-total">`
-          + `/ ${Number(
-            scoreboardData["Goal"]
-          ).toLocaleString()} points`
-          + `</span>`;
+        const points = Number(scoreboardData["Team Points"]);
 
+        teamPoints.innerHTML =
+        `${points.toLocaleString()}`
+        + ` <span class="scoreboard-points-total">`
+        + `/ ${Number(
+          scoreboardData["Goal"]
+        ).toLocaleString()} points`
+        + `</span>`;
+
+      if (highlights) {
+        highlights.style.display = points > 0 ? "block" : "none";
       }
+}
 
 
       // ========================================
