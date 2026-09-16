@@ -1066,6 +1066,59 @@ section {
 }
 
 /* ========================================
+   WEEK HIGHLIGHTS
+======================================== */
+
+.challenge-dashboard {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.challenge-dashboard > * {
+  min-width: 0;
+}
+
+.team-highlights {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 32px;
+}
+
+.highlight-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.highlight-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.highlight-list li:first-child {
+  padding-top: 0;
+}
+
+.highlight-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.highlight-list strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--navy);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+/* ========================================
    MEGAREPS THIS WEEK
 ======================================== */
 
@@ -1265,6 +1318,10 @@ footer p {
 
   .audiences {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .challenge-dashboard {
+  grid-template-columns: 1fr;
   }
 
   .challenge-card {
