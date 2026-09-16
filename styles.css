@@ -1085,6 +1085,7 @@ section {
   border: 1px solid var(--border);
   border-radius: 28px;
   padding: 32px;
+  display: none;
 }
 
 .highlight-list {
