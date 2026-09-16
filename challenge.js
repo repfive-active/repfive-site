@@ -67,6 +67,12 @@ if (DEBUG) {
   const teamPercent =
     document.getElementById("team-percent");
 
+  const highlights = document.getElementById("team-highlights");
+
+  if (highlights) {
+  highlights.style.display = teamPoints > 0 ? "block" : "none";
+  }
+
   const teamProgressBar =
     document.getElementById("team-progress-bar");
 
