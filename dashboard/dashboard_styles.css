@@ -77,22 +77,45 @@ body {
    HEADER
 ========================================================= */
 
-header {
+.dashboard-header {
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy),
+      var(--navy-2)
+    );
+
+  color: white;
+  padding: 22px 20px;
+}
+
+
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  margin-bottom: 28px;
 }
 
-.brand {
-  font-size: 25px;
+
+.logo {
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: -1px;
 }
 
-.brand span {
+
+.logo span {
   color: var(--lime);
+}
+
+.start-end {
+  margin-top: 3px;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
 }
 
 .challenge-label {
@@ -624,15 +647,22 @@ header {
 /* =========================================================
    FOOTER
 ========================================================= */
+footer {
+  background: #040d20;
+  color: white;
+  padding: 45px 0;
+}
 
-.footer {
-  text-align: center;
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
 
-  color: var(--gray-400);
-
-  font-size: 11px;
-
-  padding-top: 5px;
+footer p {
+  color: #91a1bd;
+  font-size: 13px;
 }
 
 
