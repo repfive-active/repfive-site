@@ -3,7 +3,13 @@
    Clean MVP Dashboard Styles
 ========================================================= */
 
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root {
+
   --navy: #07152f;
   --navy-2: #0b2450;
 
@@ -45,6 +51,7 @@ html {
 
 body {
   margin: 0;
+
   background: var(--gray-50);
   color: var(--navy);
 
@@ -69,6 +76,7 @@ body {
 .container {
   width: min(1100px, 92%);
   margin: 0 auto;
+
   padding: 32px 0 60px;
 }
 
@@ -78,6 +86,8 @@ body {
 ========================================================= */
 
 .dashboard-header {
+  width: 100%;
+
   background:
     linear-gradient(
       135deg,
@@ -86,46 +96,46 @@ body {
     );
 
   color: white;
+
   padding: 22px 20px;
 }
 
-
 .header-inner {
-  max-width: 800px;
+  width: min(1100px, 92%);
+
   margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
+  gap: 20px;
+}
 
 .logo {
   font-size: 24px;
+
   font-weight: 900;
+
   letter-spacing: -1px;
 }
-
 
 .logo span {
   color: var(--lime);
 }
 
-.start-end {
-  margin-top: 3px;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  opacity: 0.7;
-}
-
 .challenge-label {
   font-size: 13px;
-  color: var(--gray-500);
 
   text-transform: uppercase;
+
   letter-spacing: 0.08em;
 
   font-weight: 800;
+}
+
+.header-label {
+  color: #cbd5e1;
 }
 
 
@@ -149,6 +159,7 @@ body {
   color: white;
 
   border-radius: 22px;
+
   padding: 30px;
 
   margin-bottom: 20px;
@@ -156,16 +167,22 @@ body {
 
 .hero-top {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-start;
 
   gap: 20px;
 }
 
+.hero-label {
+  color: #93c5fd;
+}
+
 .hero h1 {
   margin: 4px 0 8px;
 
   font-size: 32px;
+
   line-height: 1.1;
 
   letter-spacing: -1.2px;
@@ -189,6 +206,7 @@ body {
   padding: 9px 14px;
 
   font-size: 12px;
+
   font-weight: 800;
 
   white-space: nowrap;
@@ -223,6 +241,7 @@ body {
   font-size: 11px;
 
   text-transform: uppercase;
+
   letter-spacing: 0.07em;
 
   font-weight: 800;
@@ -451,9 +470,18 @@ body {
   font-weight: 700;
 }
 
+.rep-row.upcoming .rep-title,
+.rep-row.upcoming .rep-rate {
+  color: var(--gray-400);
+}
+
+.rep-row.upcoming .rep-day {
+  color: var(--gray-400);
+}
+
 
 /* =========================================================
-   TEAM PARTICIPATION AGGREGATES
+   TEAM PARTICIPATION
 ========================================================= */
 
 .aggregate-grid {
@@ -504,7 +532,7 @@ body {
 
 
 /* =========================================================
-   PARENT EXPERIENCE
+   PARENT / GUARDIAN EXPERIENCE
 ========================================================= */
 
 .feedback {
@@ -551,58 +579,17 @@ body {
   margin-top: 4px;
 }
 
+.feedback-note {
+  margin-top: 14px;
+
+  font-size: 11px;
+
+  color: var(--gray-500);
+}
+
 
 /* =========================================================
    TEAM IMPACT
-========================================================= */
-
-.value-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 12px;
-}
-
-.value-card {
-  background: var(--navy);
-
-  color: white;
-
-  border-radius: 14px;
-
-  padding: 20px;
-}
-
-.value-card.blue {
-  background: var(--blue);
-}
-
-.value-card.green {
-  background: var(--green);
-}
-
-.value-number {
-  font-size: 27px;
-
-  line-height: 1.1;
-
-  font-weight: 900;
-}
-
-.value-label {
-  font-size: 12px;
-
-  line-height: 1.4;
-
-  color: rgba(255, 255, 255, 0.78);
-
-  margin-top: 6px;
-}
-
-
-/* =========================================================
-   TEAM IMPACT — SIX METRICS
 ========================================================= */
 
 .impact-grid {
@@ -647,22 +634,41 @@ body {
 /* =========================================================
    FOOTER
 ========================================================= */
+
 footer {
   background: #040d20;
+
   color: white;
-  padding: 45px 0;
+
+  padding: 30px 20px;
 }
 
 .footer-inner {
+  width: min(1100px, 92%);
+
+  margin: 0 auto;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 30px;
+}
+
+footer strong {
+  font-size: 13px;
+
+  letter-spacing: 0.04em;
 }
 
 footer p {
   color: #91a1bd;
+
   font-size: 13px;
+
+  margin: 3px 0 0;
 }
 
 
@@ -684,7 +690,6 @@ footer p {
 
   .aggregate-grid,
   .feedback,
-  .value-grid,
   .impact-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -692,6 +697,7 @@ footer p {
   .hero-top {
     flex-direction: column;
   }
+
 }
 
 
@@ -707,8 +713,20 @@ footer p {
     padding: 20px 0 40px;
   }
 
-  header {
-    margin-bottom: 20px;
+  .header-inner {
+    width: 94%;
+  }
+
+  .dashboard-header {
+    padding: 18px 12px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .header-label {
+    font-size: 10px;
   }
 
   .hero {
@@ -719,6 +737,10 @@ footer p {
 
   .hero h1 {
     font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
   }
 
   .metrics {
@@ -747,6 +769,10 @@ footer p {
     font-size: 17px;
   }
 
+  .section-subtitle {
+    font-size: 12px;
+  }
+
   .days {
     grid-template-columns: repeat(5, 1fr);
 
@@ -761,6 +787,10 @@ footer p {
     font-size: 15px;
   }
 
+  .day-status {
+    font-size: 8px;
+  }
+
   .rep-row {
     grid-template-columns: 45px 1fr 65px;
 
@@ -773,9 +803,12 @@ footer p {
     font-size: 13px;
   }
 
+  .rep-subtitle {
+    font-size: 10px;
+  }
+
   .aggregate-grid,
   .feedback,
-  .value-grid,
   .impact-grid {
     grid-template-columns: 1fr;
   }
@@ -797,4 +830,9 @@ footer p {
   .feedback-label {
     margin-top: 0;
   }
+
+  .footer-inner {
+    width: 94%;
+  }
+
 }
