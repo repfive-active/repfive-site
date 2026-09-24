@@ -1,0 +1,323 @@
+/* ========================================
+REDEEM PAGE
+======================================== */
+
+/* ================================
+REWARD GRID
+================================ */
+
+.reward-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+
+max-width: 1000px;
+}
+
+/* ================================
+REWARD CARD
+================================ */
+
+.reward-card {
+position: relative;
+
+display: block;
+
+background: white;
+border: 2px solid var(--border);
+border-radius: 24px;
+
+padding: 24px;
+
+cursor: pointer;
+
+transition:
+border-color 0.2s ease,
+box-shadow 0.2s ease,
+transform 0.2s ease;
+}
+
+.reward-card:hover {
+transform: translateY(-3px);
+
+border-color: #b8d4ff;
+
+box-shadow:
+0 12px 30px rgba(7, 21, 47, 0.08);
+}
+
+/* Hide the native radio.
+The card itself becomes the
+clickable selection area. */
+
+.reward-card input {
+position: absolute;
+
+opacity: 0;
+pointer-events: none;
+}
+
+/* ================================
+CARD CONTENT
+================================ */
+
+.reward-card-content {
+position: relative;
+}
+
+/* ================================
+CARD TOP
+================================ */
+
+.reward-top {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+
+gap: 18px;
+}
+
+.reward-main {
+display: flex;
+align-items: center;
+
+gap: 15px;
+
+min-width: 0;
+}
+
+/* ================================
+REWARD ICON
+================================ */
+
+.reward-icon {
+width: 52px;
+height: 52px;
+
+flex: 0 0 52px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: var(--light-blue);
+
+border-radius: 15px;
+
+font-size: 27px;
+}
+
+/* ================================
+REWARD TITLE
+================================ */
+
+.reward-copy {
+min-width: 0;
+}
+
+.reward-label {
+color: var(--blue);
+
+font-size: 11px;
+font-weight: 900;
+
+letter-spacing: 1.2px;
+text-transform: uppercase;
+
+margin-bottom: 4px;
+}
+
+.reward-copy h3 {
+font-size: 25px;
+line-height: 1.1;
+}
+
+/* ================================
+PROVIDER LOGO
+================================ */
+
+.reward-provider-logo {
+width: 48px;
+height: 48px;
+
+flex: 0 0 48px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: white;
+
+border: 1px solid var(--border);
+border-radius: 10px;
+
+overflow: hidden;
+}
+
+.reward-provider-logo span {
+color: #98a2b3;
+
+font-size: 8px;
+font-weight: 900;
+
+letter-spacing: 0.5px;
+}
+
+.reward-provider-logo img {
+width: 100%;
+height: 100%;
+
+object-fit: contain;
+
+padding: 6px;
+}
+
+/* ================================
+DESCRIPTION
+================================ */
+
+.reward-description {
+margin: 18px 45px 0 0;
+
+color: var(--gray);
+
+font-size: 14px;
+line-height: 1.5;
+}
+
+/* ================================
+CARD BOTTOM
+================================ */
+
+.reward-bottom {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+
+gap: 10px;
+
+margin-top: 20px;
+}
+
+/* ================================
+POINTS
+================================ */
+
+.reward-points {
+color: var(--navy);
+
+font-size: 15px;
+font-weight: 900;
+}
+
+.reward-points span {
+color: var(--gray);
+
+font-size: 11px;
+font-weight: 800;
+
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+/* ================================
+RADIO SELECTOR
+================================ */
+
+.reward-select {
+width: 24px;
+height: 24px;
+
+flex: 0 0 24px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border: 2px solid #c5cedb;
+border-radius: 50%;
+}
+
+.reward-select span {
+width: 10px;
+height: 10px;
+
+background: transparent;
+
+border-radius: 50%;
+}
+
+/* ================================
+SELECTED STATE
+================================ */
+
+.reward-card:has(input:checked) {
+border-color: var(--blue);
+
+background: #f7fbff;
+
+box-shadow:
+0 10px 30px rgba(22, 119, 255, 0.12);
+}
+
+.reward-card:has(input:checked) .reward-select {
+border-color: var(--blue);
+}
+
+.reward-card:has(input:checked) .reward-select span {
+background: var(--blue);
+}
+
+/* ================================
+RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+.reward-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+}
+
+@media (max-width: 600px) {
+
+.reward-grid {
+grid-template-columns: 1fr;
+}
+
+.reward-card {
+padding: 20px;
+}
+
+.reward-main {
+gap: 12px;
+}
+
+.reward-icon {
+width: 48px;
+height: 48px;
+
+```
+flex-basis: 48px;
+
+font-size: 25px;
+```
+
+}
+
+.reward-copy h3 {
+font-size: 23px;
+}
+
+.reward-provider-logo {
+width: 44px;
+height: 44px;
+
+```
+flex-basis: 44px;
+```
+
+}
+
+}
