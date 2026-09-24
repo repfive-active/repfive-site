@@ -542,10 +542,11 @@ if (DEBUG) {
 
       }
       if (
-        percent > 100 
+        percent > 1
       ) {
 
-        percent = 100;
+        percent =
+          1 * 100;
       }
 
 
