@@ -541,6 +541,12 @@ if (DEBUG) {
           percent * 100;
 
       }
+      if (
+        percent > 100 
+      ) {
+
+        percent = 100;
+      }
 
 
       if (teamPercent) {
