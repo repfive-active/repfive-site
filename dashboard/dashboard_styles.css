@@ -126,12 +126,16 @@ body {
 
 .challenge-label {
   font-size: 13px;
-
   text-transform: uppercase;
-
   letter-spacing: 0.08em;
-
   font-weight: 800;
+}
+
+.challenge-scorecard-link {
+  display: inline-block;
+  color: #0066ff;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .header-label {
