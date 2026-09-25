@@ -174,6 +174,7 @@ body {
   font-size: 15px;
 }
 
+/* Informational — not clickable */
 .status-pill {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -182,27 +183,41 @@ body {
   font-size: 12px;
   font-weight: 800;
   white-space: nowrap;
+  cursor: default;
 }
 
-.challenge-scorecard-link {
-  display: inline-block;
-  margin-left: 14px;
 
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+/* Clickable public challenge scorecard */
+.scorecard-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 14px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 
   color: #0066ff;
-  text-decoration: none;
+  background: #f4f8ff;
 
+  border: 1px solid #dbe8ff;
+  border-radius: 999px;
+
+  text-decoration: none;
   white-space: nowrap;
-  transition: color 0.2s ease;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.challenge-scorecard-link:hover {
+.scorecard-pill:hover {
   color: #004dcc;
-  text-decoration: underline;
+  background: #eaf2ff;
+  border-color: #bcd4ff;
 }
 
 /* =========================================================
@@ -620,10 +635,17 @@ footer p {
     font-size: 14px;
   }
 
-   .challenge-scorecard-link {
-    display: block;
-    margin-left: 0;
-    margin-top: 8px;
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .status-pill,
+  .scorecard-pill {
+    font-size: 11px;
+    padding: 8px 11px;
   }
 
   .metrics {
