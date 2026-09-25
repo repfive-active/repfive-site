@@ -76,7 +76,6 @@ body {
 .container {
   width: min(1100px, 92%);
   margin: 0 auto;
-
   padding: 32px 0 60px;
 }
 
@@ -87,36 +86,28 @@ body {
 
 .dashboard-header {
   width: 100%;
-
   background:
     linear-gradient(
       135deg,
       var(--navy),
       var(--navy-2)
     );
-
   color: white;
-
   padding: 22px 20px;
 }
 
 .header-inner {
   width: min(1100px, 92%);
-
   margin: 0 auto;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   gap: 20px;
 }
 
 .logo {
   font-size: 24px;
-
   font-weight: 900;
-
   letter-spacing: -1px;
 }
 
@@ -129,13 +120,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 800;
-}
-
-.challenge-scorecard-link {
-  display: inline-block;
-  color: #0066ff;
-  font-weight: 700;
-  text-decoration: none;
 }
 
 .header-label {
@@ -161,20 +145,15 @@ body {
     );
 
   color: white;
-
   border-radius: 22px;
-
   padding: 30px;
-
   margin-bottom: 20px;
 }
 
 .hero-top {
   display: flex;
-
   justify-content: space-between;
   align-items: flex-start;
-
   gap: 20px;
 }
 
@@ -184,38 +163,47 @@ body {
 
 .hero h1 {
   margin: 4px 0 8px;
-
   font-size: 32px;
-
   line-height: 1.1;
-
   letter-spacing: -1.2px;
 }
 
 .hero p {
   margin: 0;
-
   color: #cbd5e1;
-
   font-size: 15px;
 }
 
 .status-pill {
   background: rgba(255, 255, 255, 0.1);
-
   border: 1px solid rgba(255, 255, 255, 0.15);
-
   border-radius: 999px;
-
   padding: 9px 14px;
-
   font-size: 12px;
-
   font-weight: 800;
-
   white-space: nowrap;
 }
 
+.challenge-scorecard-link {
+  display: inline-block;
+  margin-left: 14px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #0066ff;
+  text-decoration: none;
+
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.challenge-scorecard-link:hover {
+  color: #004dcc;
+  text-decoration: underline;
+}
 
 /* =========================================================
    HERO METRICS
@@ -223,49 +211,35 @@ body {
 
 .metrics {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 12px;
-
   margin-top: 28px;
 }
 
 .metric {
   background: rgba(255, 255, 255, 0.07);
-
   border-radius: 14px;
-
   padding: 17px;
 }
 
 .metric-label {
   color: #94a3b8;
-
   font-size: 11px;
-
   text-transform: uppercase;
-
   letter-spacing: 0.07em;
-
   font-weight: 800;
-
   margin-bottom: 7px;
 }
 
 .metric-value {
   font-size: 27px;
-
   line-height: 1.1;
-
   font-weight: 900;
 }
 
 .metric-note {
   color: #cbd5e1;
-
   font-size: 11px;
-
   margin-top: 4px;
 }
 
@@ -276,36 +250,27 @@ body {
 
 .section {
   background: var(--white);
-
   border: 1px solid var(--gray-200);
-
   border-radius: var(--radius);
-
   padding: 24px;
-
   margin-bottom: 20px;
 }
 
 .section-header {
   display: flex;
-
   justify-content: space-between;
   align-items: baseline;
-
   margin-bottom: 20px;
 }
 
 .section-title {
   font-size: 18px;
-
   font-weight: 900;
-
   letter-spacing: -0.3px;
 }
 
 .section-subtitle {
   color: var(--gray-500);
-
   font-size: 13px;
 }
 
@@ -316,78 +281,58 @@ body {
 
 .days {
   display: grid;
-
   grid-template-columns: repeat(10, 1fr);
-
   gap: 7px;
 }
 
 .day {
   min-width: 0;
-
   text-align: center;
 }
 
 .day-number {
   font-size: 11px;
-
   color: var(--gray-500);
-
   font-weight: 800;
-
   margin-bottom: 7px;
 }
 
 .day-box {
   height: 76px;
-
   border-radius: 11px;
-
   background: var(--gray-100);
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-
   border: 1px solid var(--gray-200);
 }
 
 .day-box.complete {
   background: var(--blue-light);
-
   border-color: #bfdbfe;
 }
 
 .day-box.megarep {
   background: var(--green-light);
-
   border-color: #86efac;
 }
 
 .day-box.future {
   background: white;
-
   border-style: dashed;
 }
 
 .day-rate {
   font-size: 17px;
-
   line-height: 1.1;
-
   font-weight: 900;
 }
 
 .day-status {
   font-size: 9px;
-
   color: var(--gray-500);
-
   margin-top: 3px;
-
   font-weight: 800;
 }
 
@@ -402,75 +347,54 @@ body {
 
 .rep-list {
   display: flex;
-
   flex-direction: column;
-
   gap: 10px;
 }
 
 .rep-row {
   display: grid;
-
   grid-template-columns: 55px 1fr 90px;
-
   align-items: center;
-
   gap: 15px;
-
   padding: 13px 15px;
-
   border: 1px solid var(--gray-200);
-
   border-radius: 12px;
-
   transition: 0.15s ease;
 }
 
 .rep-row:hover {
   border-color: #cbd5e1;
-
   background: #fbfdff;
 }
 
 .rep-day {
   color: var(--gray-500);
-
   font-size: 11px;
-
   font-weight: 900;
-
   text-transform: uppercase;
 }
 
 .rep-title {
   font-size: 14px;
-
   font-weight: 800;
 }
 
 .rep-subtitle {
   font-size: 11px;
-
   color: var(--gray-500);
-
   margin-top: 3px;
 }
 
 .rep-rate {
   text-align: right;
-
   font-size: 14px;
-
   font-weight: 900;
 }
 
 .rep-rate span {
   display: block;
-
   color: var(--gray-400);
-
   font-size: 10px;
-
   font-weight: 700;
 }
 
@@ -490,47 +414,34 @@ body {
 
 .aggregate-grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 12px;
 }
 
 .aggregate {
   border: 1px solid var(--gray-200);
-
   border-radius: 14px;
-
   padding: 20px;
-
   background: white;
 }
 
 .aggregate-number {
   font-size: 29px;
-
   line-height: 1.1;
-
   font-weight: 900;
-
   letter-spacing: -1px;
 }
 
 .aggregate-label {
   font-size: 13px;
-
   font-weight: 800;
-
   margin-top: 5px;
 }
 
 .aggregate-description {
   color: var(--gray-500);
-
   font-size: 11px;
-
   line-height: 1.45;
-
   margin-top: 7px;
 }
 
@@ -541,53 +452,39 @@ body {
 
 .feedback {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 12px;
 }
 
 .feedback-card {
   border-radius: 14px;
-
   padding: 18px;
-
   background: var(--gray-50);
-
   border: 1px solid var(--gray-200);
 }
 
 .emoji {
   font-size: 23px;
-
   line-height: 1;
 }
 
 .feedback-number {
   font-size: 25px;
-
   line-height: 1.1;
-
   font-weight: 900;
-
   margin-top: 8px;
 }
 
 .feedback-label {
   font-size: 12px;
-
   line-height: 1.4;
-
   color: var(--gray-600);
-
   margin-top: 4px;
 }
 
 .feedback-note {
   margin-top: 14px;
-
   font-size: 11px;
-
   color: var(--gray-500);
 }
 
@@ -598,39 +495,28 @@ body {
 
 .impact-grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 12px;
 }
 
 .impact-card {
   background: var(--gray-50);
-
   border: 1px solid var(--gray-200);
-
   border-radius: 14px;
-
   padding: 18px;
 }
 
 .impact-number {
   color: var(--navy);
-
   font-size: 24px;
-
   line-height: 1.1;
-
   font-weight: 900;
 }
 
 .impact-label {
   color: var(--gray-600);
-
   font-size: 12px;
-
   line-height: 1.4;
-
   margin-top: 5px;
 }
 
@@ -641,37 +527,27 @@ body {
 
 footer {
   background: #040d20;
-
   color: white;
-
   padding: 30px 20px;
 }
 
 .footer-inner {
   width: min(1100px, 92%);
-
   margin: 0 auto;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 30px;
 }
 
 footer strong {
   font-size: 13px;
-
   letter-spacing: 0.04em;
 }
 
 footer p {
   color: #91a1bd;
-
   font-size: 13px;
-
   margin: 3px 0 0;
 }
 
@@ -688,7 +564,6 @@ footer p {
 
   .days {
     grid-template-columns: repeat(5, 1fr);
-
     gap: 10px;
   }
 
@@ -713,7 +588,6 @@ footer p {
 
   .container {
     width: 94%;
-
     padding: 20px 0 40px;
   }
 
@@ -735,7 +609,6 @@ footer p {
 
   .hero {
     padding: 22px;
-
     border-radius: 18px;
   }
 
@@ -747,11 +620,15 @@ footer p {
     font-size: 14px;
   }
 
+   .challenge-scorecard-link {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
   .metrics {
     grid-template-columns: 1fr 1fr;
-
     gap: 8px;
-
     margin-top: 22px;
   }
 
@@ -765,7 +642,6 @@ footer p {
 
   .section {
     padding: 20px;
-
     border-radius: 14px;
   }
 
@@ -779,7 +655,6 @@ footer p {
 
   .days {
     grid-template-columns: repeat(5, 1fr);
-
     gap: 8px;
   }
 
@@ -797,9 +672,7 @@ footer p {
 
   .rep-row {
     grid-template-columns: 45px 1fr 65px;
-
     gap: 8px;
-
     padding: 12px;
   }
 
@@ -819,11 +692,8 @@ footer p {
 
   .feedback-card {
     display: grid;
-
     grid-template-columns: 35px 55px 1fr;
-
     align-items: center;
-
     gap: 8px;
   }
 
