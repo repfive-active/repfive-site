@@ -99,9 +99,11 @@ body {
 .header-inner {
   width: min(1100px, 92%);
   margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 20px;
 }
 
@@ -154,7 +156,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
+  gap: 24px;
 }
 
 .hero-label {
@@ -174,8 +176,26 @@ body {
   font-size: 15px;
 }
 
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+
 /* Informational — not clickable */
+
 .status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 999px;
@@ -188,6 +208,7 @@ body {
 
 
 /* Clickable public challenge scorecard */
+
 .scorecard-pill {
   display: inline-flex;
   align-items: center;
@@ -219,6 +240,7 @@ body {
   background: #eaf2ff;
   border-color: #bcd4ff;
 }
+
 
 /* =========================================================
    HERO METRICS
@@ -588,8 +610,17 @@ footer p {
     grid-template-columns: 1fr 1fr;
   }
 
+  /*
+    Keep the hero title/content and hero actions
+    separated rather than forcing the actions below.
+  */
+
   .hero-top {
-    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-actions {
+    gap: 8px;
   }
 
 }
@@ -622,6 +653,11 @@ footer p {
     font-size: 10px;
   }
 
+
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
+
   .hero {
     padding: 22px;
     border-radius: 18px;
@@ -635,11 +671,19 @@ footer p {
     font-size: 14px;
   }
 
+
+  /*
+    The actions remain together as a compact
+    horizontal pair, with breathing room.
+  */
+
   .hero-actions {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 8px;
-    margin-top: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
   }
 
   .status-pill,
@@ -647,6 +691,11 @@ footer p {
     font-size: 11px;
     padding: 8px 11px;
   }
+
+
+  /* -----------------------------------------
+     HERO METRICS
+  ----------------------------------------- */
 
   .metrics {
     grid-template-columns: 1fr 1fr;
@@ -662,6 +711,11 @@ footer p {
     font-size: 23px;
   }
 
+
+  /* -----------------------------------------
+     GENERAL SECTIONS
+  ----------------------------------------- */
+
   .section {
     padding: 20px;
     border-radius: 14px;
@@ -674,6 +728,11 @@ footer p {
   .section-subtitle {
     font-size: 12px;
   }
+
+
+  /* -----------------------------------------
+     10-DAY JOURNEY
+  ----------------------------------------- */
 
   .days {
     grid-template-columns: repeat(5, 1fr);
@@ -692,6 +751,11 @@ footer p {
     font-size: 8px;
   }
 
+
+  /* -----------------------------------------
+     DEVELOPMENT JOURNEY
+  ----------------------------------------- */
+
   .rep-row {
     grid-template-columns: 45px 1fr 65px;
     gap: 8px;
@@ -705,6 +769,11 @@ footer p {
   .rep-subtitle {
     font-size: 10px;
   }
+
+
+  /* -----------------------------------------
+     TEAM / FEEDBACK / IMPACT
+  ----------------------------------------- */
 
   .aggregate-grid,
   .feedback,
@@ -726,6 +795,11 @@ footer p {
   .feedback-label {
     margin-top: 0;
   }
+
+
+  /* -----------------------------------------
+     FOOTER
+  ----------------------------------------- */
 
   .footer-inner {
     width: 94%;
