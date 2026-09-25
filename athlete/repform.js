@@ -153,6 +153,12 @@ async function loadRep() {
     }
     
     if (challengeStatus !== "Active") {
+       if (challengeStatus == "Completed") {
+                throw new Error("This challenge is now complete. 🏁\n\n" +
+                       "Check back with your team for future challenges. 💙\n\n" +
+                       "— REPFIVE");
+       }
+       else
        throw new Error("You’re in! Your Challenge isn’t active just yet.\n\n" +
                        "Check back when it goes live and get ready to Rep. 💙\n\n" +
                        "— REPFIVE");
