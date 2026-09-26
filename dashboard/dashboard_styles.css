@@ -448,17 +448,16 @@ body {
 /* =========================================================
    TEAM PARTICIPATION
 ========================================================= */
-
 .aggregate-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
 .aggregate {
   border: 1px solid var(--gray-200);
   border-radius: 14px;
-  padding: 20px;
+  padding: 18px;
   background: white;
 }
 
