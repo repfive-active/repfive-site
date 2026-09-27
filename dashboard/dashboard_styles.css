@@ -624,7 +624,6 @@ footer p {
 
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -670,12 +669,6 @@ footer p {
     font-size: 14px;
   }
 
-
-  /*
-    The actions remain together as a compact
-    horizontal pair, with breathing room.
-  */
-
   .hero-actions {
     display: flex;
     align-items: center;
@@ -694,10 +687,11 @@ footer p {
 
   /* -----------------------------------------
      HERO METRICS
+     Keep these compact: 2 × 2
   ----------------------------------------- */
 
   .metrics {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     margin-top: 22px;
   }
@@ -771,11 +765,17 @@ footer p {
 
 
   /* -----------------------------------------
-     TEAM / FEEDBACK / IMPACT
+     TEAM PULSE / FEEDBACK / IMPACT
   ----------------------------------------- */
 
-  .aggregate-grid,
-  .feedback,
+  .aggregate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback {
+    grid-template-columns: 1fr;
+  }
+
   .impact-grid {
     grid-template-columns: 1fr;
   }
