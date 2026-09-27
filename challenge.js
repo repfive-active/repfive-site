@@ -235,10 +235,10 @@ if (DEBUG) {
           challengeStatus.textContent =
             "🟢 Active";
 
-        } else if (status === "Completed") {
+        } else if (status === "Complete") {
 
           challengeStatus.textContent =
-            "🏆 Completed";
+            "🏆 Complete";
 
         } else if (status === "Not Started") {
 
@@ -264,6 +264,9 @@ if (DEBUG) {
         const startDate =
           new Date(challenge["Start Date"]);
 
+        const endDate =
+          new Date(challenge["End Date"]);
+
 
         const formattedStartDate =
           startDate.toLocaleDateString(
@@ -275,16 +278,33 @@ if (DEBUG) {
             }
           );
 
+        const formattedEndDate =
+          endDate.toLocaleDateString(
+            "en-US",
+            {
+              month: "long",
+              day: "numeric",
+              year: "numeric"
+            }
+          );
+
 
         if (
-          status === "Active" ||
-          status === "Completed"
+          status === "Active"
         ) {
 
           challengeStart.textContent =
             `Started ${formattedStartDate}`;
 
-        } else {
+        } else if (
+          status === "Complete"
+        ) {
+         
+          challengeStart.textContent =
+            `Ended ${formattedEndDate}`;
+
+        } 
+        else {
 
           challengeStart.textContent =
             `Starts ${formattedStartDate}`;
@@ -601,7 +621,7 @@ if (DEBUG) {
       // ========================================
 
       if (journeyMessage) {
-        if (status === "Completed") {
+        if (status === "Complete") {
 
           journeyMessage.textContent =
             "The team reached the finish line. Time to celebrate.";
