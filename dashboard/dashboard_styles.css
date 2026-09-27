@@ -426,13 +426,22 @@ body {
   text-align: right;
   font-size: 14px;
   font-weight: 900;
+  line-height: 1.2;
 }
 
 .rep-rate span {
   display: block;
+  margin-top: 5px;
   color: var(--gray-400);
   font-size: 10px;
   font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.rep-rate span strong {
+  color: var(--navy);
+  font-weight: 900;
 }
 
 .rep-row.upcoming .rep-title,
