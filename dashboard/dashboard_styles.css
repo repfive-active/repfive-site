@@ -438,11 +438,6 @@ body {
   line-height: 1.35;
 }
 
-.rep-rate span strong {
-  color: var(--navy);
-  font-weight: 900;
-}
-
 .rep-row.upcoming .rep-title,
 .rep-row.upcoming .rep-rate {
   color: var(--gray-400);
