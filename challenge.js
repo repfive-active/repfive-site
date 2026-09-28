@@ -561,12 +561,12 @@ if (DEBUG) {
           percent * 100;
 
       }
-      if (
+      else if (
         percent > 1
       ) {
 
         percent =
-          1 * 100;
+          percent * 100;
       }
 
 
