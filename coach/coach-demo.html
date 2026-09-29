@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10-Day Soccer Challenge — Coach Demo</title>
+
+<style>
+  :root {
+    --green: #166534;
+    --green-light: #dcfce7;
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+    --purple: #7c3aed;
+    --purple-light: #ede9fe;
+    --gold: #f59e0b;
+    --gold-light: #fef3c7;
+    --gray: #64748b;
+    --light: #f8fafc;
+    --border: #e2e8f0;
+    --text: #172033;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f1f5f9;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  header {
+    background: linear-gradient(135deg, #14532d, #166534);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+  }
+
+  header p {
+    margin: 0;
+    opacity: .9;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 16px;
+  }
+
+  .rep {
+    background: white;
+    border-radius: 18px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, .08);
+    border: 1px solid var(--border);
+  }
+
+  .rep-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 22px 14px;
+  }
+
+  .day {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .title h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .type {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray);
+  }
+
+  .core {
+    margin: 0 22px 20px;
+    padding: 14px 16px;
+    background: var(--light);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  .video {
+    position: relative;
+    width: 100%;
+    background: #000;
+  }
+
+  .video iframe {
+    display: block;
+    width: 100%;
+    height: 430px;
+    border: 0;
+  }
+
+  .questions {
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .question {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .question h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  .question p {
+    margin: 0 0 14px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .option {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+  }
+
+  .option.correct {
+    background: var(--green-light);
+    border-color: #86efac;
+    color: #14532d;
+    font-weight: 700;
+  }
+
+  .answer-label {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .try h3 {
+    color: var(--blue);
+  }
+
+  .try .option.correct {
+    background: var(--blue-light);
+    border-color: #93c5fd;
+    color: #1e40af;
+  }
+
+  .try .answer-label {
+    color: var(--blue);
+  }
+
+  .footer {
+    text-align: center;
+    color: var(--gray);
+    padding: 20px 0 50px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 700px) {
+    .questions {
+      grid-template-columns: 1fr;
+    }
+
+    .video iframe {
+      height: 360px;
+    }
+
+    header h1 {
+      font-size: 25px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>10-Day Soccer Challenge for U13 players</h1>
+  <p>Discover. Think. Rep. Together.</p>
+</header>
+
+<div class="container">
+
+  <!-- DAY 1 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">1</div>
+      <div class="title">
+        <h2>Scan Before You Receive</h2>
+        <span class="type">⚽ Sport</span>
+      </div>
+    </div>
+
+    <div class="core">
+      Before the ball gets to you, find out what's around you so you can make your next decision earlier.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/vzu_hOn2Bm4"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>What was different about the better way of receiving?</p>
+
+        <div class="options">
+          <div class="option correct">A — The player looked around before receiving</div>
+          <div class="option">B — The player took more touches</div>
+          <div class="option">C — The player moved closer to the ball</div>
+          <div class="option">D — The player waited longer before playing</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>What will you try the next time the ball is coming to you?</p>
+
+        <div class="options">
+          <div class="option correct">A — Scan before the ball arrives</div>
+          <div class="option">B — Watch only the ball</div>
+          <div class="option">C — Wait until I receive it to look up</div>
+          <div class="option">D — Turn and play quickly</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 2 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">2</div>
+      <div class="title">
+        <h2>One Word</h2>
+        <span class="type">🤝 Team</span>
+      </div>
+    </div>
+
+    <div class="core">
+      Communication changes a teammate's action; a quick word can support them to make their next move.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/isSJ5QM9YSw?start=50&end=250"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>What did good communication help the teammates do together?</p>
+
+        <div class="options">
+          <div class="option">A — Get more comfortable with the ball</div>
+          <div class="option correct">B — Coordinate their movements</div>
+          <div class="option">C — Make the play last longer</div>
+          <div class="option">D — Make the teammate wait for instructions</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>Are there communication words your team could use more often? Let your teammates know.</p>
+
+        <div class="options">
+          <div class="option correct">A — Yes, I’ll go first and use our communication words more in games</div>
+          <div class="option">B — Yes, but I’ll wait for someone else to use them first</div>
+          <div class="option">C — Maybe, I’ll only say something when I have the ball</div>
+          <div class="option">D — No, I think our team communicates well</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 3 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">3</div>
+      <div class="title">
+        <h2>Pass and Move</h2>
+        <span class="type">⚽ Sport</span>
+      </div>
+    </div>
+
+    <div class="core">
+      Passing is not the end of your involvement; move to create the next option.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/3VFK7xFkYIQ"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>Why was the player's movement after passing useful?</p>
+
+        <div class="options">
+          <div class="option correct">A — It gave the teammate another passing option</div>
+          <div class="option">B — It gave the player time to stop the game</div>
+          <div class="option">C — It gave the player someone to defend against</div>
+          <div class="option">D — It brought the player closer to the ball</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>After you pass, how will you help your teammate?</p>
+
+        <div class="options">
+          <div class="option correct">A — I’ll move to give them another option</div>
+          <div class="option">B — I’ll wait and see what they do</div>
+          <div class="option">C — I’ll watch the play</div>
+          <div class="option">D — I’ll stay where I am</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 4 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">4</div>
+      <div class="title">
+        <h2>Keep It Simple</h2>
+        <span class="type">🌟 Life</span>
+      </div>
+    </div>
+
+    <div class="core">
+      When soccer feels complicated, focusing on the simple things you can control can help you make better decisions.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/HSg4yHYk25o"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>Why can keeping things simple be helpful?</p>
+
+        <div class="options">
+          <div class="option correct">A — It helps you focus on what matters</div>
+          <div class="option">B — It means you don't have to work hard</div>
+          <div class="option">C — It guarantees everything will go your way</div>
+          <div class="option">D — It means you can ignore problems</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>When the game starts to feel complicated, what will you try?</p>
+
+        <div class="options">
+          <div class="option correct">A — Focus on the next thing I can control</div>
+          <div class="option">B — Try to fix everything at once</div>
+          <div class="option">C — Worry about what might happen next</div>
+          <div class="option">D — Wait for someone else to solve it</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 5 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">5</div>
+      <div class="title">
+        <h2>Defend the 1v1</h2>
+        <span class="type">⚽ Sport</span>
+      </div>
+    </div>
+
+    <div class="core">
+      Good 1v1 defending means slowing the attacker down, staying in control, and waiting for the right moment.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/brf4Rl8pGiU"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>What was the defender trying to achieve before winning the ball?</p>
+
+        <div class="options">
+          <div class="option">A — Get close to the attacker immediately</div>
+          <div class="option correct">B — Slow the attacker down and reduce the danger</div>
+          <div class="option">C — Let the attacker run toward goal</div>
+          <div class="option">D — Wait for the attacker to stop moving</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>What will you try next time you defend 1v1?</p>
+
+        <div class="options">
+          <div class="option correct">A — Slow them down and show them outside</div>
+          <div class="option">B — Dive in as quickly as possible</div>
+          <div class="option">C — Turn and run toward my own goal</div>
+          <div class="option">D — Wait for my teammate to win the ball</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 6 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">6</div>
+      <div class="title">
+        <h2>Pro Eyes</h2>
+        <span class="type">🎮 Fun</span>
+      </div>
+    </div>
+
+    <div class="core">
+      Look for clues around the ball and try to predict what might happen next.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/7fGvWAfoYCM?start=30&end=280"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>See it like the pro: what do you think a professional player notices before making his move?</p>
+
+        <div class="options">
+          <div class="option">A — An open teammate</div>
+          <div class="option">B — Space he could attack</div>
+          <div class="option">C — A defender's position</div>
+          <div class="option correct">D — More than one option</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>Think like the pro: what will you try to spot before your next touch?</p>
+
+        <div class="options">
+          <div class="option">A — Where I can turn</div>
+          <div class="option">B — Where my teammate is</div>
+          <div class="option">C — Where the defenders are</div>
+          <div class="option correct">D — All of these</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 7 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">7</div>
+      <div class="title">
+        <h2>First Touch With Purpose</h2>
+        <span class="type">⚽ Sport</span>
+      </div>
+    </div>
+
+    <div class="core">
+      A first touch keeps the ball close and gives you more control over what you do next.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/_ePH5L2VOT0"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>What made the player's first touch effective?</p>
+
+        <div class="options">
+          <div class="option">A — He stopped the ball completely</div>
+          <div class="option correct">B — He cushioned the ball and kept it close</div>
+          <div class="option">C — He kicked the ball as far as possible</div>
+          <div class="option">D — He took lots of small touches</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>What will you try to do with your first touch?</p>
+
+        <div class="options">
+          <div class="option">A — Make the ball stop at my feet</div>
+          <div class="option correct">B — Use my first touch to set up my next move</div>
+          <div class="option">C — Kick the ball as far away as possible</div>
+          <div class="option">D — Take several touches before deciding</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 8 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">8</div>
+      <div class="title">
+        <h2>Find Space</h2>
+        <span class="type">🤝 Team</span>
+      </div>
+    </div>
+
+    <div class="core">
+      When you don't have the ball, look for space that helps the play. Smart movement can give your teammate a clear option.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/83RNgvSpEN4"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>What is the player trying to create with their movement?</p>
+
+        <div class="options">
+          <div class="option correct">A — Space to become available for a pass</div>
+          <div class="option">B — More pressure on the ball</div>
+          <div class="option">C — A reason for the defender to chase them</div>
+          <div class="option">D — A way to stay close to their teammate</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>You don't have the ball and the play is moving toward you. What should you be thinking about?</p>
+
+        <div class="options">
+          <div class="option correct">A — Where can I move to support my teammate?</div>
+          <div class="option">B — Wait, why isn't my teammate looking for me?</div>
+          <div class="option">C — How can I get closer to the ball?</div>
+          <div class="option">D — When will my teammate pass to me?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 9 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">9</div>
+      <div class="title">
+        <h2>The First 3 Seconds</h2>
+        <span class="type">⚽ Sport</span>
+      </div>
+    </div>
+
+    <div class="core">
+      When the team loses the ball, the first few seconds matter. Know your job and help the team defend.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/NXMGwEBLE1E"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>What are the three jobs players can have after losing the ball?</p>
+
+        <div class="options">
+          <div class="option correct">A — Ball, depth, passing lanes</div>
+          <div class="option">B — Ball, space, attack</div>
+          <div class="option">C — Pressure, possession, passing</div>
+          <div class="option">D — Defend, attack, support</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>What will you do first when your team loses the ball?</p>
+
+        <div class="options">
+          <div class="option">A — Chase the ball</div>
+          <div class="option correct">B — Find my defensive job</div>
+          <div class="option">C — Stay where I am</div>
+          <div class="option">D — Wait for someone else to defend</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DAY 10 -->
+  <section class="rep">
+    <div class="rep-header">
+      <div class="day">10</div>
+      <div class="title">
+        <h2>Next Chance</h2>
+        <span class="type">🌟 Life</span>
+      </div>
+    </div>
+
+    <div class="core">
+      Even the best players make mistakes. What matters is how you respond when the next opportunity comes.
+    </div>
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/LHovsGSNXf0"
+        title="YouTube video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="questions">
+      <div class="question">
+        <h3>Q1 — Notice</h3>
+        <p>What can you learn from seeing a professional player make a mistake?</p>
+
+        <div class="options">
+          <div class="option correct">A — Everyone makes mistakes</div>
+          <div class="option">B — Great players shouldn't make mistakes</div>
+          <div class="option">C — You should stop after a mistake</div>
+          <div class="option">D — Mistakes decide the outcome</div>
+        </div>
+      </div>
+
+      <div class="question try">
+        <h3>Q2 — Try</h3>
+        <p>After a team mistake, what will you try to do next?</p>
+
+        <div class="options">
+          <div class="option">A — Think about it for the rest of the game</div>
+          <div class="option">B — Complain to the coach</div>
+          <div class="option correct">C — Focus on the next chance</div>
+          <div class="option">D — Give up on the play</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  10 Days • 10 Reps • Notice → Try
+</div>
+
+</body>
+</html>
