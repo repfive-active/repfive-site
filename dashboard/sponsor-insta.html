@@ -28,6 +28,12 @@
   padding: 0;
 }
 
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
   font-family:
     Inter,
@@ -43,8 +49,10 @@ body {
   color: var(--navy);
 }
 
+
 /* ========================================
    INSTAGRAM CANVAS
+   1080 x 1350
 ======================================== */
 
 .canvas {
@@ -56,12 +64,12 @@ body {
 
   background:
     radial-gradient(
-      circle at 92% 8%,
+      circle at 90% 5%,
       rgba(22,119,255,.48),
-      transparent 28%
+      transparent 29%
     ),
     radial-gradient(
-      circle at 5% 95%,
+      circle at 5% 90%,
       rgba(183,255,60,.12),
       transparent 25%
     ),
@@ -74,39 +82,41 @@ body {
   color: white;
 }
 
-/* Decorative glow */
-
 .canvas::before {
   content: "";
   position: absolute;
+
   width: 520px;
   height: 520px;
+
   border-radius: 50%;
 
-  right: -240px;
-  top: 310px;
+  right: -250px;
+  top: 300px;
 
   background: rgba(22,119,255,.12);
-  filter: blur(20px);
+  filter: blur(25px);
 }
 
 .canvas::after {
   content: "";
+
   position: absolute;
 
   width: 700px;
   height: 2px;
 
   left: 0;
-  bottom: 170px;
+  bottom: 142px;
 
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(183,255,60,.45),
+    rgba(183,255,60,.4),
     transparent
   );
 }
+
 
 /* ========================================
    CONTENT
@@ -118,27 +128,27 @@ body {
 
   width: 900px;
   height: 100%;
-  margin: 0 auto;
 
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
 }
+
 
 /* ========================================
    HEADER
 ======================================== */
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 82px;
 
-  padding-top: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
   font-size: 42px;
   line-height: 1;
+
   font-weight: 950;
   letter-spacing: -2.5px;
 }
@@ -163,12 +173,13 @@ body {
   text-transform: uppercase;
 }
 
+
 /* ========================================
    HERO
 ======================================== */
 
 .hero {
-  padding-top: 65px;
+  padding-top: 42px;
 }
 
 .eyebrow {
@@ -178,12 +189,12 @@ body {
 
   color: var(--lime);
 
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  margin-bottom: 22px;
+  margin-bottom: 17px;
 }
 
 .eyebrow::before {
@@ -197,12 +208,13 @@ body {
 }
 
 .hero h1 {
-  font-size: 104px;
+  font-size: 83px;
   line-height: .88;
-  letter-spacing: -6px;
+
+  letter-spacing: -5px;
   font-weight: 950;
 
-  margin-bottom: 25px;
+  margin-bottom: 18px;
 }
 
 .hero h1 span {
@@ -214,7 +226,7 @@ body {
 
   color: #c9d7ef;
 
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.35;
 }
 
@@ -222,77 +234,73 @@ body {
   color: white;
 }
 
+
 /* ========================================
    PRIMARY STATS
 ======================================== */
 
 .primary-stats {
-  margin-top: 48px;
+  margin-top: 27px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 15px;
+  gap: 13px;
 }
 
 .primary-stat {
-  padding: 25px 22px;
+  padding: 18px 21px;
 
-  border-radius: 22px;
+  border-radius: 19px;
 
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.13);
 }
 
 .primary-stat .number {
-  font-size: 50px;
+  font-size: 43px;
   line-height: .95;
 
   font-weight: 950;
   letter-spacing: -2px;
-
-  color: white;
-}
-
-.primary-stat .number span {
-  color: var(--lime);
 }
 
 .primary-stat .label {
-  margin-top: 9px;
+  margin-top: 7px;
 
   color: #aebfdc;
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 850;
 
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+
 /* ========================================
    DEVELOPMENT STRIP
 ======================================== */
 
 .development {
-  margin-top: 28px;
+  margin-top: 14px;
 
-  padding: 21px 25px;
+  padding: 16px 21px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-radius: 20px;
+  border-radius: 18px;
 
-  background: var(--white);
+  background: white;
   color: var(--navy);
 }
 
 .development-label {
   color: var(--blue);
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
 
   text-transform: uppercase;
@@ -301,9 +309,9 @@ body {
 
 .development-items {
   display: flex;
-  gap: 30px;
+  gap: 25px;
 
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 900;
 }
 
@@ -314,160 +322,237 @@ body {
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 
   border-radius: 50%;
   background: var(--blue);
 }
 
+
 /* ========================================
-   RESULTS PANEL
+   LOWER GRID
 ======================================== */
 
-.results {
-  margin-top: 28px;
-
+.lower-grid {
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
 
-  gap: 16px;
+  grid-template-columns: 1.12fr .88fr;
+
+  gap: 14px;
+
+  margin-top: 14px;
 }
 
-.results-main {
-  padding: 27px;
 
-  border-radius: 23px;
+/* ========================================
+   PARTICIPATION CHART
+======================================== */
+
+.chart-card {
+  padding: 20px 22px;
+
+  border-radius: 20px;
 
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.12);
 }
 
-.results-title {
+.chart-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+}
+
+.chart-title {
   color: var(--lime);
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 1.4px;
+
   text-transform: uppercase;
-
-  margin-bottom: 17px;
+  letter-spacing: 1.4px;
 }
 
-.results-main h2 {
-  font-size: 38px;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-
-  margin-bottom: 21px;
-}
-
-.result-row {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-
-  margin-bottom: 15px;
-}
-
-.result-row:last-child {
-  margin-bottom: 0;
-}
-
-.result-icon {
-  width: 35px;
-  height: 35px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 10px;
-
-  background: rgba(183,255,60,.12);
-
-  font-size: 17px;
-}
-
-.result-row strong {
-  font-size: 16px;
-}
-
-.result-row small {
-  display: block;
-
-  color: #9fb1ce;
+.chart-summary {
+  color: #aebfdc;
 
   font-size: 11px;
+  font-weight: 700;
 }
 
-/* ========================================
-   MEGAREP CARD
-======================================== */
+.chart-summary strong {
+  color: white;
+}
 
-.megarep {
+.chart {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 7px;
+}
 
-  padding: 27px;
+.bar-row {
+  display: grid;
 
-  border-radius: 23px;
+  grid-template-columns: 65px 1fr 40px;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.player {
+  color: #c9d7ef;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.bar-track {
+  height: 10px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.10);
+}
+
+.bar {
+  height: 100%;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      #52a0ff
+    );
+
+  transition: width .4s ease;
+}
+
+.bar.full {
+  background:
+    linear-gradient(
+      90deg,
+      var(--lime),
+      #83ff18
+    );
+}
+
+.percent {
+  color: #c9d7ef;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  text-align: right;
+}
+
+
+/* ========================================
+   RESULTS CARD
+======================================== */
+
+.results-card {
+  padding: 20px 22px;
+
+  border-radius: 20px;
 
   background: var(--lime);
+
   color: var(--navy);
 }
 
-.megarep-label {
-  font-size: 11px;
+.results-label {
+  font-size: 10px;
   font-weight: 950;
 
-  letter-spacing: 1.5px;
   text-transform: uppercase;
+  letter-spacing: 1.4px;
 
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-.megarep-number {
-  font-size: 76px;
-  line-height: .85;
+.results-card h2 {
+  font-size: 29px;
+  line-height: 1;
 
-  font-weight: 950;
-  letter-spacing: -5px;
+  letter-spacing: -1.2px;
 
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
-.megarep h3 {
-  font-size: 23px;
-  line-height: 1.05;
+.result {
+  display: flex;
+  align-items: center;
 
-  margin-bottom: 10px;
+  gap: 10px;
+
+  padding: 9px 0;
+
+  border-top: 1px solid rgba(7,21,47,.13);
 }
 
-.megarep p {
+.result-icon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: rgba(7,21,47,.08);
+
+  font-size: 14px;
+}
+
+.result strong {
+  display: block;
+
   font-size: 13px;
-  line-height: 1.4;
-
-  color: #30420e;
 }
+
+.result small {
+  display: block;
+
+  color: #425519;
+
+  font-size: 9px;
+}
+
 
 /* ========================================
    CELEBRATION
 ======================================== */
 
 .celebration {
-  margin-top: auto;
-  margin-bottom: 48px;
+  position: absolute;
 
-  padding: 31px 40px;
+  left: 0;
+  right: 0;
+  bottom: 157px;
 
-  border-radius: 27px;
+  min-height: 118px;
+
+  padding: 25px 31px;
+
+  border-radius: 23px;
 
   display: grid;
   grid-template-columns: 1fr auto;
 
   align-items: center;
+
   gap: 30px;
 
   background:
@@ -483,28 +568,28 @@ body {
 .celebration-eyebrow {
   color: var(--blue);
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 950;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
 
-  margin-bottom: 7px;
+  margin-bottom: 5px;
 }
 
 .celebration h2 {
-  font-size: 37px;
+  font-size: 34px;
   line-height: 1;
 
   letter-spacing: -1.5px;
 
-  margin-bottom: 9px;
+  margin-bottom: 7px;
 }
 
 .celebration p {
   color: var(--gray);
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .sponsor {
@@ -520,23 +605,24 @@ body {
 .sponsor-label {
   color: var(--gray);
 
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
 
   text-transform: uppercase;
   letter-spacing: 1.2px;
 
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .sponsor-name {
   color: var(--blue);
 
-  font-size: 27px;
+  font-size: 26px;
   font-weight: 950;
 
   letter-spacing: -1px;
 }
+
 
 /* ========================================
    FOOTER
@@ -545,27 +631,64 @@ body {
 .footer {
   position: absolute;
 
-  left: 90px;
-  right: 90px;
-  bottom: 20px;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+
+  height: 70px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   color: #7890b5;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
 }
 
-.footer strong {
+.footer-left strong {
   color: #c9d7ef;
+}
+
+.footer-right {
+  color: var(--lime);
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
 }
 
 
 /* ========================================
-   PRINT / SCREENSHOT
+   MOBILE PREVIEW
+======================================== */
+
+@media (max-width: 1080px) {
+
+  body {
+    background: var(--navy);
+  }
+
+  .canvas {
+    margin: 0;
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .canvas {
+    transform: scale(.7);
+
+    margin-bottom: -405px;
+  }
+}
+
+
+/* ========================================
+   PRINT
 ======================================== */
 
 @media print {
@@ -577,35 +700,6 @@ body {
   .canvas {
     margin: 0;
   }
-
-}
-
-
-/* ========================================
-   RESPONSIVE PREVIEW
-======================================== */
-
-@media (max-width: 1080px) {
-
-  body {
-    background: var(--navy);
-  }
-
-  .canvas {
-    transform-origin: top center;
-  }
-
-}
-
-@media (max-width: 700px) {
-
-  .canvas {
-    transform: scale(.7);
-    transform-origin: top left;
-
-    margin-bottom: -405px;
-  }
-
 }
 </style>
 </head>
@@ -617,7 +711,9 @@ body {
 
   <div class="content">
 
-    <!-- HEADER -->
+    <!-- ================================
+         HEADER
+    ================================= -->
 
     <header class="header">
 
@@ -632,9 +728,11 @@ body {
     </header>
 
 
-    <!-- HERO -->
+    <!-- ================================
+         HERO
+    ================================= -->
 
-    <section class="hero">
+    <main class="hero">
 
       <div class="eyebrow">
         Challenge Complete
@@ -657,47 +755,24 @@ body {
       <div class="primary-stats">
 
         <div class="primary-stat">
-
-          <div class="number">
-            14
-          </div>
-
-          <div class="label">
-            Players
-          </div>
-
+          <div class="number">14</div>
+          <div class="label">Players</div>
         </div>
 
-
         <div class="primary-stat">
-
-          <div class="number">
-            10
-          </div>
-
-          <div class="label">
-            Days
-          </div>
-
+          <div class="number">10</div>
+          <div class="label">Days</div>
         </div>
 
-
         <div class="primary-stat">
-
-          <div class="number">
-            112
-          </div>
-
-          <div class="label">
-            Reps Completed
-          </div>
-
+          <div class="number">112</div>
+          <div class="label">Reps Completed</div>
         </div>
 
       </div>
 
 
-      <!-- DEVELOPMENT -->
+      <!-- DEVELOPMENT FOCUS -->
 
       <div class="development">
 
@@ -727,23 +802,52 @@ body {
       </div>
 
 
-      <!-- RESULTS -->
+      <!-- ================================
+           CHART + RESULTS
+      ================================= -->
 
-      <div class="results">
+      <div class="lower-grid">
 
-        <div class="results-main">
 
-          <div class="results-title">
+        <!-- PARTICIPATION -->
+
+        <div class="chart-card">
+
+          <div class="chart-header">
+
+            <div class="chart-title">
+              Player Participation
+            </div>
+
+            <div class="chart-summary">
+              <strong>14 / 14</strong> participated
+            </div>
+
+          </div>
+
+          <div
+            class="chart"
+            id="participationChart">
+          </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="results-card">
+
+          <div class="results-label">
             The work adds up
           </div>
 
           <h2>
-            More than just<br>
+            More than<br>
             showing up.
           </h2>
 
 
-          <div class="result-row">
+          <div class="result">
 
             <div class="result-icon">
               ⚡
@@ -752,14 +856,14 @@ body {
             <div>
               <strong>2,340 Team Points</strong>
               <small>
-                Earned through challenge participation
+                Challenge participation
               </small>
             </div>
 
           </div>
 
 
-          <div class="result-row">
+          <div class="result">
 
             <div class="result-icon">
               ⏱
@@ -768,60 +872,38 @@ body {
             <div>
               <strong>~317 Minutes</strong>
               <small>
-                Approximately 5+ hours of development
+                5+ hours of development
               </small>
             </div>
 
           </div>
 
 
-          <div class="result-row">
+          <div class="result">
 
             <div class="result-icon">
-              👥
+              🔥
             </div>
 
             <div>
-              <strong>14 / 14 Players</strong>
+              <strong>1 MEGAREP</strong>
               <small>
-                Every player contributed
+                Everyone contributed
               </small>
             </div>
 
           </div>
-
-        </div>
-
-
-        <!-- MEGAREP -->
-
-        <div class="megarep">
-
-          <div class="megarep-label">
-            Team Milestone
-          </div>
-
-          <div class="megarep-number">
-            1
-          </div>
-
-          <h3>
-            MEGAREP
-          </h3>
-
-          <p>
-            A shared team moment when everyone
-            showed up and contributed.
-          </p>
 
         </div>
 
       </div>
 
-    </section>
+    </main>
 
 
-    <!-- CELEBRATION -->
+    <!-- ================================
+         CELEBRATION
+    ================================= -->
 
     <section class="celebration">
 
@@ -849,7 +931,7 @@ body {
           Made possible by
         </div>
 
-        <!-- CHANGE SPONSOR NAME -->
+        <!-- CHANGE THIS -->
 
         <div class="sponsor-name">
           Sponsor Name
@@ -859,26 +941,121 @@ body {
 
     </section>
 
-  </div>
 
+    <!-- ================================
+         FOOTER
+    ================================= -->
 
-  <!-- FOOTER -->
+    <footer class="footer">
 
-  <div class="footer">
+      <div class="footer-left">
+        <strong>REPFIVE</strong>
+        &nbsp; • &nbsp;
+        Building better players. Building stronger teams.
+      </div>
 
-    <div>
-      <strong>REPFIVE</strong>
-      &nbsp; • &nbsp;
-      Building better players. Building stronger teams.
-    </div>
+      <div class="footer-right">
+        TEAM CHALLENGE
+      </div>
 
-    <div>
-      TEAM CHALLENGE
-    </div>
+    </footer>
 
   </div>
 
 </div>
+
+
+<script>
+
+/*
+================================================
+PLAYER PARTICIPATION DATA
+================================================
+
+Change these numbers to the actual participation
+percentages from the REPFIVE dashboard.
+
+The chart automatically updates.
+*/
+
+const participationData = [
+  { name: "Player 01", value: 100 },
+  { name: "Player 02", value: 100 },
+  { name: "Player 03", value: 100 },
+  { name: "Player 04", value: 90 },
+  { name: "Player 05", value: 90 },
+  { name: "Player 06", value: 80 },
+  { name: "Player 07", value: 80 },
+  { name: "Player 08", value: 80 },
+  { name: "Player 09", value: 70 },
+  { name: "Player 10", value: 70 },
+  { name: "Player 11", value: 60 },
+  { name: "Player 12", value: 60 },
+  { name: "Player 13", value: 50 },
+  { name: "Player 14", value: 50 }
+];
+
+
+const chart =
+  document.getElementById("participationChart");
+
+
+participationData.forEach(player => {
+
+  const row =
+    document.createElement("div");
+
+  row.className = "bar-row";
+
+
+  const name =
+    document.createElement("div");
+
+  name.className = "player";
+
+  name.textContent =
+    player.name;
+
+
+  const track =
+    document.createElement("div");
+
+  track.className =
+    "bar-track";
+
+
+  const bar =
+    document.createElement("div");
+
+  bar.className =
+    "bar" +
+    (player.value >= 100 ? " full" : "");
+
+  bar.style.width =
+    player.value + "%";
+
+
+  const percent =
+    document.createElement("div");
+
+  percent.className =
+    "percent";
+
+  percent.textContent =
+    player.value + "%";
+
+
+  track.appendChild(bar);
+
+  row.appendChild(name);
+  row.appendChild(track);
+  row.appendChild(percent);
+
+  chart.appendChild(row);
+
+});
+
+</script>
 
 </body>
 </html>
