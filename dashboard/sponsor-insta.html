@@ -44,6 +44,7 @@ body {
     Helvetica,
     Arial,
     sans-serif;
+
   background: #dfe4ec;
   color: var(--navy);
 }
@@ -55,7 +56,8 @@ body {
 
 .canvas {
   width: 1080px;
-  height: 1350px;
+  min-height: 1350px;
+  height: auto;
 
   margin: 30px auto;
 
@@ -72,9 +74,9 @@ body {
 ================================================== */
 
 .hero {
-  height: 545px;
+  min-height: 545px;
 
-  padding: 32px 72px 0;
+  padding: 32px 72px 28px;
 
   position: relative;
   overflow: hidden;
@@ -296,11 +298,10 @@ body {
 
 /* ==================================================
    DEVELOPMENT FOCUS
-   — NOW CLEANLY PART OF HERO
 ================================================== */
 
 .development {
-  height: 58px;
+  min-height: 58px;
 
   margin-top: 13px;
 
@@ -388,14 +389,15 @@ body {
 
 
 /* ==================================================
-   DATA SECTION
+   DATA AREA
+   CONTENT DRIVEN — NO FIXED HEIGHT
 ================================================== */
 
 .data-area {
-  height: 610px;
+  height: auto;
 
   padding:
-    25px 72px 0;
+    25px 72px 20px;
 
   background: var(--off-white);
 }
@@ -416,7 +418,7 @@ body {
 
 
 /* ==================================================
-   CENTER DATA GRID
+   DATA GRID
 ================================================== */
 
 .data-grid {
@@ -439,7 +441,9 @@ body {
 ================================================== */
 
 .chart-card {
-  height: 225px;
+  min-height: 225px;
+
+  height: auto;
 
   padding: 22px 24px;
 
@@ -579,7 +583,9 @@ body {
 ================================================== */
 
 .results-card {
-  height: 225px;
+  min-height: 225px;
+
+  height: auto;
 
   padding: 22px 24px;
 
@@ -804,7 +810,7 @@ body {
 ================================================== */
 
 .footer {
-  height: 92px;
+  height: 63px;
 
   margin: 0 72px;
 
@@ -848,15 +854,16 @@ body {
 
   .canvas {
     width: 100%;
-    height: auto;
 
     min-height: 100vh;
+
+    height: auto;
 
     margin: 0;
   }
 
   .hero {
-    height: auto;
+    min-height: auto;
 
     padding:
       30px 5% 28px;
@@ -866,7 +873,7 @@ body {
     height: auto;
 
     padding:
-      25px 5% 0;
+      25px 5% 20px;
   }
 
   .hero h1 {
@@ -905,7 +912,6 @@ body {
 
   .chart-card,
   .results-card {
-    height: auto;
     min-height: 225px;
   }
 
@@ -930,8 +936,6 @@ body {
   }
 
   .footer {
-    margin: 0 5%;
-
     height: auto;
 
     padding: 20px 0;
@@ -1015,12 +1019,17 @@ body {
     margin: 0;
   }
 
+  html,
   body {
     background: white;
   }
 
   .canvas {
     margin: 0;
+
+    width: 1080px;
+
+    min-height: 1350px;
   }
 }
 </style>
@@ -1074,29 +1083,40 @@ body {
 
 
       <!-- =============================================
-           FOUR KEY NUMBERS
+           KEY NUMBERS
       ============================================== -->
 
       <div class="primary-stats">
 
         <div class="primary-stat">
           <div class="number">14</div>
-          <div class="label">Players</div>
+          <div class="label">
+            Players
+          </div>
         </div>
+
 
         <div class="primary-stat">
           <div class="number">10</div>
-          <div class="label">Days</div>
+          <div class="label">
+            Days
+          </div>
         </div>
+
 
         <div class="primary-stat">
           <div class="number">112</div>
-          <div class="label">Reps Completed</div>
+          <div class="label">
+            Reps Completed
+          </div>
         </div>
+
 
         <div class="primary-stat">
           <div class="number">317</div>
-          <div class="label">Minutes of Development</div>
+          <div class="label">
+            Minutes of Development
+          </div>
         </div>
 
       </div>
@@ -1140,7 +1160,7 @@ body {
 
 
   <!-- =================================================
-       DATA / PARTICIPATION
+       DATA SECTION
   ================================================== -->
 
   <section class="data-area">
@@ -1154,7 +1174,7 @@ body {
 
 
       <!-- =============================================
-           PARTICIPATION
+           PARTICIPATION MILESTONES
       ============================================== -->
 
       <div class="chart-card">
@@ -1267,7 +1287,7 @@ body {
 
 
       <!-- =============================================
-           TEAM MOMENT
+           ONE TEAM
       ============================================== -->
 
       <div class="results-card">
@@ -1336,7 +1356,7 @@ body {
 
 
     <!-- =================================================
-         MOVIE NIGHT / SPONSOR
+         CELEBRATION / SPONSOR
     ================================================== -->
 
     <div class="celebration">
