@@ -44,15 +44,14 @@ body {
     Helvetica,
     Arial,
     sans-serif;
-
   background: #dfe4ec;
   color: var(--navy);
 }
 
 
-/* ========================================
+/* ==================================================
    INSTAGRAM CANVAS
-======================================== */
+================================================== */
 
 .canvas {
   width: 1080px;
@@ -60,21 +59,22 @@ body {
 
   margin: 30px auto;
 
-  position: relative;
   overflow: hidden;
 
   background: var(--off-white);
+
+  position: relative;
 }
 
 
-/* ========================================
+/* ==================================================
    HERO
-======================================== */
+================================================== */
 
 .hero {
-  height: 555px;
+  height: 545px;
 
-  padding: 34px 72px 35px;
+  padding: 32px 72px 0;
 
   position: relative;
   overflow: hidden;
@@ -99,37 +99,36 @@ body {
 
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
 
-  right: -270px;
-  bottom: -330px;
+  right: -300px;
+  bottom: -370px;
 
   border-radius: 50%;
 
-  background: rgba(183,255,60,.06);
+  background: rgba(183,255,60,.055);
 }
 
 
-/* ========================================
+/* ==================================================
    HEADER
-======================================== */
+================================================== */
 
 .header {
   position: relative;
   z-index: 2;
 
-  height: 52px;
+  height: 50px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
 .logo {
   font-size: 38px;
+  line-height: 1;
 
   font-weight: 950;
 
@@ -143,11 +142,9 @@ body {
 .header-label {
   padding: 8px 17px;
 
-  border:
-    1px solid rgba(183,255,60,.4);
+  border: 1px solid rgba(183,255,60,.4);
 
-  background:
-    rgba(183,255,60,.08);
+  background: rgba(183,255,60,.08);
 
   border-radius: 999px;
 
@@ -163,27 +160,25 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    HERO COPY
-======================================== */
+================================================== */
 
 .hero-copy {
   position: relative;
   z-index: 2;
 
-  margin-top: 24px;
+  margin-top: 21px;
 }
 
 .eyebrow {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
 
   color: var(--lime);
 
-  font-size: 12px;
+  font-size: 11px;
 
   font-weight: 900;
 
@@ -191,13 +186,13 @@ body {
 
   text-transform: uppercase;
 
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .eyebrow::before {
   content: "";
 
-  width: 32px;
+  width: 31px;
   height: 3px;
 
   background: currentColor;
@@ -206,7 +201,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 75px;
+  font-size: 73px;
 
   line-height: .87;
 
@@ -214,7 +209,7 @@ body {
 
   font-weight: 950;
 
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .hero h1 span {
@@ -222,13 +217,13 @@ body {
 }
 
 .hero-subtitle {
-  max-width: 760px;
+  max-width: 750px;
 
   color: #c9d7ef;
 
-  font-size: 18px;
+  font-size: 17px;
 
-  line-height: 1.4;
+  line-height: 1.38;
 }
 
 .hero-subtitle strong {
@@ -236,9 +231,9 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    PRIMARY STATS
-======================================== */
+================================================== */
 
 .primary-stats {
   display: grid;
@@ -248,13 +243,13 @@ body {
 
   gap: 12px;
 
-  margin-top: 23px;
+  margin-top: 21px;
 }
 
 .primary-stat {
-  height: 88px;
+  height: 86px;
 
-  padding: 14px 17px;
+  padding: 13px 17px;
 
   border-radius: 17px;
 
@@ -269,7 +264,7 @@ body {
 .primary-stat .number {
   color: var(--blue);
 
-  font-size: 37px;
+  font-size: 36px;
 
   line-height: .95;
 
@@ -278,7 +273,7 @@ body {
   letter-spacing: -2px;
 }
 
-.primary-stat:last-child .number {
+.primary-stat:nth-child(4) .number {
   color: var(--navy);
 }
 
@@ -295,42 +290,46 @@ body {
 
   text-transform: uppercase;
 
-  letter-spacing: .7px;
+  letter-spacing: .65px;
 }
 
 
-/* ========================================
+/* ==================================================
    DEVELOPMENT FOCUS
-======================================== */
+   — NOW CLEANLY PART OF HERO
+================================================== */
 
 .development {
-  height: 60px;
+  height: 58px;
 
-  margin-top: 12px;
+  margin-top: 13px;
 
-  padding: 12px 19px;
+  padding: 10px 18px;
 
   position: relative;
-  z-index: 3;
+  z-index: 4;
 
   display: flex;
 
   align-items: center;
 
-  justify-content: space-between;
+  border-radius: 15px;
 
-  border-radius: 16px;
+  background: rgba(255,255,255,.095);
 
-  background: white;
-
-  color: var(--navy);
+  border:
+    1px solid rgba(255,255,255,.14);
 
   box-shadow:
-    0 8px 25px rgba(0,0,0,.08);
+    0 8px 20px rgba(0,0,0,.08);
 }
 
 .development-label {
-  color: var(--blue);
+  width: 145px;
+
+  flex-shrink: 0;
+
+  color: var(--lime);
 
   font-size: 9px;
 
@@ -342,15 +341,14 @@ body {
 }
 
 .development-items {
-  display: flex;
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
 
   align-items: center;
-
-  gap: 25px;
-
-  font-size: 13px;
-
-  font-weight: 900;
 }
 
 .development-items span {
@@ -358,7 +356,15 @@ body {
 
   align-items: center;
 
+  justify-content: center;
+
   gap: 7px;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 850;
 }
 
 .dot {
@@ -377,16 +383,19 @@ body {
 }
 
 .development-items span:nth-child(3) .dot {
-  background: var(--navy);
+  background: white;
 }
 
 
-/* ========================================
+/* ==================================================
    DATA SECTION
-======================================== */
+================================================== */
 
 .data-area {
-  padding: 25px 72px 0;
+  height: 742px;
+
+  padding:
+    25px 72px 0;
 
   background: var(--off-white);
 }
@@ -406,9 +415,9 @@ body {
 }
 
 
-/* ========================================
-   TWO-CARD GRID
-======================================== */
+/* ==================================================
+   CENTER DATA GRID
+================================================== */
 
 .data-grid {
   width: 100%;
@@ -425,14 +434,14 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    PARTICIPATION CARD
-======================================== */
+================================================== */
 
 .chart-card {
-  min-height: 225px;
+  height: 225px;
 
-  padding: 23px 25px;
+  padding: 22px 24px;
 
   background: white;
 
@@ -454,7 +463,7 @@ body {
 
   gap: 15px;
 
-  margin-bottom: 19px;
+  margin-bottom: 18px;
 }
 
 .chart-title {
@@ -484,12 +493,12 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    MILESTONE BARS
-======================================== */
+================================================== */
 
 .milestone {
-  margin-bottom: 14px;
+  margin-bottom: 13px;
 }
 
 .milestone:last-child {
@@ -565,14 +574,14 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    TEAM MOMENT CARD
-======================================== */
+================================================== */
 
 .results-card {
-  min-height: 225px;
+  height: 225px;
 
-  padding: 23px 25px;
+  padding: 22px 24px;
 
   border-radius: 21px;
 
@@ -591,7 +600,7 @@ body {
 }
 
 .results-label {
-  font-size: 10px;
+  font-size: 9px;
 
   font-weight: 950;
 
@@ -599,27 +608,27 @@ body {
 
   letter-spacing: 1.4px;
 
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .results-card h2 {
-  font-size: 31px;
+  font-size: 30px;
 
   line-height: .94;
 
   letter-spacing: -1.5px;
 
-  margin-bottom: 11px;
+  margin-bottom: 9px;
 }
 
 .results-card > p {
   color: var(--dark-gray);
 
-  font-size: 11px;
+  font-size: 10px;
 
-  line-height: 1.4;
+  line-height: 1.35;
 
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .result {
@@ -627,17 +636,17 @@ body {
 
   align-items: center;
 
-  gap: 10px;
+  gap: 9px;
 
-  padding: 7px 0;
+  padding: 6px 0;
 
   border-top:
     1px solid rgba(7,21,47,.14);
 }
 
 .result-icon {
-  width: 27px;
-  height: 27px;
+  width: 25px;
+  height: 25px;
 
   display: flex;
 
@@ -647,18 +656,18 @@ body {
 
   flex-shrink: 0;
 
-  border-radius: 8px;
+  border-radius: 7px;
 
   background:
     rgba(7,21,47,.08);
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .result strong {
   display: block;
 
-  font-size: 12px;
+  font-size: 11px;
 
   line-height: 1.1;
 }
@@ -676,18 +685,18 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    CELEBRATION
-======================================== */
+================================================== */
 
 .celebration {
   width: 100%;
 
-  min-height: 125px;
+  height: 128px;
 
   margin-top: 14px;
 
-  padding: 22px 27px;
+  padding: 21px 26px;
 
   border-radius: 21px;
 
@@ -695,11 +704,11 @@ body {
 
   grid-template-columns:
     minmax(0, 1fr)
-    auto;
+    245px;
 
   align-items: center;
 
-  gap: 30px;
+  gap: 25px;
 
   background:
     linear-gradient(
@@ -729,28 +738,36 @@ body {
 }
 
 .celebration h2 {
-  font-size: 32px;
+  font-size: 31px;
 
   line-height: 1;
 
   letter-spacing: -1.5px;
 
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .celebration p {
   color: var(--gray);
 
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .sponsor {
-  min-width: 230px;
+  height: 76px;
 
-  padding-left: 28px;
+  padding-left: 25px;
 
   border-left:
     1px solid var(--border);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
 
   text-align: center;
 }
@@ -772,7 +789,7 @@ body {
 .sponsor-name {
   color: var(--blue);
 
-  font-size: 24px;
+  font-size: 23px;
 
   line-height: 1;
 
@@ -782,9 +799,9 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    FOOTER
-======================================== */
+================================================== */
 
 .footer {
   height: 63px;
@@ -819,9 +836,9 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    RESPONSIVE
-======================================== */
+================================================== */
 
 @media (max-width: 900px) {
 
@@ -832,6 +849,7 @@ body {
   .canvas {
     width: 100%;
     height: auto;
+
     min-height: 100vh;
 
     margin: 0;
@@ -841,10 +859,12 @@ body {
     height: auto;
 
     padding:
-      30px 5% 35px;
+      30px 5% 28px;
   }
 
   .data-area {
+    height: auto;
+
     padding:
       25px 5% 0;
   }
@@ -862,32 +882,46 @@ body {
   .development {
     height: auto;
 
-    min-height: 60px;
+    min-height: 58px;
 
     align-items: flex-start;
 
     flex-direction: column;
 
-    gap: 10px;
+    gap: 9px;
+  }
+
+  .development-label {
+    width: auto;
   }
 
   .development-items {
-    flex-wrap: wrap;
-
-    gap: 9px 18px;
+    width: 100%;
   }
 
   .data-grid {
     grid-template-columns: 1fr;
   }
 
+  .chart-card,
+  .results-card {
+    height: auto;
+    min-height: 225px;
+  }
+
   .celebration {
+    height: auto;
+
+    min-height: 128px;
+
     grid-template-columns: 1fr;
   }
 
   .sponsor {
-    padding-left: 0;
-    padding-top: 14px;
+    height: auto;
+
+    padding:
+      14px 0 0;
 
     border-left: none;
 
@@ -933,6 +967,18 @@ body {
     font-size: 32px;
   }
 
+  .development-items {
+    grid-template-columns: 1fr;
+
+    align-items: flex-start;
+
+    gap: 7px;
+  }
+
+  .development-items span {
+    justify-content: flex-start;
+  }
+
   .chart-card,
   .results-card {
     min-height: auto;
@@ -958,9 +1004,9 @@ body {
 }
 
 
-/* ========================================
+/* ==================================================
    PRINT / SCREENSHOT
-======================================== */
+================================================== */
 
 @media print {
 
@@ -986,9 +1032,9 @@ body {
 <div class="canvas">
 
 
-  <!-- ====================================
+  <!-- =================================================
        HERO
-  ===================================== -->
+  ================================================== -->
 
   <section class="hero">
 
@@ -1011,11 +1057,13 @@ body {
         Challenge Complete
       </div>
 
+
       <h1>
         14 PLAYERS.<br>
         10 DAYS.<br>
         <span>ONE TEAM.</span>
       </h1>
+
 
       <p class="hero-subtitle">
         A focused development sprint built around
@@ -1025,69 +1073,38 @@ body {
       </p>
 
 
-      <!-- ==================================
-           PRIMARY STATS
-      =================================== -->
+      <!-- =============================================
+           FOUR KEY NUMBERS
+      ============================================== -->
 
       <div class="primary-stats">
 
         <div class="primary-stat">
-
-          <div class="number">
-            14
-          </div>
-
-          <div class="label">
-            Players
-          </div>
-
+          <div class="number">14</div>
+          <div class="label">Players</div>
         </div>
 
-
         <div class="primary-stat">
-
-          <div class="number">
-            10
-          </div>
-
-          <div class="label">
-            Days
-          </div>
-
+          <div class="number">10</div>
+          <div class="label">Days</div>
         </div>
 
-
         <div class="primary-stat">
-
-          <div class="number">
-            112
-          </div>
-
-          <div class="label">
-            Reps Completed
-          </div>
-
+          <div class="number">112</div>
+          <div class="label">Reps Completed</div>
         </div>
 
-
         <div class="primary-stat">
-
-          <div class="number">
-            317
-          </div>
-
-          <div class="label">
-            Minutes of Development
-          </div>
-
+          <div class="number">317</div>
+          <div class="label">Minutes of Development</div>
         </div>
 
       </div>
 
 
-      <!-- ==================================
+      <!-- =============================================
            DEVELOPMENT FOCUS
-      =================================== -->
+      ============================================== -->
 
       <div class="development">
 
@@ -1121,9 +1138,10 @@ body {
   </section>
 
 
-  <!-- ====================================
-       DATA
-  ===================================== -->
+
+  <!-- =================================================
+       DATA / PARTICIPATION
+  ================================================== -->
 
   <section class="data-area">
 
@@ -1132,14 +1150,12 @@ body {
     </div>
 
 
-    <!-- ==================================
-         TWO SIDE-BY-SIDE CARDS
-    =================================== -->
-
     <div class="data-grid">
 
 
-      <!-- PARTICIPATION CARD -->
+      <!-- =============================================
+           PARTICIPATION
+      ============================================== -->
 
       <div class="chart-card">
 
@@ -1249,9 +1265,10 @@ body {
       </div>
 
 
-      <!-- ==================================
+
+      <!-- =============================================
            TEAM MOMENT
-      =================================== -->
+      ============================================== -->
 
       <div class="results-card">
 
@@ -1284,7 +1301,7 @@ body {
             </strong>
 
             <small>
-              Players participated
+              Everyone participated
             </small>
 
           </div>
@@ -1317,9 +1334,10 @@ body {
     </div>
 
 
-    <!-- ====================================
-         CELEBRATION / SPONSOR
-    ===================================== -->
+
+    <!-- =================================================
+         MOVIE NIGHT / SPONSOR
+    ================================================== -->
 
     <div class="celebration">
 
@@ -1347,8 +1365,6 @@ body {
           Made possible by
         </div>
 
-        <!-- Replace with actual sponsor name -->
-
         <div class="sponsor-name">
           Sponsor Name
         </div>
@@ -1360,9 +1376,10 @@ body {
   </section>
 
 
-  <!-- ====================================
+
+  <!-- =================================================
        FOOTER
-  ===================================== -->
+  ================================================== -->
 
   <footer class="footer">
 
@@ -1374,10 +1391,11 @@ body {
     </div>
 
     <div class="footer-right">
-      TEAM DEVELOPMENT
+      EVERY REP MOVES THE TEAM
     </div>
 
   </footer>
+
 
 </div>
 
