@@ -1,6 +1,3 @@
-Yes — here is a **single self-contained HTML file** with the CSS included. I’ve kept the REPFIVE visual language you provided and focused the page specifically on the **team results + sponsor recognition + Movie Night celebration**.
-
-```
 <!DOCTYPE html>
 <html lang="en">
 <head>
