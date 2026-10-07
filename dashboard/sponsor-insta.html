@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>REPFIVE Team Shoutout</title>
 
 <style>
@@ -45,7 +44,7 @@ body {
     Arial,
     sans-serif;
 
-  background: #222;
+  background: #dfe4ec;
   color: var(--navy);
 }
 
@@ -63,77 +62,55 @@ body {
   position: relative;
   overflow: hidden;
 
+  background: var(--off-white);
+
+  color: var(--navy);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+
+  height: 545px;
+
+  padding: 38px 75px 40px;
+
   background:
     radial-gradient(
-      circle at 90% 5%,
+      circle at 88% 8%,
       rgba(22,119,255,.48),
-      transparent 29%
-    ),
-    radial-gradient(
-      circle at 5% 90%,
-      rgba(183,255,60,.12),
-      transparent 25%
+      transparent 28%
     ),
     linear-gradient(
-      145deg,
+      135deg,
       var(--navy) 0%,
       var(--navy-2) 100%
     );
 
   color: white;
+
+  overflow: hidden;
 }
 
-.canvas::before {
+.hero::after {
   content: "";
 
   position: absolute;
 
-  width: 520px;
-  height: 520px;
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  bottom: -300px;
 
   border-radius: 50%;
 
-  right: -250px;
-  top: 300px;
-
-  background: rgba(22,119,255,.12);
-
-  filter: blur(25px);
-}
-
-.canvas::after {
-  content: "";
-
-  position: absolute;
-
-  width: 700px;
-  height: 2px;
-
-  left: 0;
-  bottom: 142px;
-
   background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(183,255,60,.4),
-      transparent
-    );
-}
-
-
-/* ========================================
-   CONTENT
-======================================== */
-
-.content {
-  position: relative;
-  z-index: 2;
-
-  width: 900px;
-  height: 100%;
-
-  margin: 0 auto;
+    rgba(183,255,60,.06);
 }
 
 
@@ -142,7 +119,10 @@ body {
 ======================================== */
 
 .header {
-  height: 82px;
+  position: relative;
+  z-index: 2;
+
+  height: 55px;
 
   display: flex;
   align-items: center;
@@ -150,7 +130,7 @@ body {
 }
 
 .logo {
-  font-size: 42px;
+  font-size: 39px;
   line-height: 1;
 
   font-weight: 950;
@@ -162,28 +142,34 @@ body {
 }
 
 .header-label {
-  padding: 9px 18px;
+  padding: 8px 17px;
 
-  border: 1px solid rgba(183,255,60,.35);
-  background: rgba(183,255,60,.08);
+  border: 1px solid rgba(183,255,60,.4);
+
+  background:
+    rgba(183,255,60,.09);
 
   border-radius: 999px;
 
   color: var(--lime);
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
-  letter-spacing: 1.5px;
+
+  letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 
 /* ========================================
-   HERO
+   HERO COPY
 ======================================== */
 
-.hero {
-  padding-top: 42px;
+.hero-copy {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 29px;
 }
 
 .eyebrow {
@@ -193,34 +179,35 @@ body {
 
   color: var(--lime);
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
-  letter-spacing: 2px;
+
+  letter-spacing: 1.8px;
   text-transform: uppercase;
 
-  margin-bottom: 17px;
+  margin-bottom: 13px;
 }
 
 .eyebrow::before {
   content: "";
 
-  width: 35px;
-  height: 4px;
+  width: 32px;
+  height: 3px;
 
-  background: var(--lime);
+  background: currentColor;
 
   border-radius: 10px;
 }
 
 .hero h1 {
-  font-size: 83px;
+  font-size: 76px;
   line-height: .88;
 
-  letter-spacing: -5px;
+  letter-spacing: -4.5px;
 
   font-weight: 950;
 
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .hero h1 span {
@@ -228,13 +215,13 @@ body {
 }
 
 .hero-subtitle {
-  max-width: 770px;
+  max-width: 730px;
 
   color: #c9d7ef;
 
-  font-size: 20px;
+  font-size: 18px;
 
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .hero-subtitle strong {
@@ -247,61 +234,83 @@ body {
 ======================================== */
 
 .primary-stats {
-  margin-top: 27px;
+  position: relative;
+  z-index: 3;
 
   display: grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    repeat(4, 1fr);
 
-  gap: 13px;
+  gap: 12px;
+
+  margin-top: 24px;
 }
 
 .primary-stat {
-  padding: 18px 21px;
+  min-height: 91px;
 
-  border-radius: 19px;
+  padding: 16px 18px;
 
-  background:
-    rgba(255,255,255,.08);
+  border-radius: 17px;
+
+  background: white;
+
+  color: var(--navy);
 
   border:
-    1px solid rgba(255,255,255,.13);
+    1px solid rgba(255,255,255,.8);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.13);
 }
 
 .primary-stat .number {
-  font-size: 43px;
+  font-size: 38px;
 
   line-height: .95;
 
   font-weight: 950;
 
   letter-spacing: -2px;
+
+  color: var(--blue);
+}
+
+.primary-stat:last-child .number {
+  color: var(--navy);
 }
 
 .primary-stat .label {
   margin-top: 7px;
 
-  color: #aebfdc;
+  color: var(--gray);
 
-  font-size: 11px;
+  font-size: 9px;
 
-  font-weight: 850;
+  line-height: 1.15;
+
+  font-weight: 900;
 
   text-transform: uppercase;
 
-  letter-spacing: 1px;
+  letter-spacing: .75px;
 }
 
 
 /* ========================================
-   DEVELOPMENT STRIP
+   DEVELOPMENT FOCUS
 ======================================== */
 
 .development {
-  margin-top: 14px;
+  position: relative;
+  z-index: 3;
 
-  padding: 16px 21px;
+  margin-top: 13px;
+
+  min-height: 62px;
+
+  padding: 13px 20px;
 
   display: flex;
 
@@ -309,31 +318,37 @@ body {
 
   justify-content: space-between;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
-  background: white;
+  background:
+    rgba(255,255,255,.96);
 
   color: var(--navy);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
 }
 
 .development-label {
   color: var(--blue);
 
-  font-size: 10px;
+  font-size: 9px;
 
-  font-weight: 900;
+  font-weight: 950;
 
   text-transform: uppercase;
 
-  letter-spacing: 1.3px;
+  letter-spacing: 1.2px;
 }
 
 .development-items {
   display: flex;
 
+  align-items: center;
+
   gap: 25px;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 900;
 }
@@ -350,17 +365,57 @@ body {
   width: 7px;
   height: 7px;
 
+  flex-shrink: 0;
+
   border-radius: 50%;
 
   background: var(--blue);
 }
 
+.development-items span:nth-child(2) .dot {
+  background: var(--lime);
+}
+
+.development-items span:nth-child(3) .dot {
+  background: var(--navy);
+}
+
 
 /* ========================================
-   LOWER GRID
+   MAIN DATA AREA
 ======================================== */
 
-.lower-grid {
+.data-area {
+  padding: 25px 75px 0;
+
+  background: var(--off-white);
+}
+
+
+/* ========================================
+   SECTION LABEL
+======================================== */
+
+.section-label {
+  color: var(--blue);
+
+  font-size: 10px;
+
+  font-weight: 950;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+
+/* ========================================
+   DATA GRID
+======================================== */
+
+.data-grid {
   display: grid;
 
   grid-template-columns:
@@ -368,14 +423,11 @@ body {
 
   gap: 14px;
 
-  margin-top: 14px;
-
   align-items: stretch;
 }
 
-.lower-grid > * {
+.data-grid > * {
   min-width: 0;
-  height: 100%;
 }
 
 
@@ -384,23 +436,18 @@ body {
 ======================================== */
 
 .chart-card {
-  height: 100%;
+  min-height: 230px;
 
-  padding: 20px 22px;
+  padding: 23px 25px;
 
-  border-radius: 20px;
+  border-radius: 21px;
 
-  background:
-    rgba(255,255,255,.06);
+  background: white;
 
-  border:
-    1px solid rgba(255,255,255,.12);
+  border: 1px solid var(--border);
 
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
+  box-shadow:
+    0 8px 24px rgba(7,21,47,.045);
 }
 
 .chart-header {
@@ -410,36 +457,42 @@ body {
 
   justify-content: space-between;
 
-  margin-bottom: 16px;
+  gap: 15px;
+
+  margin-bottom: 19px;
 }
 
 .chart-title {
-  color: var(--lime);
+  color: var(--navy);
 
-  font-size: 10px;
+  font-size: 17px;
 
-  font-weight: 900;
+  line-height: 1;
 
-  text-transform: uppercase;
+  font-weight: 950;
 
-  letter-spacing: 1.4px;
+  letter-spacing: -.5px;
 }
 
 .chart-summary {
-  color: #aebfdc;
+  color: var(--gray);
 
-  font-size: 11px;
+  font-size: 10px;
 
   font-weight: 700;
+
+  white-space: nowrap;
 }
 
 .chart-summary strong {
-  color: white;
+  color: var(--blue);
+
+  font-weight: 950;
 }
 
 
 /* ========================================
-   MILESTONE BARS
+   MILESTONES
 ======================================== */
 
 .milestone {
@@ -453,38 +506,37 @@ body {
 .milestone-top {
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+
+  justify-content: space-between;
 
   margin-bottom: 5px;
 }
 
 .milestone-name {
-  color: #e8eff9;
+  color: var(--dark-gray);
 
-  font-size: 12px;
+  font-size: 11px;
 
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .milestone-count {
-  color: white;
+  color: var(--navy);
 
-  font-size: 12px;
+  font-size: 11px;
 
-  font-weight: 900;
+  font-weight: 950;
 }
 
 .milestone-track {
   height: 13px;
 
-  border-radius: 999px;
-
   overflow: hidden;
 
-  background:
-    rgba(255,255,255,.10);
+  border-radius: 999px;
+
+  background: #edf1f6;
 }
 
 .milestone-bar {
@@ -496,25 +548,25 @@ body {
     linear-gradient(
       90deg,
       var(--blue),
-      #52a0ff
+      #54a2ff
     );
 }
 
-.milestone:last-child .milestone-bar {
+.milestone:nth-child(4) .milestone-bar {
   background:
     linear-gradient(
       90deg,
       var(--lime),
-      #82ff15
+      #7dff10
     );
 }
 
 .milestone-percent {
   margin-top: 3px;
 
-  color: #8196b7;
+  color: #98a2b3;
 
-  font-size: 9px;
+  font-size: 8px;
 
   font-weight: 700;
 }
@@ -525,11 +577,11 @@ body {
 ======================================== */
 
 .results-card {
-  height: 100%;
+  min-height: 230px;
 
-  padding: 20px 22px;
+  padding: 23px 25px;
 
-  border-radius: 20px;
+  border-radius: 21px;
 
   background: var(--lime);
 
@@ -540,6 +592,9 @@ body {
   flex-direction: column;
 
   justify-content: center;
+
+  box-shadow:
+    0 8px 24px rgba(7,21,47,.07);
 }
 
 .results-label {
@@ -555,23 +610,23 @@ body {
 }
 
 .results-card h2 {
-  font-size: 29px;
+  font-size: 31px;
 
-  line-height: 1;
+  line-height: .95;
 
-  letter-spacing: -1.2px;
+  letter-spacing: -1.5px;
 
-  margin: 5px 0 12px;
+  margin-bottom: 11px;
 }
 
 .results-card > p {
-  color: var(--dark-gray);
+  color: #344054;
 
-  font-size: 13px;
+  font-size: 11px;
 
-  line-height: 1.45;
+  line-height: 1.4;
 
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 .result {
@@ -581,19 +636,15 @@ body {
 
   gap: 10px;
 
-  padding: 8px 0;
+  padding: 7px 0;
 
   border-top:
-    1px solid rgba(7,21,47,.13);
-}
-
-.result:first-of-type {
-  margin-top: 2px;
+    1px solid rgba(7,21,47,.14);
 }
 
 .result-icon {
-  width: 28px;
-  height: 28px;
+  width: 27px;
+  height: 27px;
 
   display: flex;
 
@@ -601,47 +652,53 @@ body {
 
   justify-content: center;
 
+  flex-shrink: 0;
+
   border-radius: 8px;
 
   background:
     rgba(7,21,47,.08);
 
-  font-size: 14px;
-
-  flex-shrink: 0;
+  font-size: 13px;
 }
 
 .result strong {
   display: block;
 
-  font-size: 13px;
+  font-size: 12px;
+
+  line-height: 1.1;
 }
 
 .result small {
   display: block;
 
-  color: #425519;
+  margin-top: 2px;
 
-  font-size: 9px;
+  color: #536629;
+
+  font-size: 8px;
+
+  font-weight: 700;
 }
 
 
 /* ========================================
-   MEGAREP BANNER
+   MEGAREP / TEAM ACHIEVEMENT STRIP
 ======================================== */
 
-.megarep-banner {
+.team-strip {
   margin-top: 14px;
 
-  padding: 18px 22px;
+  min-height: 70px;
 
-  border-radius: 19px;
+  padding: 13px 21px;
 
-  background:
-    rgba(255,255,255,.07);
+  border-radius: 17px;
 
-  border:
-    1px solid rgba(255,255,255,.12);
+  background: var(--navy);
+
+  color: white;
 
   display: grid;
 
@@ -649,59 +706,69 @@ body {
 
   align-items: center;
 
-  gap: 18px;
+  gap: 17px;
 }
 
-.megarep-number {
+.team-strip-number {
   color: var(--lime);
 
-  font-size: 43px;
+  font-size: 31px;
 
-  line-height: .9;
+  line-height: 1;
 
   font-weight: 950;
-
-  letter-spacing: -2px;
 }
 
-.megarep-copy h3 {
-  font-size: 18px;
+.team-strip-copy strong {
+  display: block;
 
-  margin-bottom: 2px;
+  font-size: 12px;
+
+  line-height: 1.15;
+
+  text-transform: uppercase;
+
+  letter-spacing: .6px;
 }
 
-.megarep-copy p {
+.team-strip-copy span {
+  display: block;
+
   color: #aebfdc;
 
-  font-size: 10px;
+  font-size: 9px;
 
-  line-height: 1.35;
+  margin-top: 2px;
 }
 
-.megarep-participation {
+.team-strip-right {
   text-align: right;
 }
 
-.megarep-participation strong {
+.team-strip-right strong {
   display: block;
 
   color: white;
 
-  font-size: 25px;
+  font-size: 21px;
 
   line-height: 1;
 }
 
-.megarep-participation span {
-  color: #9fb1ce;
+.team-strip-right span {
+  display: block;
 
-  font-size: 9px;
+  margin-top: 3px;
 
-  text-transform: uppercase;
+  color: #8fa3c2;
+
+  font-size: 8px;
 
   font-weight: 800;
 
-  letter-spacing: .5px;
+  text-transform: uppercase;
+
+  letter-spacing: .4px;
 }
 
 
@@ -710,18 +777,13 @@ body {
 ======================================== */
 
 .celebration {
-  position: absolute;
+  margin: 14px 75px 0;
 
-  left: 0;
-  right: 0;
+  min-height: 125px;
 
-  bottom: 157px;
+  padding: 22px 27px;
 
-  min-height: 118px;
-
-  padding: 25px 31px;
-
-  border-radius: 23px;
+  border-radius: 21px;
 
   display: grid;
 
@@ -734,9 +796,11 @@ body {
   background:
     linear-gradient(
       135deg,
-      #f7fbff,
-      #f3ffe5
+      #edf5ff,
+      #f4ffe6
     );
+
+  border: 1px solid var(--border);
 
   color: var(--navy);
 }
@@ -744,7 +808,7 @@ body {
 .celebration-eyebrow {
   color: var(--blue);
 
-  font-size: 10px;
+  font-size: 9px;
 
   font-weight: 950;
 
@@ -752,54 +816,56 @@ body {
 
   text-transform: uppercase;
 
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .celebration h2 {
-  font-size: 34px;
+  font-size: 32px;
 
   line-height: 1;
 
   letter-spacing: -1.5px;
 
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .celebration p {
   color: var(--gray);
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .sponsor {
-  min-width: 235px;
+  min-width: 230px;
 
-  text-align: center;
-
-  padding-left: 30px;
+  padding-left: 28px;
 
   border-left:
     1px solid var(--border);
+
+  text-align: center;
 }
 
 .sponsor-label {
   color: var(--gray);
 
-  font-size: 9px;
+  font-size: 8px;
 
   font-weight: 900;
 
   text-transform: uppercase;
 
-  letter-spacing: 1.2px;
+  letter-spacing: 1.1px;
 
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .sponsor-name {
   color: var(--blue);
 
-  font-size: 26px;
+  font-size: 24px;
+
+  line-height: 1;
 
   font-weight: 950;
 
@@ -812,14 +878,9 @@ body {
 ======================================== */
 
 .footer {
-  position: absolute;
+  height: 67px;
 
-  left: 0;
-  right: 0;
-
-  bottom: 30px;
-
-  height: 70px;
+  margin: 14px 75px 0;
 
   display: flex;
 
@@ -827,171 +888,166 @@ body {
 
   justify-content: space-between;
 
-  color: #7890b5;
+  color: #7b8da8;
 
-  font-size: 10px;
+  font-size: 9px;
 
   font-weight: 700;
 }
 
-.footer-left strong {
-  color: #c9d7ef;
+.footer strong {
+  color: var(--navy);
 }
 
 .footer-right {
-  color: var(--lime);
+  color: var(--blue);
 
-  font-size: 10px;
+  font-size: 9px;
 
-  font-weight: 900;
+  font-weight: 950;
 
   letter-spacing: 1px;
 }
 
 
 /* ========================================
-   RESPONSIVE
+   MOBILE
 ======================================== */
 
 @media (max-width: 900px) {
 
+  body {
+    background: var(--off-white);
+  }
+
   .canvas {
     width: 100%;
     height: auto;
+
     min-height: 100vh;
 
     margin: 0;
   }
 
-  .content {
-    width: 92%;
-  }
-
-  .hero h1 {
-    font-size: clamp(55px, 10vw, 83px);
-  }
-
-  .lower-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lower-grid > * {
-    height: auto;
-  }
-
-  .chart-card,
-  .results-card {
-    min-height: 240px;
-  }
-
-  .celebration {
-    position: relative;
-
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    margin: 25px 4% 0;
-
-    grid-template-columns: 1fr;
-  }
-
-  .sponsor {
-    border-left: none;
-
-    border-top:
-      1px solid var(--border);
-
-    padding-left: 0;
-    padding-top: 15px;
-  }
-
-  .footer {
-    position: relative;
-
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    width: 92%;
-
-    margin: 30px auto;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .header {
-    height: 70px;
-  }
-
-  .logo {
-    font-size: 32px;
-  }
-
-  .header-label {
-    font-size: 9px;
-    padding: 7px 11px;
-  }
-
   .hero {
-    padding-top: 30px;
+    height: auto;
+
+    padding: 30px 5% 35px;
+  }
+
+  .data-area {
+    padding: 25px 5% 0;
   }
 
   .hero h1 {
-    font-size: 55px;
-    letter-spacing: -3px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
+    font-size: clamp(52px, 10vw, 76px);
   }
 
   .primary-stats {
-    gap: 7px;
-  }
-
-  .primary-stat {
-    padding: 14px 10px;
-  }
-
-  .primary-stat .number {
-    font-size: 31px;
-  }
-
-  .primary-stat .label {
-    font-size: 8px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .development {
     align-items: flex-start;
+
     flex-direction: column;
+
     gap: 10px;
   }
 
   .development-items {
     flex-wrap: wrap;
-    gap: 10px 17px;
-    font-size: 11px;
+
+    gap: 9px 18px;
   }
 
-  .megarep-banner {
-    grid-template-columns: auto 1fr;
+  .data-grid {
+    grid-template-columns: 1fr;
   }
 
-  .megarep-participation {
-    grid-column: 2;
-    text-align: left;
+  .team-strip {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .celebration {
+    margin: 14px 5% 0;
+
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor {
+    padding-left: 0;
+    padding-top: 13px;
+
+    border-left: none;
+
+    border-top:
+      1px solid var(--border);
   }
 
   .footer {
+    margin: 14px 5% 0;
+
     height: auto;
 
+    padding: 18px 0;
+
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .header-label {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 51px;
+
+    letter-spacing: -3px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .primary-stat .number {
+    font-size: 32px;
+  }
+
+  .primary-stat {
+    min-height: 82px;
+
+    padding: 14px;
+  }
+
+  .chart-card,
+  .results-card {
+    min-height: auto;
+  }
+
+  .team-strip {
+    grid-template-columns: auto 1fr;
+
+    padding: 15px;
+  }
+
+  .team-strip-right {
+    grid-column: 2;
+
+    text-align: left;
+  }
+
+  .celebration {
+    padding: 21px;
+  }
+
+  .footer {
     flex-direction: column;
 
     align-items: flex-start;
-
-    gap: 8px;
   }
 }
 
@@ -1023,14 +1079,13 @@ body {
 
 <div class="canvas">
 
-  <div class="content">
+  <!-- ====================================
+       HERO
+  ===================================== -->
 
+  <section class="hero">
 
-    <!-- ==================================
-         HEADER
-    =================================== -->
-
-    <header class="header">
+    <div class="header">
 
       <div class="logo">
         REP<span>FIVE</span>
@@ -1040,14 +1095,10 @@ body {
         Team Development Shoutout
       </div>
 
-    </header>
+    </div>
 
 
-    <!-- ==================================
-         HERO
-    =================================== -->
-
-    <main class="hero">
+    <div class="hero-copy">
 
       <div class="eyebrow">
         Challenge Complete
@@ -1109,6 +1160,19 @@ body {
 
         </div>
 
+
+        <div class="primary-stat">
+
+          <div class="number">
+            317
+          </div>
+
+          <div class="label">
+            Minutes of Development
+          </div>
+
+        </div>
+
       </div>
 
 
@@ -1141,188 +1205,134 @@ body {
 
       </div>
 
+    </div>
 
-      <!-- ==================================
-           LOWER INFORMATION CARDS
-      =================================== -->
-
-      <div class="lower-grid">
+  </section>
 
 
-        <!-- PARTICIPATION -->
+  <!-- ====================================
+       DATA AREA
+  ===================================== -->
 
-        <div class="chart-card">
+  <section class="data-area">
 
-          <div class="chart-header">
+    <div class="section-label">
+      The numbers tell the story
+    </div>
 
-            <div class="chart-title">
-              Participation Milestones
-            </div>
 
-            <div class="chart-summary">
-              <strong>14 / 14</strong> participated
-            </div>
+    <div class="data-grid">
 
+
+      <!-- PARTICIPATION -->
+
+      <div class="chart-card">
+
+        <div class="chart-header">
+
+          <div class="chart-title">
+            Participation Milestones
           </div>
 
-
-          <!-- 80%+ -->
-
-          <div class="milestone">
-
-            <div class="milestone-top">
-
-              <div class="milestone-name">
-                Completed 80%+
-              </div>
-
-              <div class="milestone-count">
-                11 / 14
-              </div>
-
-            </div>
-
-            <div class="milestone-track">
-
-              <div
-                class="milestone-bar"
-                style="width:78.57%;">
-              </div>
-
-            </div>
-
-            <div class="milestone-percent">
-              78.6% of players
-            </div>
-
-          </div>
-
-
-          <!-- 90%+ -->
-
-          <div class="milestone">
-
-            <div class="milestone-top">
-
-              <div class="milestone-name">
-                Completed 90%+
-              </div>
-
-              <div class="milestone-count">
-                9 / 14
-              </div>
-
-            </div>
-
-            <div class="milestone-track">
-
-              <div
-                class="milestone-bar"
-                style="width:64.29%;">
-              </div>
-
-            </div>
-
-            <div class="milestone-percent">
-              64.3% of players
-            </div>
-
-          </div>
-
-
-          <!-- EVERY REP -->
-
-          <div class="milestone">
-
-            <div class="milestone-top">
-
-              <div class="milestone-name">
-                Completed Every Rep
-              </div>
-
-              <div class="milestone-count">
-                4 / 14
-              </div>
-
-            </div>
-
-            <div class="milestone-track">
-
-              <div
-                class="milestone-bar"
-                style="width:28.57%;">
-              </div>
-
-            </div>
-
-            <div class="milestone-percent">
-              28.6% completed every Rep
-            </div>
-
+          <div class="chart-summary">
+            <strong>14 / 14</strong>
+            participated
           </div>
 
         </div>
 
 
-        <!-- TEAM MOMENT -->
+        <!-- 80% -->
 
-        <div class="results-card">
+        <div class="milestone">
 
-          <div class="results-label">
-            One team. One big moment.
-          </div>
+          <div class="milestone-top">
 
-          <h2>
-            Everyone<br>
-            got involved.
-          </h2>
-
-          <p>
-            Every player completed at least one Rep —
-            and the team earned a MegaRep by getting
-            everyone involved.
-          </p>
-
-
-          <div class="result">
-
-            <div class="result-icon">
-              ✓
+            <div class="milestone-name">
+              Completed 80%+
             </div>
 
-            <div>
-
-              <strong>
-                14 / 14 Players
-              </strong>
-
-              <small>
-                Players participated
-              </small>
-
+            <div class="milestone-count">
+              11 / 14
             </div>
 
           </div>
 
+          <div class="milestone-track">
 
-          <div class="result">
-
-            <div class="result-icon">
-              ⚡
+            <div
+              class="milestone-bar"
+              style="width:78.57%;">
             </div>
 
-            <div>
+          </div>
 
-              <strong>
-                MEGAREP
-              </strong>
+          <div class="milestone-percent">
+            78.6% of players
+          </div>
 
-              <small>
-                One shared development moment
-              </small>
+        </div>
 
+
+        <!-- 90% -->
+
+        <div class="milestone">
+
+          <div class="milestone-top">
+
+            <div class="milestone-name">
+              Completed 90%+
             </div>
 
+            <div class="milestone-count">
+              9 / 14
+            </div>
+
+          </div>
+
+          <div class="milestone-track">
+
+            <div
+              class="milestone-bar"
+              style="width:64.29%;">
+            </div>
+
+          </div>
+
+          <div class="milestone-percent">
+            64.3% of players
+          </div>
+
+        </div>
+
+
+        <!-- EVERY REP -->
+
+        <div class="milestone">
+
+          <div class="milestone-top">
+
+            <div class="milestone-name">
+              Completed Every Rep
+            </div>
+
+            <div class="milestone-count">
+              4 / 14
+            </div>
+
+          </div>
+
+          <div class="milestone-track">
+
+            <div
+              class="milestone-bar"
+              style="width:28.57%;">
+            </div>
+
+          </div>
+
+          <div class="milestone-percent">
+            28.6% completed every Rep
           </div>
 
         </div>
@@ -1330,56 +1340,120 @@ body {
       </div>
 
 
-      <!-- ==================================
-           MEGAREP
-      =================================== -->
+      <!-- TEAM MOMENT -->
 
-      <div class="megarep-banner">
+      <div class="results-card">
 
-        <div class="megarep-number">
-          1
+        <div class="results-label">
+          One team. One big moment.
         </div>
 
-        <div class="megarep-copy">
+        <h2>
+          Everyone<br>
+          got involved.
+        </h2>
 
-          <h3>
-            MEGAREP
-          </h3>
+        <p>
+          Every player completed at least one Rep —
+          and the team earned a MegaRep by getting
+          everyone involved.
+        </p>
 
-          <p>
-            The entire team showed up for one
-            shared development moment.
-          </p>
+
+        <div class="result">
+
+          <div class="result-icon">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              14 / 14 Players
+            </strong>
+
+            <small>
+              Players participated
+            </small>
+
+          </div>
 
         </div>
 
-        <div class="megarep-participation">
 
-          <strong>
-            14 / 14
-          </strong>
+        <div class="result">
 
-          <span>
-            Players participated
-          </span>
+          <div class="result-icon">
+            ⚡
+          </div>
+
+          <div>
+
+            <strong>
+              MEGAREP
+            </strong>
+
+            <small>
+              One shared development moment
+            </small>
+
+          </div>
 
         </div>
 
       </div>
 
-    </main>
+    </div>
 
 
-    <!-- ==================================
+    <!-- ====================================
+         TEAM ACHIEVEMENT
+    ===================================== -->
+
+    <div class="team-strip">
+
+      <div class="team-strip-number">
+        1
+      </div>
+
+      <div class="team-strip-copy">
+
+        <strong>
+          MegaRep Earned
+        </strong>
+
+        <span>
+          The entire team showed up for one shared
+          development moment.
+        </span>
+
+      </div>
+
+      <div class="team-strip-right">
+
+        <strong>
+          14 / 14
+        </strong>
+
+        <span>
+          Players participated
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- ====================================
          CELEBRATION / SPONSOR
-    =================================== -->
+    ===================================== -->
 
-    <section class="celebration">
+    <div class="celebration">
 
       <div>
 
         <div class="celebration-eyebrow">
-          The reward
+          Celebration unlocked
         </div>
 
         <h2>
@@ -1400,7 +1474,7 @@ body {
           Made possible by
         </div>
 
-        <!-- Replace this with the sponsor name -->
+        <!-- Replace with actual sponsor -->
 
         <div class="sponsor-name">
           Sponsor Name
@@ -1408,35 +1482,29 @@ body {
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- ==================================
-         FOOTER
-    =================================== -->
+  <!-- ====================================
+       FOOTER
+  ===================================== -->
 
-    <footer class="footer">
+  <footer class="footer">
 
-      <div class="footer-left">
+    <div>
+      <strong>REPFIVE</strong>
+      &nbsp; • &nbsp;
+      Building better players.
+      Building stronger teams.
+    </div>
 
-        <strong>
-          REPFIVE
-        </strong>
+    <div class="footer-right">
+      TEAM DEVELOPMENT
+    </div>
 
-        &nbsp; • &nbsp;
-
-        Building better players.
-        Building stronger teams.
-
-      </div>
-
-      <div class="footer-right">
-        TEAM CHALLENGE
-      </div>
-
-    </footer>
-
-  </div>
+  </footer>
 
 </div>
 
