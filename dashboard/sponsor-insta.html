@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>REPFIVE Team Shoutout</title>
 
 <style>
@@ -63,8 +64,6 @@ body {
   overflow: hidden;
 
   background: var(--off-white);
-
-  color: var(--navy);
 }
 
 
@@ -73,11 +72,14 @@ body {
 ======================================== */
 
 .hero {
+  height: 555px;
+
+  padding: 34px 72px 35px;
+
   position: relative;
+  overflow: hidden;
 
-  height: 545px;
-
-  padding: 38px 75px 40px;
+  color: white;
 
   background:
     radial-gradient(
@@ -87,13 +89,9 @@ body {
     ),
     linear-gradient(
       135deg,
-      var(--navy) 0%,
-      var(--navy-2) 100%
+      var(--navy),
+      var(--navy-2)
     );
-
-  color: white;
-
-  overflow: hidden;
 }
 
 .hero::after {
@@ -104,13 +102,12 @@ body {
   width: 500px;
   height: 500px;
 
-  right: -250px;
-  bottom: -300px;
+  right: -270px;
+  bottom: -330px;
 
   border-radius: 50%;
 
-  background:
-    rgba(183,255,60,.06);
+  background: rgba(183,255,60,.06);
 }
 
 
@@ -122,18 +119,20 @@ body {
   position: relative;
   z-index: 2;
 
-  height: 55px;
+  height: 52px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
 .logo {
-  font-size: 39px;
-  line-height: 1;
+  font-size: 38px;
 
   font-weight: 950;
+
   letter-spacing: -2.5px;
 }
 
@@ -144,19 +143,22 @@ body {
 .header-label {
   padding: 8px 17px;
 
-  border: 1px solid rgba(183,255,60,.4);
+  border:
+    1px solid rgba(183,255,60,.4);
 
   background:
-    rgba(183,255,60,.09);
+    rgba(183,255,60,.08);
 
   border-radius: 999px;
 
   color: var(--lime);
 
   font-size: 11px;
+
   font-weight: 900;
 
   letter-spacing: 1.4px;
+
   text-transform: uppercase;
 }
 
@@ -169,23 +171,27 @@ body {
   position: relative;
   z-index: 2;
 
-  margin-top: 29px;
+  margin-top: 24px;
 }
 
 .eyebrow {
   display: flex;
+
   align-items: center;
-  gap: 10px;
+
+  gap: 9px;
 
   color: var(--lime);
 
   font-size: 12px;
+
   font-weight: 900;
 
   letter-spacing: 1.8px;
+
   text-transform: uppercase;
 
-  margin-bottom: 13px;
+  margin-bottom: 12px;
 }
 
 .eyebrow::before {
@@ -200,14 +206,15 @@ body {
 }
 
 .hero h1 {
-  font-size: 76px;
-  line-height: .88;
+  font-size: 75px;
+
+  line-height: .87;
 
   letter-spacing: -4.5px;
 
   font-weight: 950;
 
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .hero h1 span {
@@ -215,7 +222,7 @@ body {
 }
 
 .hero-subtitle {
-  max-width: 730px;
+  max-width: 760px;
 
   color: #c9d7ef;
 
@@ -234,23 +241,20 @@ body {
 ======================================== */
 
 .primary-stats {
-  position: relative;
-  z-index: 3;
-
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(4, minmax(0, 1fr));
 
   gap: 12px;
 
-  margin-top: 24px;
+  margin-top: 23px;
 }
 
 .primary-stat {
-  min-height: 91px;
+  height: 88px;
 
-  padding: 16px 18px;
+  padding: 14px 17px;
 
   border-radius: 17px;
 
@@ -258,23 +262,20 @@ body {
 
   color: var(--navy);
 
-  border:
-    1px solid rgba(255,255,255,.8);
-
   box-shadow:
-    0 10px 30px rgba(0,0,0,.13);
+    0 9px 25px rgba(0,0,0,.13);
 }
 
 .primary-stat .number {
-  font-size: 38px;
+  color: var(--blue);
+
+  font-size: 37px;
 
   line-height: .95;
 
   font-weight: 950;
 
   letter-spacing: -2px;
-
-  color: var(--blue);
 }
 
 .primary-stat:last-child .number {
@@ -288,13 +289,13 @@ body {
 
   font-size: 9px;
 
-  line-height: 1.15;
+  line-height: 1.1;
 
   font-weight: 900;
 
   text-transform: uppercase;
 
-  letter-spacing: .75px;
+  letter-spacing: .7px;
 }
 
 
@@ -303,14 +304,14 @@ body {
 ======================================== */
 
 .development {
+  height: 60px;
+
+  margin-top: 12px;
+
+  padding: 12px 19px;
+
   position: relative;
   z-index: 3;
-
-  margin-top: 13px;
-
-  min-height: 62px;
-
-  padding: 13px 20px;
 
   display: flex;
 
@@ -320,8 +321,7 @@ body {
 
   border-radius: 16px;
 
-  background:
-    rgba(255,255,255,.96);
+  background: white;
 
   color: var(--navy);
 
@@ -336,9 +336,9 @@ body {
 
   font-weight: 950;
 
-  text-transform: uppercase;
-
   letter-spacing: 1.2px;
+
+  text-transform: uppercase;
 }
 
 .development-items {
@@ -382,21 +382,18 @@ body {
 
 
 /* ========================================
-   MAIN DATA AREA
+   DATA SECTION
 ======================================== */
 
 .data-area {
-  padding: 25px 75px 0;
+  padding: 25px 72px 0;
 
   background: var(--off-white);
 }
 
-
-/* ========================================
-   SECTION LABEL
-======================================== */
-
 .section-label {
+  margin-bottom: 10px;
+
   color: var(--blue);
 
   font-size: 10px;
@@ -406,28 +403,25 @@ body {
   letter-spacing: 1.5px;
 
   text-transform: uppercase;
-
-  margin-bottom: 10px;
 }
 
 
 /* ========================================
-   DATA GRID
+   TWO-CARD GRID
 ======================================== */
 
 .data-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns:
-    1.12fr .88fr;
+    minmax(0, 1.12fr)
+    minmax(0, .88fr);
 
   gap: 14px;
 
   align-items: stretch;
-}
-
-.data-grid > * {
-  min-width: 0;
 }
 
 
@@ -436,24 +430,25 @@ body {
 ======================================== */
 
 .chart-card {
-  min-height: 230px;
+  min-height: 225px;
 
   padding: 23px 25px;
 
-  border-radius: 21px;
-
   background: white;
 
-  border: 1px solid var(--border);
+  border:
+    1px solid var(--border);
+
+  border-radius: 21px;
 
   box-shadow:
-    0 8px 24px rgba(7,21,47,.045);
+    0 7px 22px rgba(7,21,47,.045);
 }
 
 .chart-header {
   display: flex;
 
-  align-items: end;
+  align-items: center;
 
   justify-content: space-between;
 
@@ -466,8 +461,6 @@ body {
   color: var(--navy);
 
   font-size: 17px;
-
-  line-height: 1;
 
   font-weight: 950;
 
@@ -492,7 +485,7 @@ body {
 
 
 /* ========================================
-   MILESTONES
+   MILESTONE BARS
 ======================================== */
 
 .milestone {
@@ -552,12 +545,12 @@ body {
     );
 }
 
-.milestone:nth-child(4) .milestone-bar {
+.milestone:last-child .milestone-bar {
   background:
     linear-gradient(
       90deg,
       var(--lime),
-      #7dff10
+      #82ff15
     );
 }
 
@@ -577,7 +570,7 @@ body {
 ======================================== */
 
 .results-card {
-  min-height: 230px;
+  min-height: 225px;
 
   padding: 23px 25px;
 
@@ -594,7 +587,7 @@ body {
   justify-content: center;
 
   box-shadow:
-    0 8px 24px rgba(7,21,47,.07);
+    0 7px 22px rgba(7,21,47,.07);
 }
 
 .results-label {
@@ -612,7 +605,7 @@ body {
 .results-card h2 {
   font-size: 31px;
 
-  line-height: .95;
+  line-height: .94;
 
   letter-spacing: -1.5px;
 
@@ -620,13 +613,13 @@ body {
 }
 
 .results-card > p {
-  color: #344054;
+  color: var(--dark-gray);
 
   font-size: 11px;
 
   line-height: 1.4;
 
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 .result {
@@ -684,102 +677,15 @@ body {
 
 
 /* ========================================
-   MEGAREP / TEAM ACHIEVEMENT STRIP
-======================================== */
-
-.team-strip {
-  margin-top: 14px;
-
-  min-height: 70px;
-
-  padding: 13px 21px;
-
-  border-radius: 17px;
-
-  background: var(--navy);
-
-  color: white;
-
-  display: grid;
-
-  grid-template-columns: auto 1fr auto;
-
-  align-items: center;
-
-  gap: 17px;
-}
-
-.team-strip-number {
-  color: var(--lime);
-
-  font-size: 31px;
-
-  line-height: 1;
-
-  font-weight: 950;
-}
-
-.team-strip-copy strong {
-  display: block;
-
-  font-size: 12px;
-
-  line-height: 1.15;
-
-  text-transform: uppercase;
-
-  letter-spacing: .6px;
-}
-
-.team-strip-copy span {
-  display: block;
-
-  color: #aebfdc;
-
-  font-size: 9px;
-
-  margin-top: 2px;
-}
-
-.team-strip-right {
-  text-align: right;
-}
-
-.team-strip-right strong {
-  display: block;
-
-  color: white;
-
-  font-size: 21px;
-
-  line-height: 1;
-}
-
-.team-strip-right span {
-  display: block;
-
-  margin-top: 3px;
-
-  color: #8fa3c2;
-
-  font-size: 8px;
-
-  font-weight: 800;
-
-  text-transform: uppercase;
-
-  letter-spacing: .4px;
-}
-
-
-/* ========================================
    CELEBRATION
 ======================================== */
 
 .celebration {
-  margin: 14px 75px 0;
+  width: 100%;
 
   min-height: 125px;
+
+  margin-top: 14px;
 
   padding: 22px 27px;
 
@@ -787,7 +693,9 @@ body {
 
   display: grid;
 
-  grid-template-columns: 1fr auto;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
 
   align-items: center;
 
@@ -800,7 +708,8 @@ body {
       #f4ffe6
     );
 
-  border: 1px solid var(--border);
+  border:
+    1px solid var(--border);
 
   color: var(--navy);
 }
@@ -878,9 +787,9 @@ body {
 ======================================== */
 
 .footer {
-  height: 67px;
+  height: 63px;
 
-  margin: 14px 75px 0;
+  margin: 0 72px;
 
   display: flex;
 
@@ -911,7 +820,7 @@ body {
 
 
 /* ========================================
-   MOBILE
+   RESPONSIVE
 ======================================== */
 
 @media (max-width: 900px) {
@@ -923,7 +832,6 @@ body {
   .canvas {
     width: 100%;
     height: auto;
-
     min-height: 100vh;
 
     margin: 0;
@@ -932,22 +840,30 @@ body {
   .hero {
     height: auto;
 
-    padding: 30px 5% 35px;
+    padding:
+      30px 5% 35px;
   }
 
   .data-area {
-    padding: 25px 5% 0;
+    padding:
+      25px 5% 0;
   }
 
   .hero h1 {
-    font-size: clamp(52px, 10vw, 76px);
+    font-size:
+      clamp(52px, 10vw, 76px);
   }
 
   .primary-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .development {
+    height: auto;
+
+    min-height: 60px;
+
     align-items: flex-start;
 
     flex-direction: column;
@@ -965,19 +881,13 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .team-strip {
-    grid-template-columns: auto 1fr auto;
-  }
-
   .celebration {
-    margin: 14px 5% 0;
-
     grid-template-columns: 1fr;
   }
 
   .sponsor {
     padding-left: 0;
-    padding-top: 13px;
+    padding-top: 14px;
 
     border-left: none;
 
@@ -986,11 +896,11 @@ body {
   }
 
   .footer {
-    margin: 14px 5% 0;
+    margin: 0 5%;
 
     height: auto;
 
-    padding: 18px 0;
+    padding: 20px 0;
 
     gap: 10px;
   }
@@ -1013,14 +923,14 @@ body {
     font-size: 15px;
   }
 
-  .primary-stat .number {
-    font-size: 32px;
-  }
-
   .primary-stat {
-    min-height: 82px;
+    height: 82px;
 
     padding: 14px;
+  }
+
+  .primary-stat .number {
+    font-size: 32px;
   }
 
   .chart-card,
@@ -1028,16 +938,12 @@ body {
     min-height: auto;
   }
 
-  .team-strip {
-    grid-template-columns: auto 1fr;
+  .chart-header {
+    align-items: flex-start;
 
-    padding: 15px;
-  }
+    flex-direction: column;
 
-  .team-strip-right {
-    grid-column: 2;
-
-    text-align: left;
+    gap: 5px;
   }
 
   .celebration {
@@ -1079,13 +985,14 @@ body {
 
 <div class="canvas">
 
+
   <!-- ====================================
        HERO
   ===================================== -->
 
   <section class="hero">
 
-    <div class="header">
+    <header class="header">
 
       <div class="logo">
         REP<span>FIVE</span>
@@ -1095,7 +1002,7 @@ body {
         Team Development Shoutout
       </div>
 
-    </div>
+    </header>
 
 
     <div class="hero-copy">
@@ -1118,7 +1025,9 @@ body {
       </p>
 
 
-      <!-- PRIMARY STATS -->
+      <!-- ==================================
+           PRIMARY STATS
+      =================================== -->
 
       <div class="primary-stats">
 
@@ -1176,7 +1085,9 @@ body {
       </div>
 
 
-      <!-- DEVELOPMENT FOCUS -->
+      <!-- ==================================
+           DEVELOPMENT FOCUS
+      =================================== -->
 
       <div class="development">
 
@@ -1211,7 +1122,7 @@ body {
 
 
   <!-- ====================================
-       DATA AREA
+       DATA
   ===================================== -->
 
   <section class="data-area">
@@ -1221,10 +1132,14 @@ body {
     </div>
 
 
+    <!-- ==================================
+         TWO SIDE-BY-SIDE CARDS
+    =================================== -->
+
     <div class="data-grid">
 
 
-      <!-- PARTICIPATION -->
+      <!-- PARTICIPATION CARD -->
 
       <div class="chart-card">
 
@@ -1241,8 +1156,6 @@ body {
 
         </div>
 
-
-        <!-- 80% -->
 
         <div class="milestone">
 
@@ -1274,8 +1187,6 @@ body {
         </div>
 
 
-        <!-- 90% -->
-
         <div class="milestone">
 
           <div class="milestone-top">
@@ -1305,8 +1216,6 @@ body {
 
         </div>
 
-
-        <!-- EVERY REP -->
 
         <div class="milestone">
 
@@ -1340,7 +1249,9 @@ body {
       </div>
 
 
-      <!-- TEAM MOMENT -->
+      <!-- ==================================
+           TEAM MOMENT
+      =================================== -->
 
       <div class="results-card">
 
@@ -1407,44 +1318,6 @@ body {
 
 
     <!-- ====================================
-         TEAM ACHIEVEMENT
-    ===================================== -->
-
-    <div class="team-strip">
-
-      <div class="team-strip-number">
-        1
-      </div>
-
-      <div class="team-strip-copy">
-
-        <strong>
-          MegaRep Earned
-        </strong>
-
-        <span>
-          The entire team showed up for one shared
-          development moment.
-        </span>
-
-      </div>
-
-      <div class="team-strip-right">
-
-        <strong>
-          14 / 14
-        </strong>
-
-        <span>
-          Players participated
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <!-- ====================================
          CELEBRATION / SPONSOR
     ===================================== -->
 
@@ -1474,7 +1347,7 @@ body {
           Made possible by
         </div>
 
-        <!-- Replace with actual sponsor -->
+        <!-- Replace with actual sponsor name -->
 
         <div class="sponsor-name">
           Sponsor Name
