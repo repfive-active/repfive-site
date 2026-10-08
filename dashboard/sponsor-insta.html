@@ -232,6 +232,23 @@ body {
   color: white;
 }
 
+  /* Challenge context / date + team descriptor */
+.challenge-meta {
+  margin: 12px 0 8px;
+  color: #2F80FF;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+/* Optional separators */
+.challenge-meta span + span::before {
+  content: "  |  ";
+  color: #5E789A;
+}
+
 
 /* ==================================================
    PRIMARY STATS
@@ -1054,7 +1071,7 @@ body {
       </div>
 
       <div class="header-label">
-        ⚽ Team Shoutout
+         🎉 Team Shoutout 
       </div>
 
     </header>
@@ -1073,11 +1090,16 @@ body {
         <span>ONE TEAM.</span>
       </h1>
 
+      <div class="challenge-meta">
+        <span>Youth Soccer Team</span>
+        <span>Rancho Cucamonga</span>
+        <span>Fall 2026</span>
+      </div>
 
       <p class="hero-subtitle">
-        A focused team development sprint built around
+        A focused team ⚽ soccer development sprint built around
         <strong>
-          Game IQ, Team Play, and Mental Resilience.
+          Game IQ, Team Play, and Mental Game.
         </strong>
       </p>
 
@@ -1146,7 +1168,7 @@ body {
 
           <span>
             <i class="dot"></i>
-            Mental Resilience
+            Mental Game
           </span>
 
         </div>
@@ -1390,7 +1412,7 @@ body {
         </div>
 
         <div class="sponsor-name">
-          Sponsor Name
+          Community Sponsor
         </div>
 
       </div>
