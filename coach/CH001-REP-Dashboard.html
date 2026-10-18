@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REP Player Response Dashboard</title>
+
+<style>
+:root {
+    --navy: #17365d;
+    --blue: #2474d2;
+    --gray: #b8c0cc;
+    --track: #edf0f5;
+    --text: #243247;
+    --muted: #64748b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: #f3f6fb;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    max-width: 1500px;
+    margin: 0 auto 24px;
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: var(--navy);
+    font-size: 30px;
+}
+
+header p {
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    font-size: 13px;
+}
+
+.legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.swatch {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.swatch.blue { background: var(--blue); }
+.swatch.gray { background: var(--gray); }
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.card {
+    min-width: 0;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #e0e7f0;
+    border-top: 5px solid var(--blue);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #17365d0d;
+    break-inside: avoid;
+}
+
+.card h2 {
+    margin: 0 0 5px;
+    color: var(--navy);
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.rep-id {
+    margin-bottom: 15px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.question {
+    margin-bottom: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.answer {
+    margin-bottom: 19px;
+}
+
+.answer-label {
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.bar-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.track {
+    flex: 1;
+    min-width: 0;
+    height: 27px;
+    overflow: hidden;
+    background: var(--track);
+    border-radius: 5px;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    min-width: 0;
+    padding-right: 6px;
+    border-radius: 5px;
+    transition: width .3s ease;
+}
+
+.bar.positive { background: var(--blue); }
+.bar.zero { background: var(--gray); }
+
+.bar-number {
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.count {
+    flex: 0 0 105px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.count.zero { color: #697586; }
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid #e2e8f0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.card-footer strong { color: var(--navy); }
+
+footer {
+    max-width: 1500px;
+    margin: 24px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    body { padding: 14px; }
+    .dashboard { grid-template-columns: 1fr; }
+    h1 { font-size: 25px; }
+}
+
+@media print {
+    @page {
+        size: landscape;
+        margin: 10mm;
+    }
+
+    body {
+        padding: 0;
+        background: white;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .dashboard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .card {
+        padding: 13px;
+        box-shadow: none;
+    }
+
+    .card h2 { font-size: 16px; }
+    .question { font-size: 11px; margin-bottom: 12px; }
+    .answer { margin-bottom: 10px; }
+    .answer-label { font-size: 10px; }
+    .track { height: 20px; }
+    .count { flex-basis: 90px; font-size: 10px; }
+    .bar-number { font-size: 9px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>REP Player Response Dashboard</h1>
+    <p>
+        Player reflections across 10 REPs.
+        Each chart shows the distribution of responses to one question.
+    </p>
+
+    <div class="legend">
+        <span><i class="swatch blue"></i> Responses received</span>
+        <span><i class="swatch gray"></i> 0% — no responses</span>
+    </div>
+</header>
+
+<main class="dashboard" id="dashboard"></main>
+
+<footer>
+    Percentages are calculated from the number of responses recorded for
+    each REP. Gray bars identify options selected by zero players.
+</footer>
+
+<script>
+const reps = [
+{
+    id: "REP-SOC-001",
+    title: "REP1 — Scan Before You Receive",
+    question: "What will you try the next time the ball is coming to you?",
+    options: [
+        ["Scan before the ball arrives", 12],
+        ["Watch only the ball", 0],
+        ["Wait until I receive it to look up", 0],
+        ["Turn and play quickly", 1]
+    ]
+},
+{
+    id: "REP-SOC-002",
+    title: "REP2 — One Word",
+    question: "Are there communication words your team could use more often during games? Let your teammates know!",
+    options: [
+        ["YES! I’ll go first and use our communication words more in games", 11],
+        ["Yes, but I’ll wait for someone else to use them first", 2],
+        ["Maybe. I’ll speak up when I have the ball", 0],
+        ["No, I think our team communicates well", 0]
+    ]
+},
+{
+    id: "REP-SOC-003",
+    title: "REP3 — Pass and Move",
+    question: "After you pass the ball, what will you try to support your teammate?",
+    options: [
+        ["I’ll move to become another option for my teammate", 12],
+        ["I’ll wait and see what they do", 0],
+        ["I’ll watch the play", 0],
+        ["I’ll stay where I am", 0]
+    ]
+},
+{
+    id: "REP-SOC-004",
+    title: "REP4 — Keep It Simple",
+    question: "When the game starts to feel complicated, what will you try?",
+    options: [
+        ["Focus on the next thing I can control", 11],
+        ["Try to solve everything at once", 0],
+        ["Worry about what might happen next", 0],
+        ["Wait for someone else to fix it", 0]
+    ]
+},
+{
+    id: "REP-SOC-005",
+    title: "REP5 — Defend the 1v1",
+    question: "What will you try next time you defend 1v1?",
+    options: [
+        ["Slow them down and show them outside", 11],
+        ["Dive in as quickly as possible", 0],
+        ["Turn and run toward my own goal", 0],
+        ["Wait for my teammate to win the ball", 0]
+    ]
+},
+{
+    id: "REP-SOC-006",
+    title: "REP6 — Pro Eyes",
+    question: "Think like the pro: what will you try to spot before your next touch?",
+    options: [
+        ["Where I can turn", 0],
+        ["Where my teammate is", 0],
+        ["Where the defenders are", 0],
+        ["All of these", 13]
+    ]
+},
+{
+    id: "REP-SOC-007",
+    title: "REP7 — First Touch With Purpose",
+    question: "What will you try to do with your first touch?",
+    options: [
+        ["Make the ball stop at my feet", 2],
+        ["Use my first touch to set up my next move", 8],
+        ["Kick the ball as far away as possible", 0],
+        ["Take several touches before deciding", 0]
+    ]
+},
+{
+    id: "REP-SOC-008",
+    title: "REP8 — Find Space",
+    question: "You don't have the ball and the play is moving toward you. What should you be thinking about?",
+    options: [
+        ["Where can I move to support my teammate?", 12],
+        ["Wait, why isn't my teammate looking for me?", 0],
+        ["How can I get closer to the ball?", 0],
+        ["When will my teammate pass to me?", 0]
+    ]
+},
+{
+    id: "REP-SOC-009",
+    title: "REP9 — The First 3 Seconds",
+    question: "What will you do first when your team loses the ball?",
+    options: [
+        ["Chase the ball", 0],
+        ["Find my defensive job", 9],
+        ["Stay where I am", 0],
+        ["Wait for someone else to defend", 0]
+    ]
+},
+{
+    id: "REP-SOC-010",
+    title: "REP10 — Next Chance",
+    question: "What will you try when your team makes a mistake?",
+    options: [
+        ["Think about it for the rest of the game", 0],
+        ["Complain to the coach", 0],
+        ["Focus on the next chance", 7],
+        ["Give up on the play", 0]
+    ]
+}
+];
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, c => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[c]);
+}
+
+function renderRep(rep) {
+    const total = rep.options.reduce((sum, option) => sum + option[1], 0);
+    const maxCount = Math.max(1, ...rep.options.map(option => option[1]));
+
+    const rows = rep.options.map(([label, count]) => {
+        const pct = total ? count / total * 100 : 0;
+        const width = count / maxCount * 100;
+        const zero = count === 0;
+
+        return `
+        <div class="answer">
+            <div class="answer-label">${escapeHTML(label)}</div>
+            <div class="bar-line">
+                <div class="track"
+                     role="img"
+                     aria-label="${escapeHTML(label)}: ${count} players, ${pct.toFixed(1)}%">
+                    <div class="bar ${zero ? "zero" : "positive"}"
+                         style="width:${width}%">
+                        ${count > 0 && width > 24
+                            ? `<span class="bar-number">${count}</span>`
+                            : ""}
+                    </div>
+                </div>
+                <div class="count ${zero ? "zero" : ""}">
+                    ${count} ${count === 1 ? "player" : "players"}
+                    (${pct.toFixed(1)}%)
+                </div>
+            </div>
+        </div>`;
+    }).join("");
+
+    return `
+    <section class="card">
+        <h2>${escapeHTML(rep.title)}</h2>
+        <div class="rep-id">${escapeHTML(rep.id)}</div>
+        <div class="question">${escapeHTML(rep.question)}</div>
+        ${rows}
+        <div class="card-footer">
+            <span>Total responses</span>
+            <strong>${total} ${total === 1 ? "player" : "players"}</strong>
+        </div>
+    </section>`;
+}
+
+document.getElementById("dashboard").innerHTML =
+    reps.map(renderRep).join("");
+</script>
+
+</body>
+</html>
