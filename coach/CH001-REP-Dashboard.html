@@ -194,110 +194,114 @@ footer {
 @media print {
     @page {
         size: 8in 11.5in;
-        margin: 0.25in;
+        margin: 0.2in;
     }
 
     html,
     body {
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
         width: 100%;
-        background: white;
+        background: white !important;
         color: #243247;
         font-family: Arial, Helvetica, sans-serif;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
 
+    /* Compact page heading */
     header {
-        margin: 0 0 8px;
+        margin: 0 0 5px;
         max-width: none;
     }
 
     h1 {
-        font-size: 16px;
-        margin: 0 0 3px;
+        font-size: 14px;
+        line-height: 1.2;
+        margin: 0 0 2px;
     }
 
     header p {
-        font-size: 9px;
-        line-height: 1.2;
+        font-size: 8px;
+        line-height: 1.15;
         margin: 0;
     }
 
     .legend {
+        display: flex;
         gap: 10px;
-        margin-top: 5px;
-        font-size: 8px;
+        margin-top: 3px;
+        font-size: 7px;
     }
 
     .swatch {
-        width: 8px;
-        height: 8px;
+        width: 7px;
+        height: 7px;
     }
 
+    /* Two columns and five rows */
     .dashboard {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(3, auto);
+        grid-auto-rows: auto;
         grid-auto-flow: row;
-        gap: 7px;
+        gap: 5px;
         max-width: none;
         margin: 0;
         align-items: stretch;
     }
 
+    /* Compact graph cards */
     .card {
         min-width: 0;
-        padding: 7px;
+        padding: 5px;
         background: white;
         border: 1px solid #d5dce5;
-        border-top: 3px solid #2474d2;
-        border-radius: 4px;
+        border-top: 2px solid #2474d2;
+        border-radius: 3px;
         box-shadow: none;
+
         break-inside: avoid;
         page-break-inside: avoid;
     }
 
     .card h2 {
-        font-size: 10px;
-        line-height: 1.2;
+        font-size: 9px;
+        line-height: 1.15;
         margin: 0 0 3px;
         overflow-wrap: anywhere;
     }
 
+    /* Hide long technical IDs in print only */
     .rep-id {
-        font-size: 7px;
-        line-height: 1.15;
-        margin-bottom: 5px;
-        overflow-wrap: anywhere;
+        display: none;
     }
 
     .question {
-        font-size: 8px;
-        line-height: 1.2;
-        margin-bottom: 6px;
+        font-size: 7.5px;
+        line-height: 1.15;
+        margin: 0 0 4px;
     }
 
     .answer {
-        margin-bottom: 5px;
+        margin-bottom: 4px;
         break-inside: avoid;
         page-break-inside: avoid;
     }
 
     .answer-label {
         font-size: 7px;
-        line-height: 1.15;
+        line-height: 1.1;
         margin-bottom: 2px;
         overflow-wrap: anywhere;
     }
 
     .bar-line {
-        gap: 4px;
+        gap: 3px;
     }
 
     .track {
-        height: 11px;
+        height: 9px;
         border-radius: 2px;
     }
 
@@ -307,37 +311,36 @@ footer {
     }
 
     .bar-number {
-        font-size: 7px;
+        font-size: 6px;
     }
 
     .count {
-        flex: 0 0 68px;
-        font-size: 7px;
+        flex: 0 0 62px;
+        font-size: 6.5px;
         white-space: nowrap;
     }
 
     .card-footer {
-        gap: 4px;
-        margin-top: 6px;
-        padding-top: 4px;
+        gap: 3px;
+        margin-top: 4px;
+        padding-top: 3px;
         font-size: 7px;
     }
 
     footer {
         max-width: none;
-        margin: 6px 0 0;
+        margin: 5px 0 0;
         font-size: 7px;
-        line-height: 1.2;
+        line-height: 1.15;
     }
 
-    /* New page after every 6 graphs */
-    .card:nth-child(6n) {
-        break-after: page;
-        page-break-after: always;
+    /* Keep the dashboard together as one printed page */
+    .dashboard {
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 
-    /* Prevent a blank page after the last graph */
-    .card:last-child {
+    .card {
         break-after: auto;
         page-break-after: auto;
     }
