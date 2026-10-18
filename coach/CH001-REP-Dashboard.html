@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>REP Player Response Dashboard</title>
+<title>Challenge Response Dashboard</title>
 
 <style>
 :root {
@@ -228,7 +228,7 @@ footer {
 <body>
 
 <header>
-    <h1>REP Player Response Dashboard</h1>
+    <h1>Challenge Response Dashboard</h1>
     <p>
         Player reflections across 10 REPs.
         Each chart shows the distribution of responses to one question.
@@ -250,8 +250,8 @@ footer {
 <script>
 const reps = [
 {
-    id: "REP-SOC-001",
-    title: "REP1 — Scan Before You Receive",
+    id: "REP-SOC-001 [🧠 GAME IQ → Awareness · Decision-making]",
+    title: "DAY1 — Scan what's around you before receiving",
     question: "What will you try the next time the ball is coming to you?",
     options: [
         ["Scan before the ball arrives", 12],
@@ -261,19 +261,19 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-002",
-    title: "REP2 — One Word",
+    id: "REP-SOC-002 [🤝 TEAM PLAY → Communication]",
+    title: "DAY2 — Communicate to help your teammates",
     question: "Are there communication words your team could use more often during games? Let your teammates know!",
     options: [
-        ["YES! I’ll go first and use our communication words more in games", 11],
+        ["YES! I’ll go first and use our communication words more in games", 12],
         ["Yes, but I’ll wait for someone else to use them first", 2],
         ["Maybe. I’ll speak up when I have the ball", 0],
         ["No, I think our team communicates well", 0]
     ]
 },
 {
-    id: "REP-SOC-003",
-    title: "REP3 — Pass and Move",
+    id: "REP-SOC-003 [🤝 TEAM PLAY → Movement · Supporting teammates]",
+    title: "DAY3 — Pass, then create another option",
     question: "After you pass the ball, what will you try to support your teammate?",
     options: [
         ["I’ll move to become another option for my teammate", 12],
@@ -283,8 +283,8 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-004",
-    title: "REP4 — Keep It Simple",
+    id: "REP-SOC-004 [🧘 MENTAL GAME → Focus · Decision-making]",
+    title: "DAY4 — Keep it simple. Focus on what you can control",
     question: "When the game starts to feel complicated, what will you try?",
     options: [
         ["Focus on the next thing I can control", 11],
@@ -294,8 +294,8 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-005",
-    title: "REP5 — Defend the 1v1",
+    id: "REP-SOC-005 [🧠 GAME IQ → Defending]",
+    title: "DAY5 — Slow the attacker down",
     question: "What will you try next time you defend 1v1?",
     options: [
         ["Slow them down and show them outside", 11],
@@ -305,8 +305,8 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-006",
-    title: "REP6 — Pro Eyes",
+    id: "REP-SOC-006 [🧠 GAME IQ → Awareness · Anticipation · Decision-making]",
+    title: "DAY6 — See more. Predict what happens next. Create multiple options",
     question: "Think like the pro: what will you try to spot before your next touch?",
     options: [
         ["Where I can turn", 0],
@@ -316,8 +316,8 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-007",
-    title: "REP7 — First Touch With Purpose",
+    id: "REP-SOC-007 [🧠 GAME IQ → On-the-Ball · Progression · Decision-making]",
+    title: "DAY7 — Use your first touch to set up your next move",
     question: "What will you try to do with your first touch?",
     options: [
         ["Make the ball stop at my feet", 2],
@@ -327,8 +327,8 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-008",
-    title: "REP8 — Find Space",
+    id: "REP-SOC-008 [🤝 TEAM PLAY → Off-the-Ball · Movement · Supporting teammates]",
+    title: "DAY8 — Find space to give your teammate an option",
     question: "You don't have the ball and the play is moving toward you. What should you be thinking about?",
     options: [
         ["Where can I move to support my teammate?", 12],
@@ -338,8 +338,8 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-009",
-    title: "REP9 — The First 3 Seconds",
+    id: "REP-SOC-009 [🤝 TEAM PLAY → Transition · Defending]",
+    title: "DAY9 — Defend the transition together. React in the first few seconds",
     question: "What will you do first when your team loses the ball?",
     options: [
         ["Chase the ball", 0],
@@ -349,8 +349,8 @@ const reps = [
     ]
 },
 {
-    id: "REP-SOC-010",
-    title: "REP10 — Next Chance",
+    id: "REP-SOC-010 [🧘 MENTAL GAME → Resilience · Focus · Persistence]",
+    title: "DAY10 — Reset. Refocus. Seize the next opportunity",
     question: "What will you try when your team makes a mistake?",
     options: [
         ["Think about it for the rest of the game", 0],
